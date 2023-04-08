@@ -1,0 +1,10 @@
+{
+    "foods": [
+        {
+            "id":1,
+            "name": "Pizza pequena",
+            "price": "R$24,90",
+            "Description": "Serve 3 pessoas, ideal para um lanche no fim da noite" 
+        }
+    ]
+}

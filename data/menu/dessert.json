@@ -1,0 +1,52 @@
+{
+  "desserts": [
+    {
+        "id": 1,
+         "name": "Cocada ao Forno - Coco Bambu",
+        "description": "A famosa Cocada ao Forno, do restaurante Coco Bambu, é elaborada com coco ralado fresco e leite condensado. Para finalizar, ela é dourada ao forno e servida quente com uma bola de sorvete",
+        "price": "R$ 27,20"
+    },
+    {
+        "id": 2,
+        "name": "Torta do Luiz - Obá",
+        "description": "Para quem prefere tortas, o Obá oferece a famosa Torta do Luiz, feita com mousse de chocolate com toque de cachaça e castanha do pará, acompanhada com um pouco de calda de maracujá",
+        "price": "R$19,00"
+    },
+    {
+        "id": 3,
+        "name": "Great Wall of Chocolate - P.F. Chang’s",
+        "description": "O incrível Great Wall of Chocolate, do P.F. Chang’s, é um bolo de chocolate de seis camadas, decorado com chips de chocolate meio amargo e calda de frutas vermelhas. Ele serve até seis pessoas",
+        "price": "R$36,00"
+    },
+    {
+        "id": 4,
+         "name": "Torta de Chocolate com Amora ",
+        "description": "A delicada Torta de Chocolate com Amora, leva chocolate cremoso e amoras orgânica",
+        "price": "R$40,00"
+    },
+    {
+        "id": 5,
+         "name": "Mil Folhas de Doce de Leite",
+        "description": "O nome mil-folhas é uma referência ao número de folhas da massa que o compõem.",
+        "price": "R$19,60"
+    },
+    {
+        "id": 6,
+         "name": "Fondue com Sorvete",
+        "description": "Uma das sobremesas mais pedidas pelos frequentadores. Serve até duas pessoas e vem com deliciosas minibolas de sorvete, acompanhadas de chocolate derretido e pedaços de frutas, brownies e cookies",
+        "price": "R$51,00"
+    },
+    {
+        "id": 7,
+         "name": "Cheesecake de Frutas Vermelhas",
+        "description": "O saboroso e nada enjoativo cheesecake com calda de frutas vermelhas e pedaços de morango e amora faz sucesso na casa",
+        "price": "R$19,00"
+    },
+    {
+        "id": 8,
+         "name": "Volcano",
+        "description": "Tem o formato de um vulcão e traz o tradicional sorvete de doce de leite Häagen-Dazs, coberto por uma casquinha de chocolate ao leite, que vem separada para o cliente derrubá-la, revelando um delicioso recheio de doce de leite argentino",
+        "price": "R$28,70"
+    }
+  ]
+}

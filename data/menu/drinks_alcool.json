@@ -1,0 +1,46 @@
+{
+    "drinks_alcool": [
+        {
+            "id":1,
+            "name": "Cerveja Brahma",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":2,
+            "name": "Cerveja Heineken",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":3,
+            "name": "Cerveja Budweiser",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":4,
+            "name": "Cerveja Skol",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":5,
+            "name": "Vodka Orloff",
+            "size": "1 Litro",
+            "price": "R$66,00"
+        },
+        {
+            "id":6,
+            "name": "Vodka Smirnoff",
+            "size": "1 Litro",
+            "price": "R$59,90"
+        },
+        {
+            "id":7,
+            "name": "Whisky Red Label",
+            "size": "500 ml",
+            "price": "R$67,00"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "pizzas": [
+        {
+            "id":1,
+            "name": "Pizza Calabresa",
+            "price": "R$24,90"
+        },
+        {
+            "id":2,
+            "name": "Pizza Portuguesa",
+            "price": "R$24,90"
+        },
+        {
+            "id":3,
+            "name": "Pizza Marguerita",
+            "price": "R$24,90"
+        },
+        {
+            "id":4,
+            "name": "Pizza Mussarela",
+            "price": "R$24,90"
+        },
+        {
+            "id":5,
+            "name": "Pizza Frango com catupiry",
+            "price": "R$24,90"
+        },
+        {
+            "id":6,
+            "name": "Pizza Napolitana",
+            "price": "R$24,90"
+        },
+        {
+            "id":7,
+            "name": "Pizza Califórnia",
+            "price": "R$24,90"
+        },
+        {
+            "id":8,
+            "name": "Romeu e julieta",
+            "price": "R$24,90"
+        }
+
+
+    ]
+}

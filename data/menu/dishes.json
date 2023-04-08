@@ -1,0 +1,52 @@
+{
+    "dishes": [
+        {
+            "id": 1,
+            "name": "Frango com quiabo",
+            "culture": "Cultura mineira",
+            "description": "O frango com quiabo é um prato típico da culinária mineira."
+        },
+        {
+            "id": 2,
+            "name": "Leitão à pururuca",
+            "culture": "Cultura mineira",
+            "description": "O leitão à pururuca é uma versão brasileira do tradicional leitão assado português, popularizada, assim como o frango com quiabo, em Minas Gerais.No dialeto tupi, pururuca significa o que produz barulho. O nome guarda referência a um ingrediente essencial dessa receita: a pele do porco."
+        },
+        {
+            "id": 3,
+            "name": " Galinhada com pequi",
+            "culture": "Cultura goiana",
+            "description":"O leitão à pururuca é uma versão brasileira do tradicional leitão assado português, popularizada, assim como o frango com quiabo, em Minas Gerais. No dialeto tupi, pururuca significa o que produz barulho. O nome guarda referência a um ingrediente essencial dessa receita: a pele do porco."
+        },
+        {
+            "id": 4,
+            "name": "Virado à paulista",
+            "culture": "Cultura paulistana",
+            "description":"o virado à paulista é patrimônio imaterial do estado de São Paulo, reconhecido pelo Conselho de Defesa do Patrimônio Histórico, Arqueológico, Artístico e Turístico do Estado de São Paulo"
+        },
+        {
+            "id": 5,
+            "name": "Picadinho de carne",
+            "culture": "Cultura paulistana",
+        "description":"O picadinho de carne é um dos pratos mais tradicionais da culinária brasileira, apreciado de Norte a Sul do País. A popularidade dessa receita é tanta, que no dia 26 de outubro é celebrado o Dia Nacional do Picadinho de Carne."
+        },
+        {
+            "id": 6,
+            "name": "Feijoada",
+            "culture": "Cultura carioca",
+            "description": "O tradicionalíssimo prato é composto por feijão preto, carnes maturadas (carne-seca, carne de sol etc.) e partes de porco (orelha, língua, rabo, lombo e costela, além de linguiça), e servido com arroz branco, couve, farofa, torresmo e laranja."
+        },
+        {
+            "id": 7,
+            "name": " Arroz carreteiro",
+            "culture": "Cultura sulista",
+            "description":"O prato surgiu quando os carreteiros (transportadores de cargas) que viajavam em carretas puxadas por bois cozinhavam em uma panela de ferro a mistura de arroz com guisado de carne de sol."
+        },
+        {
+            "id": 8,
+            "name": "Acarajé",
+            "culture": "Cultura baiana",
+            "description":"O acarajé é uma deliciosa iguaria preparada com um bolinho de feijão-fradinho artesanal, temperado com cebola e sal, frito em azeite de dendê e depois recheado com vatapá (leite de coco, castanha de caju, amendoim e camarão), vinagrete e camarão seco."
+        }
+    ]
+}

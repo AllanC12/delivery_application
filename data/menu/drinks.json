@@ -1,0 +1,52 @@
+{
+    "drinks":[
+        {
+            "id": 1,
+            "name": "Refrigerante",
+            "size": "1 Litro",
+            "price": "R$3,50"
+        },
+        {
+            "id": 2,
+            "name": "Suco de laranja",
+            "size": "350 ml",
+            "price": "R$2,90"
+        },
+        {
+            "id": 3,
+            "name": "Limonada Suiça",
+            "size": "350 ml",
+            "price": "R$3,00"
+        },
+        {
+            "id": 4,
+            "name": "Coquetel de morango",
+            "size": "350 ml",
+            "price": "R$3,75"
+        },
+        {
+            "id": 5,
+            "name": "Coquetel Alice",
+            "size": "350 ml",
+            "price": "R$3,75"
+        },
+        {
+            "id": 6,
+            "name": "Sex on the beach",
+            "size": "350 ml",
+            "price": "R$6,00"
+        },
+        {
+            "id": 7,
+            "name": "Verão a mil",
+            "size": "350 ml",
+            "price": "R$6,00"
+        },
+        {
+            "id": 8,
+            "name": "Agua tônica",
+            "size": "350 ml",
+            "price": "R$3,90"
+        }
+    ]
+}

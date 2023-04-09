@@ -2,7 +2,9 @@ import styles from "./sass_pages/FormClient.module.scss"
 
 import { Link } from "react-router-dom"
 
+//hooks
 import { useRef , useEffect, useState} from "react"
+import { useFetch } from "../hooks/useFetch"
 
 //img_animation
 import beer from "../images/img_animations/beer.png"
@@ -18,6 +20,7 @@ const FormClient = () => {
 
     const [name,setName] = useState('')
     const [password,setPassword] = useState('')
+    const urlDataClient = 'http://localhost:3000/'
  
    const animationForm = () => {
     
@@ -45,9 +48,14 @@ const FormClient = () => {
   },[])
     
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+  }
+
   return (
     <div className={styles.banner_main}>
-         <form onSubm className={styles.form_login}>
+         <form onSubmit={handleSubmit} className={styles.form_login}>
              <h2>A fome bateu? Entre aqui e sirva-se</h2>
             <div ref={divImgsFormAnimation}  className={styles.form_animation}>
                 <img src={beer} alt="" />

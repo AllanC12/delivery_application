@@ -8,12 +8,6 @@
     background-position: center;
     background-size: cover;
 
-    .form_login{
-        width: 100%;
-        max-width: 280px;
-        height: 55vh;
-        background-color: white;
-
         .form_animation{
             @include flex-between;
 
@@ -24,5 +18,4 @@
              }
         }
 
-    }
- }
+  }

@@ -2,7 +2,7 @@ import styles from "./sass_pages/FormClient.module.scss"
 
 import { Link } from "react-router-dom"
 
-import { useRef , useEffect} from "react"
+import { useRef , useEffect, useState} from "react"
 
 //img_animation
 import beer from "../images/img_animations/beer.png"
@@ -16,6 +16,9 @@ const FormClient = () => {
     const divImgsFormAnimation = useRef()
     let indexImgAnimation = 0;
 
+    const [name,setName] = useState('')
+    const [password,setPassword] = useState('')
+ 
    const animationForm = () => {
     
     const imgsAnimation = divImgsFormAnimation.current.children
@@ -25,22 +28,26 @@ const FormClient = () => {
 
             if(indexImgAnimation === arrayImages.length){
                 indexImgAnimation = 0
+                for(let i = 0; i < arrayImages.length; i++){
+                    arrayImages[i].style.setProperty('opacity','0')
+                }
              }
 
             arrayImages[indexImgAnimation].style.setProperty('opacity','1')
             indexImgAnimation++
+        
         },1000)
    }
 
 
    useEffect(()=>{
      animationForm()
-  })
+  },[])
     
 
   return (
     <div className={styles.banner_main}>
-         <form className={styles.form_login}>
+         <form onSubm className={styles.form_login}>
              <h2>A fome bateu? Entre aqui e sirva-se</h2>
             <div ref={divImgsFormAnimation}  className={styles.form_animation}>
                 <img src={beer} alt="" />
@@ -51,11 +58,17 @@ const FormClient = () => {
                 <img src={sprite} alt="" />
             </div>
              <label>
-                  <input type="text" placeholder="Insira seu nome..."/>
+                  <input type="text" 
+                  placeholder="Insira seu nome..."
+                  value={name}  
+                  onChange={(e)=> setName(e.target.value)}/>
              </label>
 
              <label>
-                  <input type="password" placeholder="Insira sua senha..."/>
+                  <input type="password" 
+                  placeholder="Insira sua senha..."
+                  value={password} 
+                  onChange={(e)=> setPassword(e.target.value)}/>
              </label>
 
              <input className="btn" type="submit" value="Enviar" />

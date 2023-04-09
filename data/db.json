@@ -1,0 +1,246 @@
+{
+    "clients": [
+        {
+           "id":1,
+           "name": "Allan",
+           "password": "allan007"
+        }
+    ],
+    "desserts": [
+        {
+            "id": 1,
+             "name": "Cocada ao Forno - Coco Bambu",
+            "description": "A famosa Cocada ao Forno, do restaurante Coco Bambu, é elaborada com coco ralado fresco e leite condensado. Para finalizar, ela é dourada ao forno e servida quente com uma bola de sorvete",
+            "price": "R$ 27,20"
+        },
+        {
+            "id": 2,
+            "name": "Torta do Luiz - Obá",
+            "description": "Para quem prefere tortas, o Obá oferece a famosa Torta do Luiz, feita com mousse de chocolate com toque de cachaça e castanha do pará, acompanhada com um pouco de calda de maracujá",
+            "price": "R$19,00"
+        },
+        {
+            "id": 3,
+            "name": "Great Wall of Chocolate - P.F. Chang’s",
+            "description": "O incrível Great Wall of Chocolate, do P.F. Chang’s, é um bolo de chocolate de seis camadas, decorado com chips de chocolate meio amargo e calda de frutas vermelhas. Ele serve até seis pessoas",
+            "price": "R$36,00"
+        },
+        {
+            "id": 4,
+             "name": "Torta de Chocolate com Amora ",
+            "description": "A delicada Torta de Chocolate com Amora, leva chocolate cremoso e amoras orgânica",
+            "price": "R$40,00"
+        },
+        {
+            "id": 5,
+             "name": "Mil Folhas de Doce de Leite",
+            "description": "O nome mil-folhas é uma referência ao número de folhas da massa que o compõem.",
+            "price": "R$19,60"
+        },
+        {
+            "id": 6,
+             "name": "Fondue com Sorvete",
+            "description": "Uma das sobremesas mais pedidas pelos frequentadores. Serve até duas pessoas e vem com deliciosas minibolas de sorvete, acompanhadas de chocolate derretido e pedaços de frutas, brownies e cookies",
+            "price": "R$51,00"
+        },
+        {
+            "id": 7,
+             "name": "Cheesecake de Frutas Vermelhas",
+            "description": "O saboroso e nada enjoativo cheesecake com calda de frutas vermelhas e pedaços de morango e amora faz sucesso na casa",
+            "price": "R$19,00"
+        },
+        {
+            "id": 8,
+             "name": "Volcano",
+            "description": "Tem o formato de um vulcão e traz o tradicional sorvete de doce de leite Häagen-Dazs, coberto por uma casquinha de chocolate ao leite, que vem separada para o cliente derrubá-la, revelando um delicioso recheio de doce de leite argentino",
+            "price": "R$28,70"
+        }
+      ],
+      "dishes": [
+        {
+            "id": 1,
+            "name": "Frango com quiabo",
+            "culture": "Cultura mineira",
+            "description": "O frango com quiabo é um prato típico da culinária mineira."
+        },
+        {
+            "id": 2,
+            "name": "Leitão à pururuca",
+            "culture": "Cultura mineira",
+            "description": "O leitão à pururuca é uma versão brasileira do tradicional leitão assado português, popularizada, assim como o frango com quiabo, em Minas Gerais.No dialeto tupi, pururuca significa o que produz barulho. O nome guarda referência a um ingrediente essencial dessa receita: a pele do porco."
+        },
+        {
+            "id": 3,
+            "name": " Galinhada com pequi",
+            "culture": "Cultura goiana",
+            "description":"O leitão à pururuca é uma versão brasileira do tradicional leitão assado português, popularizada, assim como o frango com quiabo, em Minas Gerais. No dialeto tupi, pururuca significa o que produz barulho. O nome guarda referência a um ingrediente essencial dessa receita: a pele do porco."
+        },
+        {
+            "id": 4,
+            "name": "Virado à paulista",
+            "culture": "Cultura paulistana",
+            "description":"o virado à paulista é patrimônio imaterial do estado de São Paulo, reconhecido pelo Conselho de Defesa do Patrimônio Histórico, Arqueológico, Artístico e Turístico do Estado de São Paulo"
+        },
+        {
+            "id": 5,
+            "name": "Picadinho de carne",
+            "culture": "Cultura paulistana",
+        "description":"O picadinho de carne é um dos pratos mais tradicionais da culinária brasileira, apreciado de Norte a Sul do País. A popularidade dessa receita é tanta, que no dia 26 de outubro é celebrado o Dia Nacional do Picadinho de Carne."
+        },
+        {
+            "id": 6,
+            "name": "Feijoada",
+            "culture": "Cultura carioca",
+            "description": "O tradicionalíssimo prato é composto por feijão preto, carnes maturadas (carne-seca, carne de sol etc.) e partes de porco (orelha, língua, rabo, lombo e costela, além de linguiça), e servido com arroz branco, couve, farofa, torresmo e laranja."
+        },
+        {
+            "id": 7,
+            "name": " Arroz carreteiro",
+            "culture": "Cultura sulista",
+            "description":"O prato surgiu quando os carreteiros (transportadores de cargas) que viajavam em carretas puxadas por bois cozinhavam em uma panela de ferro a mistura de arroz com guisado de carne de sol."
+        },
+        {
+            "id": 8,
+            "name": "Acarajé",
+            "culture": "Cultura baiana",
+            "description":"O acarajé é uma deliciosa iguaria preparada com um bolinho de feijão-fradinho artesanal, temperado com cebola e sal, frito em azeite de dendê e depois recheado com vatapá (leite de coco, castanha de caju, amendoim e camarão), vinagrete e camarão seco."
+        }
+    ],    "drinks_alcool": [
+        {
+            "id":1,
+            "name": "Cerveja Brahma",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":2,
+            "name": "Cerveja Heineken",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":3,
+            "name": "Cerveja Budweiser",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":4,
+            "name": "Cerveja Skol",
+            "size": "350 ml",
+            "price": "R$4,00"
+        },
+        {
+            "id":5,
+            "name": "Vodka Orloff",
+            "size": "1 Litro",
+            "price": "R$66,00"
+        },
+        {
+            "id":6,
+            "name": "Vodka Smirnoff",
+            "size": "1 Litro",
+            "price": "R$59,90"
+        },
+        {
+            "id":7,
+            "name": "Whisky Red Label",
+            "size": "500 ml",
+            "price": "R$67,00"
+        }
+    ],
+    "drinks":[
+        {
+            "id": 1,
+            "name": "Refrigerante",
+            "size": "1 Litro",
+            "price": "R$3,50"
+        },
+        {
+            "id": 2,
+            "name": "Suco de laranja",
+            "size": "350 ml",
+            "price": "R$2,90"
+        },
+        {
+            "id": 3,
+            "name": "Limonada Suiça",
+            "size": "350 ml",
+            "price": "R$3,00"
+        },
+        {
+            "id": 4,
+            "name": "Coquetel de morango",
+            "size": "350 ml",
+            "price": "R$3,75"
+        },
+        {
+            "id": 5,
+            "name": "Coquetel Alice",
+            "size": "350 ml",
+            "price": "R$3,75"
+        },
+        {
+            "id": 6,
+            "name": "Sex on the beach",
+            "size": "350 ml",
+            "price": "R$6,00"
+        },
+        {
+            "id": 7,
+            "name": "Verão a mil",
+            "size": "350 ml",
+            "price": "R$6,00"
+        },
+        {
+            "id": 8,
+            "name": "Agua tônica",
+            "size": "350 ml",
+            "price": "R$3,90"
+        }
+    ],
+    "pizzas": [
+        {
+            "id":1,
+            "name": "Pizza Calabresa",
+            "price": "R$24,90"
+        },
+        {
+            "id":2,
+            "name": "Pizza Portuguesa",
+            "price": "R$24,90"
+        },
+        {
+            "id":3,
+            "name": "Pizza Marguerita",
+            "price": "R$24,90"
+        },
+        {
+            "id":4,
+            "name": "Pizza Mussarela",
+            "price": "R$24,90"
+        },
+        {
+            "id":5,
+            "name": "Pizza Frango com catupiry",
+            "price": "R$24,90"
+        },
+        {
+            "id":6,
+            "name": "Pizza Napolitana",
+            "price": "R$24,90"
+        },
+        {
+            "id":7,
+            "name": "Pizza Califórnia",
+            "price": "R$24,90"
+        },
+        {
+            "id":8,
+            "name": "Romeu e julieta",
+            "price": "R$24,90"
+        }
+
+
+    ]
+}

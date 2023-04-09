@@ -66,3 +66,19 @@ input::placeholder{
     background-color: #c75218;
  }
 
+ .message-error{
+    background-color: #f55f5f;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+ }
+
+ .message-success{
+    background-color: #75f080;
+    border: 1px solid #29cc37;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+ }
+

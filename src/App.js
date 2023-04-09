@@ -15,6 +15,7 @@ function App() {
            <Routes>
               <Route path="/" element={<FormClient/>}/>
               <Route path="/cadastro" element={<FormNewClient/>}/>
+              <Route path="/inicio" element={<Home/>}/>
            </Routes>
         </BrowserRouter>
      </div>

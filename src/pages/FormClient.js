@@ -20,7 +20,7 @@ const FormClient = () => {
     const [password,setPassword] = useState('')
 
     const urlDataClient = `http://localhost:3000/clients`
-    const {data:clients} = useFetch(urlDataClient)
+    const {data:clients,loading} = useFetch(urlDataClient)
     const [errorMessage,setErrorMessage] = useState('')
     const [successMessage,setSuccessMessage] = useState('')
     const Navigate = useNavigate()
@@ -56,7 +56,7 @@ const FormClient = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const userNameValidate = clients.filter(client => (
+     const userNameValidate = clients.filter(client => (
         client.name === name
     ))
 
@@ -74,14 +74,13 @@ const FormClient = () => {
 
     setName('')
     setPassword('')
-    
-    setInterval(()=>{    
+    setInterval(()=>{  
         Navigate('/inicio')
     },700)
   }
 
   return (
-    <div className={styles.banner_main}>
+    <div className={styles.banner_form_login}>
          <form onSubmit={handleSubmit} className={styles.form_login}>
              <h2>A fome bateu? Entre aqui e sirva-se</h2>
             <div ref={divImgsFormAnimation}  className={styles.form_animation}>
@@ -94,7 +93,7 @@ const FormClient = () => {
             </div>
              <label>
                   <input type="text" 
-                  placeholder="Insira seu nome..."
+                  placeholder="Insira seu nome de usuário..."
                   value={name}  
                   onChange={(e)=> setName(e.target.value)}/>
              </label>
@@ -106,7 +105,11 @@ const FormClient = () => {
                   onChange={(e)=> setPassword(e.target.value)}/>
              </label>
 
-             <input className="btn" type="submit" value="Enviar" />
+            {!loading && <input className="btn btn-login disabled" type="submit" value="Entrar" />}
+
+            {loading && 
+               <input disabled className="btn btn-login" type="submit" value="Entrando" />
+            }
 
              {errorMessage && (
                 <p className="message-error">{errorMessage}</p>

@@ -24,7 +24,7 @@ form a{
 
 form label{
     display: block;
-    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 form input[type="text"],input[type="password"]{
@@ -51,21 +51,30 @@ input::placeholder{
 
  .btn{
     border-radius: 5px;
-    background-color: #e65f1c;
-    width: 10vw;
     border:none;
     padding: 5px 15px;
     color: white;
     font-size: 1.2em;
-    margin-top: 25px;
-    cursor: pointer;
+     cursor: pointer;
     transition: .5s;
  }
 
- .btn:hover{
+ .btn-login{
+    background-color: #e65f1c;
+
+ }
+
+ .btn-login:hover{
     background-color: #c75218;
  }
 
+ .btn-add{
+    background-color: #29cc37;;
+ }
+
+.btn-add:hover{
+    background-color:#75f080;
+}
  .message-error{
     background-color: #f55f5f;
     border: 1px solid red;
@@ -81,4 +90,5 @@ input::placeholder{
     padding: 5px 10px;
     color: white;
  }
+ 
 

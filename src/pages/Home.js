@@ -1,5 +1,5 @@
 //styles
-import styles from "../sass_pages/Home.scss"
+import styles from "./sass_pages/Home.module.scss"
 
 //components
 import Navbar from "../components/Navbar"

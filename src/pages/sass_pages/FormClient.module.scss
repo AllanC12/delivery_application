@@ -11,11 +11,18 @@
     .form_login{
         width: 100%;
         max-width: 280px;
-        height: 50vh;
+        height: 55vh;
         background-color: white;
 
-        img{
-            width: 100%;
+        .form_animation{
+            @include flex-between;
+
+            img{
+                width: 20px;
+                height: 20px;
+                opacity: 0;
+             }
         }
+
     }
  }

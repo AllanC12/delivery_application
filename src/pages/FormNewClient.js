@@ -3,15 +3,13 @@ import styles from "./sass_pages/FormClient.module.scss"
 import chef from "../images/img_animations/chef.png"
 import hungry from "../images/img_animations/hungry.png"
 
-import { useCallback, useState } from "react"
+import { useState } from "react"
 import { useFetch } from "../hooks/useFetch"
-import { useNavigate } from "react-router-dom"
-
+ 
 const FormNewClient = () => {
   const urlAddClient = `http://localhost:3000/clients`
   const {registerClient} = useFetch(urlAddClient)
-  const Navigate = useNavigate()
-
+ 
   const [nameAddUser,setNameAddUser] = useState('')
   const [passwordAddUser,setPasswordAddUser] = useState('')
   const [confirmPasswordAddUser,setConfirmPasswordAddUser] = useState('')

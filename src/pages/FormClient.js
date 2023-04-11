@@ -70,6 +70,7 @@ const FormClient = () => {
         }
     }else{
         setErrorMessage(`Usuário não encontrado...`)
+        return
     }
 
     setName('')
@@ -91,7 +92,7 @@ const FormClient = () => {
                 <img src={potatoChips} alt="potatoChips" />
                 <img src={sprite} alt="sprite" />
             </div>
-             <label>
+             <label onFocus={()=> setErrorMessage("")}>
                   <input type="text" 
                   placeholder="Insira seu nome de usuário..."
                   value={name}  

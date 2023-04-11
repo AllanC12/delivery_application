@@ -67,6 +67,9 @@ const FormClient = () => {
     if(userNameValidate.length > 0){
         if(userPasswordValidate.length > 0){
             setSuccessMessage(`Seja bem vindo ${name}`)
+        }else{
+            setErrorMessage(`Senha incorreta`)
+            return
         }
     }else{
         setErrorMessage(`Usuário não encontrado...`)
@@ -92,15 +95,15 @@ const FormClient = () => {
                 <img src={potatoChips} alt="potatoChips" />
                 <img src={sprite} alt="sprite" />
             </div>
-             <label onFocus={()=> setErrorMessage("")}>
-                  <input type="text" 
+             <label >
+                  <input onFocus={()=> setErrorMessage("")} type="text" 
                   placeholder="Insira seu nome de usuário..."
                   value={name}  
                   onChange={(e)=> setName(e.target.value)}/>
              </label>
 
              <label>
-                  <input type="password" 
+                  <input onFocus={()=> setErrorMessage("")} type="password" 
                   placeholder="Insira sua senha..."
                   value={password} 
                   onChange={(e)=> setPassword(e.target.value)}/>

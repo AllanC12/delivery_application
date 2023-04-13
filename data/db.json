@@ -274,15 +274,15 @@
   ],
   "foods_banner":[
     {"id":1,
-    "adress_image": "https://initiate.alphacoders.com/images/202/cropped-1366-768-202135.jpg?6330",
+    "adress_image": "https://initiate.alphacoders.com/images/202/cropped-1366-768-202135.jpg",
      "legend": "Pizzas de sabores maravilhosos..."
     },
     {"id":2,
-    "adress_image": "https://initiate.alphacoders.com/images/434/cropped-1366-768-434430.jpg?9844",
+    "adress_image": "https://initiate.alphacoders.com/images/434/cropped-1366-768-434430.jpg",
      "legend": "...Sobremesas que impressionam à todos"
     },
     {"id":3,
-    "adress_image": "https://initiate.alphacoders.com/images/449/cropped-1366-768-449153.jpg?2272",
+    "adress_image": "https://initiate.alphacoders.com/images/449/cropped-1366-768-449153.jpg",
      "legend": "...e drinks que te farão sentir o sabor do céu!"
     }
   ]

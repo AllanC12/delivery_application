@@ -271,5 +271,19 @@
       "name": "Romeu e julieta",
       "price": "R$24,90"
     }
+  ],
+  "foods_banner":[
+    {"id":1,
+    "adress_image": "https://initiate.alphacoders.com/images/202/cropped-1366-768-202135.jpg?6330",
+     "legend": "Pizzas de sabores maravilhosos..."
+    },
+    {"id":2,
+    "adress_image": "https://initiate.alphacoders.com/images/434/cropped-1366-768-434430.jpg?9844",
+     "legend": "...Sobremesas que impressionam à todos"
+    },
+    {"id":3,
+    "adress_image": "https://initiate.alphacoders.com/images/449/cropped-1366-768-449153.jpg?2272",
+     "legend": "...e drinks que te farão sentir o sabor do céu!"
+    }
   ]
 }

@@ -274,11 +274,11 @@
   ],
   "foods_banner":[
     {"id":1,
-    "adress_image": "https://initiate.alphacoders.com/images/202/cropped-1366-768-202135.jpg",
+    "adress_image": "https://initiate.alphacoders.com/images/370/cropped-1366-768-370708.jpg",
      "legend": "Pizzas de sabores maravilhosos..."
     },
     {"id":2,
-    "adress_image": "https://initiate.alphacoders.com/images/434/cropped-1366-768-434430.jpg",
+    "adress_image": "https://initiate.alphacoders.com/images/233/cropped-1366-768-233206.jpg",
      "legend": "...Sobremesas que impressionam à todos"
     },
     {"id":3,

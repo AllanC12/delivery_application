@@ -13,11 +13,12 @@ const Home = () => {
    return (
     <div>
       <Navbar/>
+      <div className={styles.banner_home}>
          {foods_banner && foods_banner.map(food_banner => (
-            <div key={food_banner.id} className={styles.banner_home}>
-              <img src={food_banner.adress_image} alt={food_banner.legend}/>
-            </div>
+            <img src={food_banner.adress_image} alt={food_banner.legend}/>
          ))}
+      </div>
+
       <Footer/>
     </div>
   )

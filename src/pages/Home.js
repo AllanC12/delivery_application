@@ -28,7 +28,7 @@ const Home = () => {
       <Navbar />
       <div ref={imgElement} className="banner_home">
         <div className="banner_wraper selected">
-          <h2 className="legend_banner">"Pizzas maravilhosas..."</h2>
+          <h2 className="legend_banner">Pizzas maravilhosas...</h2>
           <img
             className="img_banner"
             src="https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express-1536x1007.jpg"

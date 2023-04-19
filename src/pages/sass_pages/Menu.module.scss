@@ -1,0 +1,17 @@
+@import "../../sass_mixins/mixin.scss";
+
+.menu_element {
+  width: 100%;
+  min-height: 85vh;
+
+  .banner_menu {
+    width: 100%;
+    height: 100%;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

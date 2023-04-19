@@ -6,7 +6,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from "./pages/Home.js"
 import FormClient from './pages/FormClient';
 import FormNewClient from './pages/FormNewClient';
-
+import Menu from './pages/Menu';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
               <Route path="/" element={<FormClient/>}/>
               <Route path="/cadastro" element={<FormNewClient/>}/>
               <Route path="/inicio" element={<Home/>}/>
+              <Route path="/cardapio" element={<Menu/>}/>
            </Routes>
         </BrowserRouter>
      </div>

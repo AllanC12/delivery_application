@@ -14,6 +14,7 @@ const Home = () => {
     const imgBanner = imgElement.current.children;
     let index = 0;
     let indexMax = imgBanner.length - 1;
+    imgBanner[0].classList.add("selected");
 
     setInterval(() => {
       imgBanner[index].classList.remove("selected");
@@ -26,16 +27,16 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div ref={imgElement} className={styles.banner_home}>
-        <div className={`${styles.banner_wraper},${styles.selected}`}>
+      <div ref={imgElement} className="banner_home">
+        <div className="banner_wraper selected">
           <h2>Pizzas maravilhosas...</h2>
           <img src="https://pastapizza.com.br/wp-content/uploads/2017/07/Pizza-Pizzaria-Forno-Forza-Express-1536x1007.jpg" />
         </div>
-        <div className={styles.banner_wraper}>
+        <div className="banner_wraper ">
           <h2>...Sobremesas impactantes...</h2>
           <img src="https://www.sabornamesa.com.br/media/k2/items/cache/7d2898c3630feea92ec1553d16389ff6_XL.jpg" />
         </div>
-        <div className={styles.banner_wraper}>
+        <div className="banner_wraper ">
           <h2>Drinks de tirar o fôlego...</h2>
           <img src="https://blog.ginbrasil.com.br/wp-content/uploads/2020/08/Gin-Brasil-11-Entenda-a-fun%C3%A7%C3%A3o-do-gelo-no-seu-drink-e-por-que-ele-%C3%A9-importante.jpg" />
         </div>

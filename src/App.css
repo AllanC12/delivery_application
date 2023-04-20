@@ -101,4 +101,44 @@ input::placeholder {
 }
 
 
+/* banner-home */
 
+ 
+.banner_home {
+  width: 100%;
+  position: relative;
+  height: 79vh;
+  
+}
+  .banner_wraper{
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+
+img{
+  width: 100%;
+  height: 85vh;
+  object-fit: cover;
+  transition: 1s;
+}
+
+h2{
+  position: absolute;
+  left: 15vw;
+  top: 40vh;
+  font-size: 4em;
+  color: #332f2d;
+}
+
+
+.selected {
+  opacity: 1;
+}
+
+ 

@@ -128,7 +128,7 @@ img{
   transition: 1s;
 }
 
-h2{
+h2.legend_banner{
   position: absolute;
   left: 15vw;
   top: 40vh;

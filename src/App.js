@@ -18,10 +18,18 @@ function App() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const [confirmUser, setConfirmUser] = useState(false);
+
+  let confirmUser = false;
 
   let userNameValidate;
   let userPasswordValidate;
+
+  const confirmClientValidate = (message) => {
+    if(message !== ""){
+      confirmUser = true
+    }
+  }
+  confirmClientValidate(successMessage)
 
   const verifyDataClient = (clients) => {
     if (clients) {
@@ -37,7 +45,6 @@ function App() {
     if (userName.length > 0) {
       if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
-        setConfirmUser(true);
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
@@ -48,6 +55,8 @@ function App() {
     }
   };
 
+
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -57,9 +66,11 @@ function App() {
     setNameClient("");
     setPassword("");
     setInterval(() => {
-      window.location.href = "http://localhost:3001/inicio";
-    }, 700);
+
+    },100);
   };
+
+
 
   console.log(confirmUser)
 

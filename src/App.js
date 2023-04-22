@@ -1,9 +1,7 @@
 import "./App.css";
 //hooks
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useFetch } from "./hooks/useFetch";
 
 //pages
@@ -13,30 +11,33 @@ import FormNewClient from "./pages/FormNewClient";
 import Menu from "./pages/Menu";
 
 function App() {
+  const urlDataClient = `http://localhost:3000/clients`;
+  const { data: clients, loading } = useFetch(urlDataClient);
+
   const [nameClient, setNameClient] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [confirmUser, setConfirmUser] = useState(false);
 
-  const urlDataClient = `http://localhost:3000/clients`;
-  const { data: clients, loading } = useFetch(urlDataClient);
+  let userNameValidate;
+  let userPasswordValidate;
 
-  console.log(clients);
+  const verifyDataClient = (clients) => {
+    if (clients) {
+      userNameValidate = clients.filter((client) => client.name === nameClient);
 
-  const userNameValidate = clients.filter(
-    (client) => client.name === nameClient
-  );
+      userPasswordValidate = clients.filter(
+        (client) => client.password === password
+      );
+    }
+  };
 
-  const userPasswordValidate = clients.filter(
-    (client) => client.password === password
-  );
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-
-    if (userNameValidate.length > 0) {
-      if (userPasswordValidate.length > 0) {
+  const validateDataClient = (userName,userPassword) => {
+    if (userName.length > 0) {
+      if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
+        setConfirmUser(true);
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
@@ -45,6 +46,13 @@ function App() {
       setErrorMessage(`Usuário não encontrado...`);
       return;
     }
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    verifyDataClient(clients);
+    validateDataClient(userNameValidate,userPasswordValidate);
 
     setNameClient("");
     setPassword("");
@@ -52,6 +60,8 @@ function App() {
       window.location.href = "http://localhost:3001/inicio";
     }, 700);
   };
+
+  console.log(confirmUser)
 
   return (
     <div className="App">
@@ -75,10 +85,10 @@ function App() {
             }
           />
           <Route path="/cadastro" element={<FormNewClient />} />
-          <Route
-            path="/inicio"
-            element={userPasswordValidate ? <Home /> : <FormNewClient />}
-          />
+          <Route path="/inicio" element={
+               confirmUser ? <Home /> : <Navigate to="/"/>
+             }
+           />
           <Route path="/cardapio" element={<Menu />} />
         </Routes>
       </BrowserRouter>

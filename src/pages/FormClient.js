@@ -1,11 +1,10 @@
 import styles from "./sass_pages/FormClient.module.scss";
 
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //hooks
 import { useRef, useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
-
 
 //img_animation
 import beer from "../images/img_animations/beer.png";
@@ -15,7 +14,9 @@ import dinner from "../images/img_animations/dinner.png";
 import potatoChips from "../images/img_animations/potato_chips.png";
 import sprite from "../images/img_animations/sprite.png";
 
-const FormClient = () => {
+const FormClient = ({setConfirmUser}) => {
+  const Navigate = useNavigate()
+
   const divImgsFormAnimation = useRef();
   let indexImgAnimation = 0;
 
@@ -27,40 +28,10 @@ const FormClient = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  const Navigate = useNavigate()
-
+  
   let userNameValidate;
   let userPasswordValidate;
-  let confirmUser = false;
-  
-  const animationForm = () => {
-    const imgsAnimation = divImgsFormAnimation.current.children;
-    const arrayImages = Array.from(imgsAnimation);
-
-    setInterval(() => {
-      if (indexImgAnimation === arrayImages.length) {
-        indexImgAnimation = 0;
-        for (let i = 0; i < arrayImages.length; i++) {
-          arrayImages[i].style.setProperty("opacity", "0");
-        }
-      }
-
-      arrayImages[indexImgAnimation].style.setProperty("opacity", "1");
-      indexImgAnimation++;
-    }, 1000);
-  };
-
-  useEffect(() => {
-    animationForm();
-  }, []);
-
-  const confirmClientValidate = (message) => {
-    if(message !== ""){
-      confirmUser = true
-    }
-  }
-  confirmClientValidate(successMessage)
-
+   
   const verifyDataClient = (clients) => {
     if (clients) {
       userNameValidate = clients.filter((client) => client.name === nameClient);
@@ -75,6 +46,7 @@ const FormClient = () => {
     if (userName.length > 0) {
       if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
+        setConfirmUser(true)
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
@@ -95,10 +67,29 @@ const FormClient = () => {
 
     setNameClient("");
     setPassword("");
+       Navigate("/inicio")
+   };
+
+  const animationForm = () => {
+    const imgsAnimation = divImgsFormAnimation.current.children;
+    const arrayImages = Array.from(imgsAnimation);
+
     setInterval(() => {
-      Navigate("/inicio")
-    },100);
+      if (indexImgAnimation === arrayImages.length) {
+        indexImgAnimation = 0;
+        for (let i = 0; i < arrayImages.length; i++) {
+          arrayImages[i].style.setProperty("opacity", "0");
+        }
+      }
+
+      arrayImages[indexImgAnimation].style.setProperty("opacity", "1");
+      indexImgAnimation++;
+    }, 1000);
   };
+
+  useEffect(() => {
+    animationForm();
+  }, []);
 
   return (
     <div className={styles.banner_form_login}>

@@ -7,8 +7,9 @@ import Footer from "../components/Footer";
 const Menu = () => {
   return (
     <div className={styles.menu_element}>
-      <Navbar />
-      <div className={styles.banner_menu}>
+      <Navbar/>
+
+       <div className={styles.banner_menu}>
         <img src="https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg" />
         <div className={styles.menu}>
             <div className={styles.cover_menu}>
@@ -24,8 +25,9 @@ const Menu = () => {
             </div>
         </div>
       </div>
-      <Footer />
-    </div>
+
+      <Footer/>
+     </div>
   );
 };
 

@@ -1,9 +1,10 @@
 import styles from "./sass_pages/FormClient.module.scss";
 
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 //hooks
 import { useRef, useEffect, useState } from "react";
+import { useFetch } from "../hooks/useFetch";
 
 
 //img_animation
@@ -14,20 +15,24 @@ import dinner from "../images/img_animations/dinner.png";
 import potatoChips from "../images/img_animations/potato_chips.png";
 import sprite from "../images/img_animations/sprite.png";
 
-const FormClient = ({
-  nameClient,
-  password,
-  handleLogin,
-  setNameClient,
-  setPassword,
-  errorMessage,
-  successMessage,
-  setErrorMessage,
-  loading,
-}) => {
+const FormClient = () => {
   const divImgsFormAnimation = useRef();
   let indexImgAnimation = 0;
 
+  const urlDataClient = `http://localhost:3000/clients`;
+  const { data: clients, loading } = useFetch(urlDataClient);
+
+  const [nameClient, setNameClient] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const Navigate = useNavigate()
+
+  let userNameValidate;
+  let userPasswordValidate;
+  let confirmUser = false;
+  
   const animationForm = () => {
     const imgsAnimation = divImgsFormAnimation.current.children;
     const arrayImages = Array.from(imgsAnimation);
@@ -48,6 +53,52 @@ const FormClient = ({
   useEffect(() => {
     animationForm();
   }, []);
+
+  const confirmClientValidate = (message) => {
+    if(message !== ""){
+      confirmUser = true
+    }
+  }
+  confirmClientValidate(successMessage)
+
+  const verifyDataClient = (clients) => {
+    if (clients) {
+      userNameValidate = clients.filter((client) => client.name === nameClient);
+
+      userPasswordValidate = clients.filter(
+        (client) => client.password === password
+      );
+    }
+  };
+
+  const validateDataClient = (userName,userPassword) => {
+    if (userName.length > 0) {
+      if (userPassword.length > 0) {
+        setSuccessMessage(`Seja bem vindo ${nameClient}`);
+      } else {
+        setErrorMessage(`Senha incorreta`);
+        return;
+      }
+    } else {
+      setErrorMessage(`Usuário não encontrado...`);
+      return;
+    }
+  };
+
+
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    verifyDataClient(clients);
+    validateDataClient(userNameValidate,userPasswordValidate);
+
+    setNameClient("");
+    setPassword("");
+    setInterval(() => {
+      Navigate("/inicio")
+    },100);
+  };
 
   return (
     <div className={styles.banner_form_login}>

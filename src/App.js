@@ -13,7 +13,9 @@ import About from "./pages/About"
 function App() {
 
   const [confirmUser, setConfirmUser] = useState(false)
-  console.log(confirmUser)
+  sessionStorage.setItem("confirmedUser", confirmUser)
+  const confirmedUser = sessionStorage.getItem("confirmedUser")
+  
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,9 +23,9 @@ function App() {
           <Route path="/" element={<FormClient setConfirmUser={setConfirmUser} />} />
           <Route path="/cadastro" element={<FormNewClient />} />
 
-          <Route path="/inicio" element={confirmUser ? <Home /> : <Navigate to="/"/>} />
-          <Route path="/cardapio" element={confirmUser ? <Menu /> : <Navigate to="/"/>} />
-          <Route path="/sobre" element={confirmUser ? <About/> : <Navigate to="/"/>} />
+          <Route path="/inicio" element={confirmedUser ? <Home /> : <Navigate to="/"/>} />
+          <Route path="/cardapio" element={confirmedUser ? <Menu /> : <Navigate to="/"/>} />
+          <Route path="/sobre" element={confirmedUser ? <About/> : <Navigate to="/"/>} />
         </Routes>
       </BrowserRouter>
     </div>

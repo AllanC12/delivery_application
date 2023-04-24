@@ -49,8 +49,8 @@ const Menu = () => {
     }, 900);
   };
 
-  const showPageFive = (pageVerified, pageFour, pageFive) => {
-    if (getComputedStyle(pageVerified).zIndex === "2") {
+  const showPageFive = (pageThree, pageFour, pageFive) => {
+    if (getComputedStyle(pageThree).zIndex === "2") {
       pageFour.style.setProperty("transform", "RotateY(180deg)");
       setTimeout(() => {
         pageFive.style.setProperty("z-index", "2");

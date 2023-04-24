@@ -40,7 +40,7 @@
           width: 48%;
           height: 90%;
           background-color: #fff;
-          transition: 1s;
+          transition: 1.5s;
           padding: 5px;
         }
         
@@ -50,7 +50,8 @@
         }
 
         .page_one,
-        .page_three {
+        .page_three,
+        .page_five {
           transform-origin: right;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
@@ -64,7 +65,8 @@
         }
 
         .page_two,
-        .page_four {
+        .page_four,
+        .page_six {
           transform-origin: left;
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;

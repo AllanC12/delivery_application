@@ -13,38 +13,46 @@ const Menu = () => {
   const pageTwo = useRef();
   const pageThree = useRef();
   const pageFour = useRef();
+  const pageFive = useRef();
 
-  const showPage = (pageTwo,pageThree,pageOne) => {
-    pageTwo.style.setProperty("transform", "RotateY(180deg)");
-    setTimeout(()=>{
-      pageThree.style.setProperty("z-index", "2");
-      pageOne.style.setProperty("z-index", "1");
-    },540)
-
-  };
-
-  const verifyPageTwo = (pageTwo) => {
-    
-  }
-
-  const hiddePage = (pageTwo,pageOne,pageThree) => {
-    if(getComputedStyle(pageTwo).transform !== "none"){
+  const verifyPageTwo = (pageTwo, pageOne, pageThree) => {
+    if (getComputedStyle(pageTwo).transform !== "none") {
       pageTwo.style.setProperty("transform", "none");
-      pageOne.style.setProperty("z-index","1")
-      pageTwo.style.setProperty("z-index","1")
-      pageThree.style.setProperty("z-index","auto")
-    }else{
-      console.log(getComputedStyle(pageTwo).transform)
-      return
+      setTimeout(()=> {
+        pageOne.style.setProperty("z-index", "1");
+        pageTwo.style.setProperty("z-index", "1");
+        pageThree.style.setProperty("z-index", "auto");
+      },160)
+    } else {
+      return;
     }
   };
 
+  const showPageThree = (pageTwo, pageThree, pageFour,pageOne) => {
+    pageTwo.style.setProperty("transform", "RotateY(180deg)");
+    setTimeout(() => {
+      pageThree.style.setProperty("z-index", "2");
+      pageFour.style.setProperty("z-index", "2");
+      pageOne.style.setProperty("z-index", "1");
+    }, 900);
+  };
+
+  const showPageFive = (pageVerified,pageFour,pageFive) => {
+      if(getComputedStyle(pageVerified).zIndex === "2"){
+        pageFour.style.setProperty("transform","RotateY(180deg)")
+        setTimeout(()=> {
+          pageFive.style.setProperty("z-index","2")
+        },900)
+      }
+  }
+
   const beforePage = () => {
-    hiddePage(pageTwo.current,pageOne.current,pageThree.current);
+    verifyPageTwo(pageTwo.current, pageOne.current, pageThree.current);
   };
 
   const nextPage = () => {
-    showPage(pageTwo.current,pageThree.current,pageOne.current);
+    showPageThree(pageTwo.current, pageFour.current,pageThree.current, pageOne.current);
+    showPageFive(pageThree.current,pageFour.current,pageFive.current)
   };
 
   return (
@@ -73,6 +81,17 @@ const Menu = () => {
               className={`${styles.page_four} ${styles.page}`}
             >
               <p>Conteudo da pagina 4</p>
+            </div>
+            <div
+              ref={pageFive}
+              className={`${styles.page_five} ${styles.page}`}
+            >
+              <p>Conteudo da pagina 5</p>
+            </div>
+            <div
+               className={`${styles.page_six} ${styles.page}`}
+            >
+              <p>Conteudo da pagina 6</p>
             </div>
           </div>
           <img onClick={nextPage} src={next_page} />

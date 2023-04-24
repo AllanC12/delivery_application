@@ -15,20 +15,32 @@ const Menu = () => {
   const pageFour = useRef();
   const pageFive = useRef();
 
-  const verifyPageTwo = (pageTwo, pageOne, pageThree) => {
-    if (getComputedStyle(pageTwo).transform !== "none") {
+  const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
+    if (
+      getComputedStyle(pageTwo).transform !== "none" &&
+      getComputedStyle(pageFour).transform === "none"
+    ) {
       pageTwo.style.setProperty("transform", "none");
-      setTimeout(()=> {
+      setTimeout(() => {
         pageOne.style.setProperty("z-index", "1");
         pageTwo.style.setProperty("z-index", "1");
         pageThree.style.setProperty("z-index", "auto");
-      },160)
+        pageFour.style.setProperty("z-index", "auto");
+      }, 160);
     } else {
       return;
     }
   };
 
-  const showPageThree = (pageTwo, pageThree, pageFour,pageOne) => {
+  const verifyPageFour = (pageFour, pageFive) => {
+    if (getComputedStyle(pageFour).transform !== "none") {
+      pageFour.style.setProperty("transform", "none");
+      pageFour.style.setProperty("z-index", "2");
+      pageFive.style.setProperty("z-index", "auto");
+    }
+  };
+
+  const showPageThree = (pageTwo, pageThree, pageFour, pageOne) => {
     pageTwo.style.setProperty("transform", "RotateY(180deg)");
     setTimeout(() => {
       pageThree.style.setProperty("z-index", "2");
@@ -37,22 +49,33 @@ const Menu = () => {
     }, 900);
   };
 
-  const showPageFive = (pageVerified,pageFour,pageFive) => {
-      if(getComputedStyle(pageVerified).zIndex === "2"){
-        pageFour.style.setProperty("transform","RotateY(180deg)")
-        setTimeout(()=> {
-          pageFive.style.setProperty("z-index","2")
-        },900)
-      }
-  }
+  const showPageFive = (pageVerified, pageFour, pageFive) => {
+    if (getComputedStyle(pageVerified).zIndex === "2") {
+      pageFour.style.setProperty("transform", "RotateY(180deg)");
+      setTimeout(() => {
+        pageFive.style.setProperty("z-index", "2");
+      }, 900);
+    }
+  };
 
   const beforePage = () => {
-    verifyPageTwo(pageTwo.current, pageOne.current, pageThree.current);
+    verifyPageTwo(
+      pageTwo.current,
+      pageFour.current,
+      pageOne.current,
+      pageThree.current
+    );
+    verifyPageFour(pageFour.current, pageFive.current);
   };
 
   const nextPage = () => {
-    showPageThree(pageTwo.current, pageFour.current,pageThree.current, pageOne.current);
-    showPageFive(pageThree.current,pageFour.current,pageFive.current)
+    showPageThree(
+      pageTwo.current,
+      pageFour.current,
+      pageThree.current,
+      pageOne.current
+    );
+    showPageFive(pageThree.current, pageFour.current, pageFive.current);
   };
 
   return (
@@ -88,9 +111,7 @@ const Menu = () => {
             >
               <p>Conteudo da pagina 5</p>
             </div>
-            <div
-               className={`${styles.page_six} ${styles.page}`}
-            >
+            <div className={`${styles.page_six} ${styles.page}`}>
               <p>Conteudo da pagina 6</p>
             </div>
           </div>

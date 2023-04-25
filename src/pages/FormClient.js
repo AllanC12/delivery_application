@@ -67,7 +67,9 @@ const FormClient = ({setConfirmUser}) => {
 
     setNameClient("");
     setPassword("");
-       Navigate("/inicio")
+    setTimeout(()=> {
+      Navigate("/inicio")
+    },500)
    };
 
   const animationForm = () => {

@@ -1,10 +1,14 @@
 import styles from "./sass_pages/Menu.module.scss";
 
 import { useRef, useEffect } from "react";
+import { useFetch } from "../hooks/useFetch";
 
 //components
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import MenuStructure from "../components/MenuStructure";
+
+//images
 import before_page from "../images/arrows/before-page.png";
 import next_page from "../images/arrows/next-page.png";
 
@@ -14,6 +18,13 @@ const Menu = () => {
   const pageThree = useRef();
   const pageFour = useRef();
   const pageFive = useRef();
+
+  const urlsForMenu = [
+    "http://localhost:3000/desserts",
+    "http://localhost:3000/dishes",
+    "http://localhost:3000/drinks_alcool",
+    "http://localhost:3000/drinks",
+  ];
 
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
@@ -88,7 +99,11 @@ const Menu = () => {
           <img onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>
             <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
-              <p>Conteudo da pagina 1 </p>
+              <MenuStructure
+                titleSession={`Pizzas`}
+                titleFood={`Pizza de mussarela`}
+                priceFood={`19.99`}
+              />
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
               <p>Conteudo da pagina 2 </p>

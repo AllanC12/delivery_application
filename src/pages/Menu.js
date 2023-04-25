@@ -116,26 +116,52 @@ const Menu = () => {
                 ))}
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
-              <p>Conteudo da pagina 2 </p>
+            {drinks &&
+                drinks.map((drink, index) => (
+                  <MenuStructure
+                    key={index}
+                    titleFood={drink.name}
+                    priceFood={drink.price}
+                  />
+                ))}
             </div>
             <div
               ref={pageThree}
               className={`${styles.page_three} ${styles.page}`}
             >
-              <p>Conteudo da pagina 3 </p>
+              {pizzas &&
+                pizzas.map((pizza, index) => (
+                  <MenuStructure
+                    key={index}
+                    titleFood={pizza.name}
+                    priceFood={pizza.price}
+                  />
+                ))}
             </div>
             <div
               ref={pageFour}
               className={`${styles.page_four} ${styles.page}`}
             >
-              <p>Conteudo da pagina 4</p>
-            </div>
+              {desserts &&
+                desserts.map((dessert, index) => (
+                  <MenuStructure
+                    key={index}
+                    titleFood={dessert.name}
+                    priceFood={dessert.price}
+                  />
+                ))}            </div>
             <div
               ref={pageFive}
               className={`${styles.page_five} ${styles.page}`}
             >
-              <p>Conteudo da pagina 5</p>
-            </div>
+              {drinks_alcool &&
+                drinks_alcool.map((drinkAlcool, index) => (
+                  <MenuStructure
+                    key={index}
+                    titleFood={drinkAlcool.name}
+                    priceFood={drinkAlcool.price}
+                  />
+                ))}            </div>
             <div className={`${styles.page_six} ${styles.page}`}>
               <p>Conteudo da pagina 6</p>
             </div>

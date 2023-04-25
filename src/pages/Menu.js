@@ -20,11 +20,18 @@ const Menu = () => {
   const pageFive = useRef();
 
   const urlsForMenu = [
-    "http://localhost:3000/desserts",
     "http://localhost:3000/dishes",
-    "http://localhost:3000/drinks_alcool",
     "http://localhost:3000/drinks",
+    "http://localhost:3000/pizzas",
+    "http://localhost:3000/desserts",
+    "http://localhost:3000/drinks_alcool",
   ];
+
+  const { data: dishes } = useFetch(urlsForMenu[0]);
+  const { data: drinks } = useFetch(urlsForMenu[1]);
+  const { data: pizzas } = useFetch(urlsForMenu[2]);
+  const { data: desserts } = useFetch(urlsForMenu[3]);
+  const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
@@ -99,11 +106,14 @@ const Menu = () => {
           <img onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>
             <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
-              <MenuStructure
-                titleSession={`Pizzas`}
-                titleFood={`Pizza de mussarela`}
-                priceFood={`19.99`}
-              />
+              {dishes &&
+                dishes.map((dishe, index) => (
+                  <MenuStructure
+                    key={index}
+                    titleFood={dishe.name}
+                    priceFood={dishe.price}
+                  />
+                ))}
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
               <p>Conteudo da pagina 2 </p>

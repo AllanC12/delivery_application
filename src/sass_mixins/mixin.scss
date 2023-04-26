@@ -2,8 +2,8 @@
     display: flex;
 }
 
-@mixin flex($allignment){
+@mixin flex($spacing){
     @include display-flex();
-    justify-content: $allignment;
+    justify-content: $spacing;
     align-items: center;
 }

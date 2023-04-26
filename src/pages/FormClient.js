@@ -19,7 +19,7 @@ const FormClient = ({ setConfirmUser }) => {
 
   const divImgsFormAnimation = useRef();
   let indexImgAnimation = 0;
-  const [intervalAnimation,setIntervalAnimation] = useState(null)
+  let animationInterval;
 
   const urlDataClient = `http://localhost:3000/clients`;
   const { data: clients, loading } = useFetch(urlDataClient);
@@ -32,21 +32,11 @@ const FormClient = ({ setConfirmUser }) => {
   let userNameValidate;
   let userPasswordValidate;
 
-  const verifyDataClient = (clients) => {
-    if (clients) {
-      userNameValidate = clients.filter((client) => client.name === nameClient);
-
-      userPasswordValidate = clients.filter(
-        (client) => client.password === password
-      );
-    }
-  };
-
   const animationForm = () => {
     const imgsAnimation = divImgsFormAnimation.current.children;
     const arrayImages = Array.from(imgsAnimation);
 
-      const animationInterval = setInterval(() => {
+      animationInterval = setInterval(() => {
         console.log("aquiiiii")
       if (indexImgAnimation === arrayImages.length) {
         indexImgAnimation = 0;
@@ -57,20 +47,28 @@ const FormClient = ({ setConfirmUser }) => {
       arrayImages[indexImgAnimation].style.setProperty("opacity", "1");
       indexImgAnimation++;
     }, 1000);
-    setIntervalAnimation(animationInterval)
   };
 
-  const stopIntervalAnimation = () => {
-    clearInterval(intervalAnimation)
-    console.log('animação parada')
-  }
+  useEffect(() => {
+    animationForm();
+    return () => clearInterval(animationInterval)
+  }, []);
+
+  const verifyDataClient = (clients) => {
+    if (clients) {
+      userNameValidate = clients.filter((client) => client.name === nameClient);
+
+      userPasswordValidate = clients.filter(
+        (client) => client.password === password
+      );
+    }
+  };
 
   const validateDataClient = (userName, userPassword) => {
     if (userName.length > 0) {
       if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
         setConfirmUser(true);
-        stopIntervalAnimation()
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
@@ -80,10 +78,10 @@ const FormClient = ({ setConfirmUser }) => {
       return;
     }
   };
-
+  
   const handleLogin = (e) => {
     e.preventDefault();
-
+    
     verifyDataClient(clients);
     validateDataClient(userNameValidate, userPasswordValidate);
 
@@ -93,12 +91,6 @@ const FormClient = ({ setConfirmUser }) => {
       Navigate("/inicio");
     }, 500);
   };
-
-  useEffect(() => {
-    animationForm();
-
-    return clearInterval(intervalAnimation)
-  }, []);
 
   return (
     <div className={styles.banner_form_login}>

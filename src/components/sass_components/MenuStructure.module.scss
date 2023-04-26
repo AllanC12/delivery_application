@@ -1,0 +1,10 @@
+@import "../../sass_mixins/mixin.scss";
+
+.boxFood{
+    @include flex(space-between);
+    margin-bottom: 3vh;
+
+    h4{
+        font-size: .8em;
+    }
+}

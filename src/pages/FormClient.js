@@ -14,11 +14,12 @@ import dinner from "../images/img_animations/dinner.png";
 import potatoChips from "../images/img_animations/potato_chips.png";
 import sprite from "../images/img_animations/sprite.png";
 
-const FormClient = ({setConfirmUser}) => {
-  const Navigate = useNavigate()
+const FormClient = ({ setConfirmUser }) => {
+  const Navigate = useNavigate();
 
   const divImgsFormAnimation = useRef();
   let indexImgAnimation = 0;
+  const [intervalAnimation,setIntervalAnimation] = useState(null)
 
   const urlDataClient = `http://localhost:3000/clients`;
   const { data: clients, loading } = useFetch(urlDataClient);
@@ -28,10 +29,9 @@ const FormClient = ({setConfirmUser}) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  
   let userNameValidate;
   let userPasswordValidate;
-   
+
   const verifyDataClient = (clients) => {
     if (clients) {
       userNameValidate = clients.filter((client) => client.name === nameClient);
@@ -42,11 +42,35 @@ const FormClient = ({setConfirmUser}) => {
     }
   };
 
-  const validateDataClient = (userName,userPassword) => {
+  const animationForm = () => {
+    const imgsAnimation = divImgsFormAnimation.current.children;
+    const arrayImages = Array.from(imgsAnimation);
+
+      const animationInterval = setInterval(() => {
+        console.log("aquiiiii")
+      if (indexImgAnimation === arrayImages.length) {
+        indexImgAnimation = 0;
+        for (let i = 0; i < arrayImages.length; i++) {
+          arrayImages[i].style.setProperty("opacity", "0");
+        }
+      }
+      arrayImages[indexImgAnimation].style.setProperty("opacity", "1");
+      indexImgAnimation++;
+    }, 1000);
+    setIntervalAnimation(animationInterval)
+  };
+
+  const stopIntervalAnimation = () => {
+    clearInterval(intervalAnimation)
+    console.log('animação parada')
+  }
+
+  const validateDataClient = (userName, userPassword) => {
     if (userName.length > 0) {
       if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
-        setConfirmUser(true)
+        setConfirmUser(true);
+        stopIntervalAnimation()
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
@@ -57,40 +81,23 @@ const FormClient = ({setConfirmUser}) => {
     }
   };
 
-
-
   const handleLogin = (e) => {
     e.preventDefault();
 
     verifyDataClient(clients);
-    validateDataClient(userNameValidate,userPasswordValidate);
+    validateDataClient(userNameValidate, userPasswordValidate);
 
     setNameClient("");
     setPassword("");
-    setTimeout(()=> {
-      Navigate("/inicio")
-    },500)
-   };
-
-  const animationForm = () => {
-    const imgsAnimation = divImgsFormAnimation.current.children;
-    const arrayImages = Array.from(imgsAnimation);
-
-    setInterval(() => {
-      if (indexImgAnimation === arrayImages.length) {
-        indexImgAnimation = 0;
-        for (let i = 0; i < arrayImages.length; i++) {
-          arrayImages[i].style.setProperty("opacity", "0");
-        }
-      }
-
-      arrayImages[indexImgAnimation].style.setProperty("opacity", "1");
-      indexImgAnimation++;
-    }, 1000);
+    setTimeout(() => {
+      Navigate("/inicio");
+    }, 500);
   };
 
   useEffect(() => {
     animationForm();
+
+    return clearInterval(intervalAnimation)
   }, []);
 
   return (

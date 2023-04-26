@@ -45,13 +45,13 @@
     },
     {
       "id": 2,
-      "name": "Torta do Luiz - Obá",
-      "description": "Para quem prefere tortas, o Obá oferece a famosa Torta do Luiz, feita com mousse de chocolate com toque de cachaça e castanha do pará, acompanhada com um pouco de calda de maracujá",
+      "name": "Torta do Luiz",
+      "description": "Para quem prefere tortas, a famosa Torta do Luiz, feita com mousse de chocolate com toque de cachaça e castanha do pará, acompanhada com um pouco de calda de maracujá",
       "price": "R$19,00"
     },
     {
       "id": 3,
-      "name": "Great Wall of Chocolate - P.F. Chang’s",
+      "name": "Great Wall of Chocolate",
       "description": "O incrível Great Wall of Chocolate, do P.F. Chang’s, é um bolo de chocolate de seis camadas, decorado com chips de chocolate meio amargo e calda de frutas vermelhas. Ele serve até seis pessoas",
       "price": "R$36,00"
     },

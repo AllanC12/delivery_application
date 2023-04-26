@@ -18,6 +18,7 @@ const Menu = () => {
   const pageThree = useRef();
   const pageFour = useRef();
   const pageFive = useRef();
+  const pageSix = useRef();
 
   const urlsForMenu = [
     "http://localhost:3000/dishes",
@@ -44,7 +45,7 @@ const Menu = () => {
         pageTwo.style.setProperty("z-index", "1");
         pageThree.style.setProperty("z-index", "auto");
         pageFour.style.setProperty("z-index", "auto");
-      }, 160);
+      }, 150);
     } else {
       return;
     }
@@ -58,13 +59,13 @@ const Menu = () => {
     }
   };
 
-  const showPageThree = (pageTwo, pageThree, pageFour, pageOne) => {
+  const showPageThree = (pageTwo, pageThree, pageFour, pageOne,pageSix) => {
     pageTwo.style.setProperty("transform", "RotateY(180deg)");
     setTimeout(() => {
       pageThree.style.setProperty("z-index", "2");
       pageFour.style.setProperty("z-index", "2");
       pageOne.style.setProperty("z-index", "1");
-    }, 900);
+     }, 600);
   };
 
   const showPageFive = (pageThree, pageFour, pageFive) => {
@@ -72,7 +73,7 @@ const Menu = () => {
       pageFour.style.setProperty("transform", "RotateY(180deg)");
       setTimeout(() => {
         pageFive.style.setProperty("z-index", "2");
-      }, 900);
+      }, 500);
     }
   };
 
@@ -91,8 +92,8 @@ const Menu = () => {
       pageTwo.current,
       pageFour.current,
       pageThree.current,
-      pageOne.current
-    );
+      pageOne.current,
+     );
     showPageFive(pageThree.current, pageFour.current, pageFive.current);
   };
 
@@ -162,9 +163,7 @@ const Menu = () => {
                     priceFood={drinkAlcool.price}
                   />
                 ))}            </div>
-            <div className={`${styles.page_six} ${styles.page}`}>
-              <p>Conteudo da pagina 6</p>
-            </div>
+   
           </div>
           <img onClick={nextPage} src={next_page} />
         </div>

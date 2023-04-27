@@ -7,6 +7,7 @@ import { useFetch } from "../hooks/useFetch";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import MenuStructure from "../components/MenuStructure";
+import ModalOrder from "../components/ModalOrder";
 
 //images
 import before_page from "../images/arrows/before-page.png";
@@ -59,13 +60,13 @@ const Menu = () => {
     }
   };
 
-  const showPageThree = (pageTwo, pageThree, pageFour, pageOne,pageSix) => {
+  const showPageThree = (pageTwo, pageThree, pageFour, pageOne, pageSix) => {
     pageTwo.style.setProperty("transform", "RotateY(180deg)");
     setTimeout(() => {
       pageThree.style.setProperty("z-index", "2");
       pageFour.style.setProperty("z-index", "2");
       pageOne.style.setProperty("z-index", "1");
-     }, 600);
+    }, 600);
   };
 
   const showPageFive = (pageThree, pageFour, pageFive) => {
@@ -92,16 +93,16 @@ const Menu = () => {
       pageTwo.current,
       pageFour.current,
       pageThree.current,
-      pageOne.current,
-     );
+      pageOne.current
+    );
     showPageFive(pageThree.current, pageFour.current, pageFive.current);
   };
 
   return (
     <div className={styles.menu_element}>
       <Navbar />
-
       <div className={styles.banner_menu}>
+      <ModalOrder/>
         <img src="https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg" />
         <div className={styles.menu}>
           <img onClick={beforePage} src={before_page} />
@@ -119,13 +120,13 @@ const Menu = () => {
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
               <h2>Bebidas sem álcool</h2>
-            {drinks &&
+              {drinks &&
                 drinks.map((drink, index) => (
                   <MenuStructure
                     key={index}
                     titleFood={drink.name}
                     priceFood={drink.price}
-                   />
+                  />
                 ))}
             </div>
             <div
@@ -139,7 +140,7 @@ const Menu = () => {
                     key={index}
                     titleFood={pizza.name}
                     priceFood={pizza.price}
-                   />
+                  />
                 ))}
             </div>
             <div
@@ -153,8 +154,9 @@ const Menu = () => {
                     key={index}
                     titleFood={dessert.name}
                     priceFood={dessert.price}
-                   />
-                ))}            </div>
+                  />
+                ))}{" "}
+            </div>
             <div
               ref={pageFive}
               className={`${styles.page_five} ${styles.page}`}
@@ -166,9 +168,9 @@ const Menu = () => {
                     key={index}
                     titleFood={drinkAlcool.name}
                     priceFood={drinkAlcool.price}
-                   />
-                ))}            </div>
-   
+                  />
+                ))}
+            </div>
           </div>
           <img onClick={nextPage} src={next_page} />
         </div>

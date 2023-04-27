@@ -83,6 +83,16 @@ input::placeholder {
   background-color: #75f080;
 }
 
+.btn-order{
+  font-size: .7em;
+  padding: 4px 7px;
+  cursor: pointer;
+  background-color: #e65f1c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
 .message-error,
 .message-success {
   border-radius: 5px;

@@ -107,6 +107,7 @@ const Menu = () => {
           <img onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>
             <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
+              <h2>Pratos típicos</h2>
               {dishes &&
                 dishes.map((dishe, index) => (
                   <MenuStructure
@@ -117,51 +118,55 @@ const Menu = () => {
                 ))}
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
+              <h2>Bebidas sem álcool</h2>
             {drinks &&
                 drinks.map((drink, index) => (
                   <MenuStructure
                     key={index}
                     titleFood={drink.name}
                     priceFood={drink.price}
-                  />
+                   />
                 ))}
             </div>
             <div
               ref={pageThree}
               className={`${styles.page_three} ${styles.page}`}
             >
+              <h2>Pizzas</h2>
               {pizzas &&
                 pizzas.map((pizza, index) => (
                   <MenuStructure
                     key={index}
                     titleFood={pizza.name}
                     priceFood={pizza.price}
-                  />
+                   />
                 ))}
             </div>
             <div
               ref={pageFour}
               className={`${styles.page_four} ${styles.page}`}
             >
+              <h2>Sobremesas</h2>
               {desserts &&
                 desserts.map((dessert, index) => (
                   <MenuStructure
                     key={index}
                     titleFood={dessert.name}
                     priceFood={dessert.price}
-                  />
+                   />
                 ))}            </div>
             <div
               ref={pageFive}
               className={`${styles.page_five} ${styles.page}`}
             >
+              <h2>Bebidas alcoólicas</h2>
               {drinks_alcool &&
                 drinks_alcool.map((drinkAlcool, index) => (
                   <MenuStructure
                     key={index}
                     titleFood={drinkAlcool.name}
                     priceFood={drinkAlcool.price}
-                  />
+                   />
                 ))}            </div>
    
           </div>

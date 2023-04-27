@@ -5,6 +5,7 @@ import hungry from "../images/img_animations/hungry.png"
 
 import { useState } from "react"
 import { useFetch } from "../hooks/useFetch"
+import { useNavigate } from "react-router-dom"
  
 const FormNewClient = () => {
   const urlAddClient = `http://localhost:3000/clients`
@@ -15,6 +16,8 @@ const FormNewClient = () => {
   const [confirmPasswordAddUser,setConfirmPasswordAddUser] = useState('')
   const [errorMessage,setErrorMessage] = useState(null)
   const [successMessage,setSuccessMessage] = useState(null)
+
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
      e.preventDefault()
@@ -48,7 +51,9 @@ const FormNewClient = () => {
      setPasswordAddUser('')
      setConfirmPasswordAddUser('')
 
- 
+    setTimeout(()=> {
+      navigate("/")
+    },500)
   }
 
   return (

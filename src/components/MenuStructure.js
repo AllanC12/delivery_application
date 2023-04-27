@@ -6,8 +6,7 @@ const MenuStructure = ({titleFood,priceFood}) => {
        <div className={styles.boxFood}>
           <h4>{titleFood}</h4>
           <h4>{priceFood}</h4>
-          <button>Fazer pedido</button>
-       </div>
+        </div>
     </div>
   )
 }

@@ -39,7 +39,7 @@ const ModalOrder = ({titleOrder,priceOrder}) => {
             <form className={styles.form_order}>
                 <h2>Comanda</h2>
                 <div className={styles.box_order}>
-                    <span>Acarajé: R$25,40</span>
+                    <span>{`${titleOrder}: ${priceOrder}`}</span>
                     <span>Qtd:</span>
                     <input type="number" defaultValue={1} min={1}/>
                 </div>

@@ -22,7 +22,9 @@
     .box_order {
       margin-bottom: 15px;
       @include flex(space-between);
-  
+      border-bottom: 1px solid #ccc;
+      padding: 5px 0;
+      
       input{
        padding: 4px;
         margin-left: 5px;

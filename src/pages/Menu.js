@@ -14,6 +14,8 @@ import before_page from "../images/arrows/before-page.png";
 import next_page from "../images/arrows/next-page.png";
 
 const Menu = () => {
+  const adressBanner = "https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg"
+
   const pageOne = useRef();
   const pageTwo = useRef();
   const pageThree = useRef();
@@ -98,12 +100,13 @@ const Menu = () => {
     showPageFive(pageThree.current, pageFour.current, pageFive.current);
   };
 
+
   return (
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
       <ModalOrder/>
-        <img src="https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg" />
+        <img src={adressBanner} />
         <div className={styles.menu}>
           <img onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>
@@ -112,10 +115,11 @@ const Menu = () => {
               {dishes &&
                 dishes.map((dishe, index) => (
                   <MenuStructure
-                    key={index}
-                    titleFood={dishe.name}
-                    priceFood={dishe.price}
+                  key={index}
+                  titleFood={dishe.name}
+                  priceFood={dishe.price}
                   />
+ 
                 ))}
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>

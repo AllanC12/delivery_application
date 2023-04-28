@@ -1,17 +1,48 @@
 import styles from "./sass_components/ModalOrder.module.scss";
 
+import { useRef } from "react";
+
 const ModalOrder = ({titleOrder,priceOrder}) => {
-  return (
-    <div className={styles.modal}>
+
+  const modalRef = useRef()
+  let posX, posY = 0;
+
+  const handleDragStart = (event) => {
+    console.log('arrastado')
+    event.dataTransfer.setData('text/plain', '');
+    event.dataTransfer.effectAllowed = 'move';
+  };
+
+  
+  const onDragOver = (e) => {
+    posX = e.pageX
+    posY = e.pageY
+    modalRef.current.style.setProperty("left",`${posX}px`)
+    modalRef.current.style.setProperty("top",`${posY}px`) 
+  }
+
+  const onDragEnd = () => {
+
+    console.log("caido")
+  }
+
+
+   return (
+    <div
+     ref={modalRef}
+     draggable="true"
+     onDragStart={handleDragStart}
+     onDragOver={onDragOver}
+     onDragEnd={onDragEnd}
+       >
         <div className={styles.order_details}>
-            <form>
-            <h2>Nome do pedido</h2>
-                <label>
-                    Quantidade:
-                    <input type="number" min={1}/>
-                </label>
-                <p>Descrição do pedido:</p>
-                <h2>Valor total: <span>Valor</span></h2>
+            <form className={styles.form_order}>
+             <h2>Comanda</h2>
+                <div className={styles.box_oder}>
+                    <span>Acarajé: R$25,40</span>
+                    <span>Qtd:</span>
+                    <input type="number" defaultValue={1} min={1}/>
+                </div>
                 <button className={styles.btn_order}>Fazer pedido</button>
             </form>
         </div>

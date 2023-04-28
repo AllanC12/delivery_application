@@ -27,8 +27,8 @@ form label {
   margin-bottom: 30px;
 }
 
-form input[type="text"],
-input[type="password"] {
+input[type="text"],
+input[type="password"]{
   width: 100%;
   max-width: 250px;
   height: 25px;
@@ -39,12 +39,7 @@ input[type="password"] {
   border-bottom: 1px solid #ccc;
   background-color: transparent;
 }
-
-form span {
-  font-size: 1.4em;
-  color: #bab7b6;
-}
-
+ 
 input::placeholder {
   color: #ccc;
   font-size: 1.3em;

@@ -3,7 +3,8 @@
 .order_details {
   cursor: pointer;
   width: 100%;
-  max-width: 220px;
+  max-width: 300px;
+  background-color: green;
   text-align: center;
   position: absolute;
   z-index: 4;
@@ -12,19 +13,18 @@
     margin-bottom: 15px;
     font-size: 19px;
 
-    span {
-      font-size: 19px;
-    }
   }
 
    .form_order{
+    max-width: 100%;
     padding: 10px;
-
+ 
     .box_order {
       margin-bottom: 15px;
+      @include flex(space-between);
   
-      input[type="number"]{
-        padding: 4px;
+      input{
+       padding: 4px;
         margin-left: 5px;
         width: 50px;
       }

@@ -2,6 +2,8 @@ import styles from "./sass_components/ModalOrder.module.scss";
 
 import { useRef } from "react";
 
+import Order from "./Order";
+
 const ModalOrder = ({titleOrder,priceOrder}) => {
 
   const modalRef = useRef()
@@ -38,11 +40,7 @@ const ModalOrder = ({titleOrder,priceOrder}) => {
         <div className={styles.order_details}>
             <form className={styles.form_order}>
                 <h2>Comanda</h2>
-                <div className={styles.box_order}>
-                    <span>{`${titleOrder}: ${priceOrder}`}</span>
-                    <span>Qtd:</span>
-                    <input type="number" defaultValue={1} min={1}/>
-                </div>
+                 <Order titleOrder={titleOrder} priceOrder={priceOrder} />
                 <button className={styles.btn_order}>Fazer pedido</button>
             </form>
         </div>

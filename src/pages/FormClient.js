@@ -69,6 +69,9 @@ const FormClient = ({ setConfirmUser }) => {
       if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
         setConfirmUser(true);
+        setTimeout(() => {
+          Navigate("/inicio");
+        }, 500);
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
@@ -87,9 +90,6 @@ const FormClient = ({ setConfirmUser }) => {
 
     setNameClient("");
     setPassword("");
-    setTimeout(() => {
-      Navigate("/inicio");
-    }, 500);
   };
 
   return (

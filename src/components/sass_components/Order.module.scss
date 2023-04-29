@@ -1,0 +1,19 @@
+@import "../../sass_mixins/mixin.scss";
+
+.box_order {
+    margin-bottom: 15px;
+    @include flex(space-between);
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    
+    input{
+     padding: 4px;
+      margin-left: 5px;
+      width: 50px;
+    }
+
+    span{
+      font-size: 19px;
+      color: #000;
+    }
+  }

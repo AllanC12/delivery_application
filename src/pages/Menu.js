@@ -39,9 +39,6 @@ const Menu = () => {
   const [titleOrder,setTitleOrder] = useState("")
   const [priceOrder,setPriceOrder] = useState("")
 
-  console.log(titleOrder)
-  console.log(priceOrder)
-
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
       getComputedStyle(pageTwo).transform !== "none" &&
@@ -111,10 +108,10 @@ const Menu = () => {
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
-      <ModalOrder tileOrder={titleOrder} priceOrder={priceOrder} />
-        <img src={adressBanner} />
+        <ModalOrder titleOrder={titleOrder} priceOrder={priceOrder} />
+        <img alt="banner" src={adressBanner} />
         <div className={styles.menu}>
-          <img onClick={beforePage} src={before_page} />
+          <img alt="beforePage" onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>
             <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
               <h2>Pratos típicos</h2>
@@ -127,7 +124,6 @@ const Menu = () => {
                     titleFood={dishe.name}
                     priceFood={dishe.price}
                   />
- 
                 ))}
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
@@ -192,7 +188,7 @@ const Menu = () => {
                 ))}
             </div>
           </div>
-          <img onClick={nextPage} src={next_page} />
+          <img alt="nextPage" onClick={nextPage} src={next_page} />
         </div>
       </div>
 

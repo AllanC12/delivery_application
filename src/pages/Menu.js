@@ -36,8 +36,6 @@ const Menu = () => {
   const { data: desserts } = useFetch(urlsForMenu[3]);
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
-  const [titleOrder,setTitleOrder] = useState("")
-  const [priceOrder,setPriceOrder] = useState("")
 
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
@@ -108,7 +106,7 @@ const Menu = () => {
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
-        <ModalOrder titleOrder={titleOrder} priceOrder={priceOrder} />
+        <ModalOrder/>
         <img alt="banner" src={adressBanner} />
         <div className={styles.menu}>
           <img alt="beforePage" onClick={beforePage} src={before_page} />
@@ -119,8 +117,6 @@ const Menu = () => {
                 dishes.map((dishe, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={dishe.name}
                     priceFood={dishe.price}
                   />
@@ -132,8 +128,6 @@ const Menu = () => {
                 drinks.map((drink, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={drink.name}
                     priceFood={drink.price}
                   />
@@ -148,8 +142,6 @@ const Menu = () => {
                 pizzas.map((pizza, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={pizza.name}
                     priceFood={pizza.price}
                   />
@@ -164,8 +156,6 @@ const Menu = () => {
                 desserts.map((dessert, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={dessert.name}
                     priceFood={dessert.price}
                   />
@@ -180,8 +170,6 @@ const Menu = () => {
                 drinks_alcool.map((drinkAlcool, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={drinkAlcool.name}
                     priceFood={drinkAlcool.price}
                   />

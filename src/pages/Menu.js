@@ -111,7 +111,7 @@ const Menu = () => {
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
-      <ModalOrder tileOrder={titleOrder} priceOrder={priceOrder} />
+      <ModalOrder titleOrder={titleOrder} priceOrder={priceOrder} />
         <img src={adressBanner} />
         <div className={styles.menu}>
           <img onClick={beforePage} src={before_page} />

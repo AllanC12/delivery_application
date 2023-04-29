@@ -36,6 +36,12 @@ const Menu = () => {
   const { data: desserts } = useFetch(urlsForMenu[3]);
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
+  const [orders,setOrders] = useState([
+    {id: 1, name: "Refrigerante", price: "R$10.90"}
+   ])
+
+   console.log(orders)
+
 
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
@@ -106,7 +112,7 @@ const Menu = () => {
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
-        <ModalOrder/>
+        <ModalOrder orders={orders} />
         <img alt="banner" src={adressBanner} />
         <div className={styles.menu}>
           <img alt="beforePage" onClick={beforePage} src={before_page} />
@@ -127,6 +133,7 @@ const Menu = () => {
               {drinks &&
                 drinks.map((drink, index) => (
                   <MenuStructure
+                    setOrders={setOrders}
                     key={index}
                     titleFood={drink.name}
                     priceFood={drink.price}

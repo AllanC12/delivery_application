@@ -36,8 +36,7 @@ const Menu = () => {
   const { data: desserts } = useFetch(urlsForMenu[3]);
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
-  const [orders,setOrders] = useState([
-   ])
+  const [orders,setOrders] = useState([])
    
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (

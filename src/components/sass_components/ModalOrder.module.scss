@@ -9,15 +9,15 @@
   top: 12vh;
   z-index: 4;
 
-  svg{
+  svg.close_modal{
     position: absolute;
-    right: 2vw;
-    top: 2vh;
+    right: 2px;
+    top: 2px;
     font-size: 1.5em;
   }
 
   h2 {
-    margin-bottom: 15px;
+    margin: 15px;
     font-size: 19px;
 
   }
@@ -28,9 +28,7 @@
     display: none;
 
     .box_order {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #ccc;
-      padding: 5px 0;
+      margin-bottom: 2px;
   
       span{
         font-size: 17px;
@@ -40,6 +38,19 @@
 
       .order{
         @include flex(space-between);
+        border-bottom:1px solid #ccc ;
+        padding: 10px 0;
+
+        svg.remove_order{
+          position: relative;
+          top: -2px;
+          font-size: 1em;
+          color: #e65f1c;
+        }
+
+        p{
+          margin-bottom: 5px ;
+        }
 
       }
     }

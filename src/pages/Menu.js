@@ -37,7 +37,6 @@ const Menu = () => {
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
   const [orders,setOrders] = useState([
-    {id: 1, name: "Refrigerante", price: "R$10.90"}
    ])
 
    console.log(orders)

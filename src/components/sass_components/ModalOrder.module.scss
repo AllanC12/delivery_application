@@ -38,6 +38,7 @@
 
       .order{
         @include flex(space-between);
+        background-color: green;
       }
     }
 

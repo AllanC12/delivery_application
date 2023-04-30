@@ -46,56 +46,56 @@
       "id": 1,
       "name": "Cocada ao Forno - Coco Bambu",
       "description": "A famosa Cocada ao Forno, do restaurante Coco Bambu, é elaborada com coco ralado fresco e leite condensado. Para finalizar, ela é dourada ao forno e servida quente com uma bola de sorvete",
-      "price": "27,20"
+      "price": "27.20"
     },
     {
       "id": 2,
       "name": "Torta do Luiz",
       "description": "Para quem prefere tortas, a famosa Torta do Luiz, feita com mousse de chocolate com toque de cachaça e castanha do pará, acompanhada com um pouco de calda de maracujá",
-      "price": "19,00"
+      "price": "19.00"
     },
     {
       "id": 3,
       "name": "Great Wall of Chocolate",
       "description": "O incrível Great Wall of Chocolate, do P.F. Chang’s, é um bolo de chocolate de seis camadas, decorado com chips de chocolate meio amargo e calda de frutas vermelhas. Ele serve até seis pessoas",
-      "price": "36,00"
+      "price": "36.00"
     },
     {
       "id": 4,
       "name": "Torta de Chocolate com Amora ",
       "description": "A delicada Torta de Chocolate com Amora, leva chocolate cremoso e amoras orgânica",
-      "price": "40,00"
+      "price": "40.00"
     },
     {
       "id": 5,
       "name": "Mil Folhas de Doce de Leite",
       "description": "O nome mil-folhas é uma referência ao número de folhas da massa que o compõem.",
-      "price": "19,60"
+      "price": "19.60"
     },
     {
       "id": 6,
       "name": "Fondue com Sorvete",
       "description": "Uma das sobremesas mais pedidas pelos frequentadores. Serve até duas pessoas e vem com deliciosas minibolas de sorvete, acompanhadas de chocolate derretido e pedaços de frutas, brownies e cookies",
-      "price": "51,00"
+      "price": "51.00"
     },
     {
       "id": 7,
       "name": "Cheesecake de Frutas Vermelhas",
       "description": "O saboroso e nada enjoativo cheesecake com calda de frutas vermelhas e pedaços de morango e amora faz sucesso na casa",
-      "price": "19,00"
+      "price": "19.00"
     },
     {
       "id": 8,
       "name": "Volcano",
       "description": "Tem o formato de um vulcão e traz o tradicional sorvete de doce de leite Häagen-Dazs, coberto por uma casquinha de chocolate ao leite, que vem separada para o cliente derrubá-la, revelando um delicioso recheio de doce de leite argentino",
-      "price": "28,70"
+      "price": "28.70"
     }
   ],
   "dishes": [
     {
       "id": 1,
       "name": "Frango com quiabo",
-      "price": "R$22,40",
+      "price": "22.40",
       "culture": "Cultura mineira",
       "description": "O frango com quiabo é um prato típico da culinária mineira."
     },
@@ -109,7 +109,7 @@
     {
       "id": 3,
       "name": " Galinhada com pequi",
-      "price": "R$25,00",
+      "price": "25.00",
       "culture": "Cultura goiana",
       "description": "O leitão à pururuca é uma versão brasileira do tradicional leitão assado português, popularizada, assim como o frango com quiabo, em Minas Gerais. No dialeto tupi, pururuca significa o que produz barulho. O nome guarda referência a um ingrediente essencial dessa receita: a pele do porco."
     },
@@ -123,7 +123,7 @@
     {
       "id": 5,
       "name": "Picadinho de carne",
-      "price": "R$21,00",
+      "price": "21.00",
       "culture": "Cultura paulistana",
       "description": "O picadinho de carne é um dos pratos mais tradicionais da culinária brasileira, apreciado de Norte a Sul do País. A popularidade dessa receita é tanta, que no dia 26 de outubro é celebrado o Dia Nacional do Picadinho de Carne."
     },
@@ -137,7 +137,7 @@
     {
       "id": 7,
       "name": " Arroz carreteiro",
-      "price": "R$23,00",
+      "price": "23.00",
       "culture": "Cultura sulista",
       "description": "O prato surgiu quando os carreteiros (transportadores de cargas) que viajavam em carretas puxadas por bois cozinhavam em uma panela de ferro a mistura de arroz com guisado de carne de sol."
     },
@@ -154,7 +154,7 @@
       "id": 1,
       "name": "Cerveja Brahma",
       "size": "350 ml",
-      "price": "4,00"
+      "price": "4.00"
     },
     {
       "id": 2,
@@ -166,7 +166,7 @@
       "id": 3,
       "name": "Cerveja Budweiser",
       "size": "350 ml",
-      "price": "4,00"
+      "price": "4.00"
     },
     {
       "id": 4,
@@ -184,13 +184,13 @@
       "id": 6,
       "name": "Vodka Smirnoff",
       "size": "1 Litro",
-      "price": "59,90"
+      "price": "59.90"
     },
     {
       "id": 7,
       "name": "Whisky Red Label",
       "size": "500 ml",
-      "price": "67,00"
+      "price": "67.00"
     }
   ],
   "drinks": [
@@ -198,13 +198,13 @@
       "id": 1,
       "name": "Refrigerante",
       "size": "1 Litro",
-      "price": "3,50"
+      "price": "3.50"
     },
     {
       "id": 2,
       "name": "Suco de laranja",
       "size": "350 ml",
-      "price": "R$2,90"
+      "price": "2.90"
     },
     {
       "id": 3,
@@ -216,19 +216,19 @@
       "id": 4,
       "name": "Coquetel de morango",
       "size": "350 ml",
-      "price": "3,75"
+      "price": "3.75"
     },
     {
       "id": 5,
       "name": "Coquetel Alice",
       "size": "350 ml",
-      "price": "3,75"
+      "price": "3.75"
     },
     {
       "id": 6,
       "name": "Sex on the beach",
       "size": "350 ml",
-      "price": "6,00"
+      "price": "6.00"
     },
     {
       "id": 7,
@@ -240,49 +240,49 @@
       "id": 8,
       "name": "Agua tônica",
       "size": "350 ml",
-      "price": "3,90"
+      "price": "3.90"
     }
   ],
   "pizzas": [
     {
       "id": 1,
       "name": "Pizza Calabresa",
-      "price": "24,90"
+      "price": "25.90"
     },
     {
       "id": 2,
       "name": "Pizza Portuguesa",
-      "price": "24,90"
+      "price": "24.00"
     },
     {
       "id": 3,
       "name": "Pizza Marguerita",
-      "price": "24,90"
+      "price": "26.90"
     },
     {
       "id": 4,
       "name": "Pizza Mussarela",
-      "price": "24,90"
+      "price": "25.00"
     },
     {
       "id": 5,
       "name": "Pizza Frango com catupiry",
-      "price": "R$24,90"
+      "price": "24.00"
     },
     {
       "id": 6,
       "name": "Pizza Napolitana",
-      "price": "R$24,90"
+      "price": "28.00"
     },
     {
       "id": 7,
       "name": "Pizza Califórnia",
-      "price": "R$24,90"
+      "price": "26.70"
     },
     {
       "id": 8,
       "name": "Romeu e julieta",
-      "price": "R$24,90"
+      "price": "27.00"
     }
   ]
 }

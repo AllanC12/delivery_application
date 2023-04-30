@@ -15,9 +15,12 @@ const MenuStructure = ({titleFood,priceFood,setOrders}) => {
 
   return (
     <div>
-       <div onClick={(e)=> addOrders(e.target.children[0].innerText,e.target.children[1].innerText)} className={styles.boxFood}> 
+       <div onClick={(e)=> addOrders(
+          e.target.children[0].innerText
+        , e.target.children[1].innerText.split("$")[1]
+        )} className={styles.boxFood}> 
           <h4>{titleFood}</h4>
-          <h4>{priceFood}</h4>
+          <h4><span>R$</span>{priceFood}</h4>
         </div>
     </div>
   )

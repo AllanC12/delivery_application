@@ -7,18 +7,25 @@ import { MdRemoveCircle } from "react-icons/md"
 
 const ModalOrder = ({ orders }) => {
   const modalRef = useRef();
-  const [valueTotalOrder,setValueTotalOrder] = useState("R$45,50")
+  const [valueTotalOrder,setValueTotalOrder] = useState("")
 
   const sumValueOrder = () => {
-    let integerValueOrder = orders.map((order) => (
-       parseInt(order.price.split(",")[0])
+    let valueOrder = orders.map((order) => (
+       parseFloat(order.price)
     ))
-  console.log(integerValueOrder)
+    
+    let sumValueOrder = valueOrder.reduce((accumulator,index)=> {
+       return accumulator + index
+    },0)
+
+    setValueTotalOrder(sumValueOrder.toFixed(2))
   }
 
 useEffect(()=>{
   sumValueOrder()
 },[orders])
+
+
   const handleModal = (modal) => {
     if (orders.length > 0) {
       modalRef.current.style.setProperty("display", "block");
@@ -35,18 +42,19 @@ useEffect(()=>{
     <div>
       <div className={styles.order_details}>
         <form ref={modalRef} className={styles.form_order}>
-          <h2>Comanda</h2> <FaWindowClose className={styles.close_modal} onClick={closeModal} />
+          <h2>Comanda</h2>
+         <FaWindowClose className={styles.close_modal} onClick={closeModal} />
           <div className={styles.box_order}>
             {orders &&
               orders.map((order) => (
                 <div className={styles.order} key={order.id}>
                   <p>{order.name}</p>
-                  <p>{order.price}</p>
-                  <MdRemoveCircle className={styles.remove_order}/>
+                  <p>R${order.price}</p>
+                  <MdRemoveCircle onClick={removeOrder} className={styles.remove_order}/>
                 </div>
               ))}
-             <h3>Valor total: <span>{valueTotalOrder}</span></h3>
           </div>
+             <h2>Valor total: <span>R${valueTotalOrder}</span></h2>
           <button className={styles.btn_order}>Fazer pedido</button>
         </form>
       </div>

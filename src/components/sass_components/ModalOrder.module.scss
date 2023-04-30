@@ -9,10 +9,10 @@
   top: 12vh;
   z-index: 4;
 
-  svg{
+  svg.close_modal{
     position: absolute;
     right: 2vw;
-    top: 2vh;
+    top: 1.5vh;
     font-size: 1.5em;
   }
 
@@ -40,6 +40,13 @@
 
       .order{
         @include flex(space-between);
+
+        svg.remove_order{
+          position: relative;
+          top: -8px;
+          font-size: 1em;
+          color: #e65f1c;
+        }
 
       }
     }

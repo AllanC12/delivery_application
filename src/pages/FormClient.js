@@ -52,7 +52,7 @@ const FormClient = ({ setConfirmUser }) => {
   useEffect(() => {
     animationForm();
     return () => clearInterval(animationInterval)
-  }, []);
+  });
 
   const verifyDataClient = (clients) => {
     if (clients) {

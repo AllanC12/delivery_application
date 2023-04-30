@@ -36,11 +36,12 @@ const Menu = () => {
   const { data: desserts } = useFetch(urlsForMenu[3]);
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
-  const [titleOrder,setTitleOrder] = useState("")
-  const [priceOrder,setPriceOrder] = useState("")
+  const [orders,setOrders] = useState([
+    {id: 1, name: "Refrigerante", price: "R$10.90"}
+   ])
 
-  console.log(titleOrder)
-  console.log(priceOrder)
+   console.log(orders)
+
 
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
@@ -111,10 +112,12 @@ const Menu = () => {
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
-      <ModalOrder titleOrder={titleOrder} priceOrder={priceOrder} />
+      <ModalOrder/>
         <img src={adressBanner} />
+        <ModalOrder orders={orders} />
+        <img alt="banner" src={adressBanner} />
         <div className={styles.menu}>
-          <img onClick={beforePage} src={before_page} />
+          <img alt="beforePage" onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>
             <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
               <h2>Pratos típicos</h2>
@@ -122,12 +125,9 @@ const Menu = () => {
                 dishes.map((dishe, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={dishe.name}
                     priceFood={dishe.price}
                   />
- 
                 ))}
             </div>
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
@@ -135,9 +135,8 @@ const Menu = () => {
               {drinks &&
                 drinks.map((drink, index) => (
                   <MenuStructure
+                    setOrders={setOrders}
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={drink.name}
                     priceFood={drink.price}
                   />
@@ -152,8 +151,6 @@ const Menu = () => {
                 pizzas.map((pizza, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={pizza.name}
                     priceFood={pizza.price}
                   />
@@ -168,8 +165,6 @@ const Menu = () => {
                 desserts.map((dessert, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={dessert.name}
                     priceFood={dessert.price}
                   />
@@ -184,15 +179,13 @@ const Menu = () => {
                 drinks_alcool.map((drinkAlcool, index) => (
                   <MenuStructure
                     key={index}
-                    setTitleOrder={setTitleOrder}
-                    setPriceOrder={setPriceOrder}
                     titleFood={drinkAlcool.name}
                     priceFood={drinkAlcool.price}
                   />
                 ))}
             </div>
           </div>
-          <img onClick={nextPage} src={next_page} />
+          <img alt="nextPage" onClick={nextPage} src={next_page} />
         </div>
       </div>
 

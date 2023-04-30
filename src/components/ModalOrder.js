@@ -30,8 +30,7 @@ const removeOrder = (id) => {
   setOrders(ordersFiltered)
 }
 
-
-  const handleModal = (modal) => {
+  const handleModal = () => {
     if (orders.length > 0) {
       modalRef.current.style.setProperty("display", "block");
     }

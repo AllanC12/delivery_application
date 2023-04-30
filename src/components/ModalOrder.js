@@ -10,7 +10,10 @@ const ModalOrder = ({ orders }) => {
   const [valueTotalOrder,setValueTotalOrder] = useState("R$45,50")
 
   const sumValueOrder = () => {
-    
+    let integerValueOrder = orders.map((order) => (
+       parseInt(order.price.split(",")[0])
+    ))
+  console.log(integerValueOrder)
   }
 
 useEffect(()=>{

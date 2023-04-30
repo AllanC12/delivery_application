@@ -68,7 +68,7 @@ const Menu = () => {
     }
   };
 
-  const showPageThree = (pageTwo, pageThree, pageFour, pageOne, pageSix) => {
+  const showPageThree = (pageTwo, pageThree, pageFour, pageOne) => {
     pageTwo.style.setProperty("transform", "RotateY(180deg)");
     setTimeout(() => {
       pageThree.style.setProperty("z-index", "2");
@@ -112,10 +112,8 @@ const Menu = () => {
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
-      <ModalOrder/>
         <img src={adressBanner} />
         <ModalOrder orders={orders} />
-        <img alt="banner" src={adressBanner} />
         <div className={styles.menu}>
           <img alt="beforePage" onClick={beforePage} src={before_page} />
           <div className={styles.cover_menu}>

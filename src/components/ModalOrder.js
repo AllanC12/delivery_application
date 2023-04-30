@@ -2,7 +2,6 @@ import styles from "./sass_components/ModalOrder.module.scss";
 
 
 const ModalOrder = ({orders}) => {
-console.log("atualizado")
   return (
     <div>
       <div className={styles.order_details}>

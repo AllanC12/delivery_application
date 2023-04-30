@@ -38,10 +38,7 @@ const Menu = () => {
 
   const [orders,setOrders] = useState([
    ])
-
-   console.log(orders)
-
-
+   
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
       getComputedStyle(pageTwo).transform !== "none" &&

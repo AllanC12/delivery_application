@@ -123,6 +123,7 @@ const Menu = () => {
                 dishes.map((dishe, index) => (
                   <MenuStructure
                     key={index}
+                    setOrders={setOrders}
                     titleFood={dishe.name}
                     priceFood={dishe.price}
                   />
@@ -133,8 +134,8 @@ const Menu = () => {
               {drinks &&
                 drinks.map((drink, index) => (
                   <MenuStructure
-                    setOrders={setOrders}
                     key={index}
+                    setOrders={setOrders}
                     titleFood={drink.name}
                     priceFood={drink.price}
                   />
@@ -149,6 +150,7 @@ const Menu = () => {
                 pizzas.map((pizza, index) => (
                   <MenuStructure
                     key={index}
+                    setOrders={setOrders}
                     titleFood={pizza.name}
                     priceFood={pizza.price}
                   />
@@ -163,6 +165,7 @@ const Menu = () => {
                 desserts.map((dessert, index) => (
                   <MenuStructure
                     key={index}
+                    setOrders={setOrders}
                     titleFood={dessert.name}
                     priceFood={dessert.price}
                   />
@@ -177,6 +180,7 @@ const Menu = () => {
                 drinks_alcool.map((drinkAlcool, index) => (
                   <MenuStructure
                     key={index}
+                    setOrders={setOrders}
                     titleFood={drinkAlcool.name}
                     priceFood={drinkAlcool.price}
                   />

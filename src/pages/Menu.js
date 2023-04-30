@@ -1,5 +1,7 @@
+//styles
 import styles from "./sass_pages/Menu.module.scss";
 
+//Hooks
 import { useRef, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
@@ -14,15 +16,17 @@ import before_page from "../images/arrows/before-page.png";
 import next_page from "../images/arrows/next-page.png";
 
 const Menu = () => {
-  const adressBanner =
-    "https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg";
+  //Endereço do banner do componente menu
+  const adressBanner = "https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg";
 
+  //Referencias para todas as páginas do cardápio
   const pageOne = useRef();
   const pageTwo = useRef();
   const pageThree = useRef();
   const pageFour = useRef();
   const pageFive = useRef();
 
+  //Urls para carregar todos os dados de pedidos e preços do cardápio
   const urlsForMenu = [
     "http://localhost:3000/dishes",
     "http://localhost:3000/drinks",
@@ -31,14 +35,17 @@ const Menu = () => {
     "http://localhost:3000/drinks_alcool",
   ];
 
+  //Buscando itens individualmente por catergoria
   const { data: dishes } = useFetch(urlsForMenu[0]);
   const { data: drinks } = useFetch(urlsForMenu[1]);
   const { data: pizzas } = useFetch(urlsForMenu[2]);
   const { data: desserts } = useFetch(urlsForMenu[3]);
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
+  //State que aramazena os pedidos feitos pelo cliente
   const [orders,setOrders] = useState([])
-     
+    
+ //Funções que realizam a animação e sincronização das páginas do cardápio
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
       getComputedStyle(pageTwo).transform !== "none" &&

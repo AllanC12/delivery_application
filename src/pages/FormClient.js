@@ -37,7 +37,6 @@ const FormClient = ({ setConfirmUser }) => {
     const arrayImages = Array.from(imgsAnimation);
 
       animationInterval = setInterval(() => {
-        console.log("aquiiiii")
       if (indexImgAnimation === arrayImages.length) {
         indexImgAnimation = 0;
         for (let i = 0; i < arrayImages.length; i++) {

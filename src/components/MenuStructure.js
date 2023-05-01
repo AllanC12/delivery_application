@@ -1,31 +1,36 @@
-import styles from "./sass_components/MenuStructure.module.scss"
+import styles from "./sass_components/MenuStructure.module.scss";
 
-  
-const MenuStructure = ({titleFood,priceFood,setOrders}) => {
-
+const MenuStructure = ({ titleFood, priceFood, setOrders }) => {
   //Função que monta os pedidos do cliente
- const addOrders = (titleOrder,priceOrder) => {
+  const addOrders = (e) => {
+    const titleOrder = e.target.children[0].innerText;
+    const priceOrder = e.target.children[1].innerText.split("$")[1];
+
     const order = {
       id: Math.random(),
-      name:titleOrder,
-      price:priceOrder
-    }
+      name: titleOrder,
+      price: priceOrder,
+    };
 
-    setOrders(prevOrders => [...prevOrders ,order])
- }
+    setOrders((prevOrders) => [...prevOrders, order]);
+  };
 
   return (
     <div>
-       <div onClick={(e)=> addOrders(
-            e.target.children[0].innerText,
-            e.target.children[1].innerText.split("$")[1]
-          )} className={styles.boxFood}
-        > 
-          <h4>{titleFood}</h4>
-          <h4><span>R$</span>{priceFood}</h4>
-        </div>
+      <div
+        onClick={(e) => { if(!e.target.children[0] || !e.target.children[1]) return  
+           addOrders(e);
+         }}
+        className={styles.boxFood}
+      >
+        <h4>{titleFood}</h4>
+        <h4>
+          <span>R$</span>
+          {priceFood}
+        </h4>
+      </div>
     </div>
-  )
-} 
+  );
+};
 
-export default MenuStructure
+export default MenuStructure;

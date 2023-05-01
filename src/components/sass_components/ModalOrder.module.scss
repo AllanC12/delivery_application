@@ -3,12 +3,13 @@
 .order_details {
   cursor: pointer;
   width: 100%;
-  max-width: 300px;
-   left: 0;
+  min-width: 310px;
+  left: 0;
   top: 12vh;
 
   svg.close_modal{
-     right: 2px;
+    position: absolute;
+    right: 2px;
     top: 2px;
     font-size: 1.5em;
   }

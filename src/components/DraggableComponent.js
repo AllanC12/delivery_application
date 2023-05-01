@@ -18,12 +18,18 @@ const DraggableComponent = ({ children }) => {
   const handleMouseMove = (e) => {
     let {offsetLeft,offsetTop} = ref.current
     const height = ref.current.getBoundingClientRect().height
+    const width = ref.current.getBoundingClientRect().width
     const {innerWidth,innerHeight} = window
+
+    console.log(innerWidth)
+    console.log(offsetLeft)
  
-   if(offsetTop > innerHeight - height - 5){
+   if(offsetTop > innerHeight - height - 10){
        setDragging(false)
    }
-
+   if(offsetLeft < 0 || offsetLeft === innerWidth - width){
+    setDragging(false)
+   }
     if (dragging) {
       const { clientX, clientY } = e;
       setPosition({ x: clientX - offset.x, y: clientY - offset.y });

@@ -108,7 +108,6 @@ const Menu = () => {
     );
     showPageFive(pageThree.current, pageFour.current, pageFive.current);
   };
-
   return (
     <div className={styles.menu_element}>
       <Navbar />

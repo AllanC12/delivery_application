@@ -2,6 +2,8 @@ import styles from "./sass_components/ModalOrder.module.scss";
 
 import { useState, useRef, useEffect } from "react";
 
+import DraggableComponent from "./DraggableComponent";
+
 import { FaWindowClose } from "react-icons/fa";
 import { MdRemoveCircle } from "react-icons/md";
 
@@ -40,8 +42,9 @@ const ModalOrder = ({ orders, setOrders }) => {
     orders.length = 0;
   };
 
+
   return (
-    <div>
+    <DraggableComponent>
       <div className={styles.order_details}>
         <form ref={modalRef} className={styles.form_order}>
           <h2>Comanda</h2>
@@ -65,7 +68,7 @@ const ModalOrder = ({ orders, setOrders }) => {
           <button className={styles.btn_order}>Fazer pedido</button>
         </form>
       </div>
-    </div>
+    </DraggableComponent>
   );
 };
 

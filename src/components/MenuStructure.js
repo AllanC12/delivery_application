@@ -18,7 +18,8 @@ const MenuStructure = ({ titleFood, priceFood, setOrders }) => {
   return (
     <div>
       <div
-        onClick={(e) => { if(!e.target.children[0] || !e.target.children[1]) return  
+        onClick={(e) => { 
+           if(!e.target.children[0] || !e.target.children[1]) return  
            addOrders(e);
          }}
         className={styles.boxFood}

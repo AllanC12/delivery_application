@@ -4,14 +4,11 @@
   cursor: pointer;
   width: 100%;
   max-width: 300px;
-  position: absolute;
-  left: 0;
+   left: 0;
   top: 12vh;
-  z-index: 4;
 
   svg.close_modal{
-    position: absolute;
-    right: 2px;
+     right: 2px;
     top: 2px;
     font-size: 1.5em;
   }

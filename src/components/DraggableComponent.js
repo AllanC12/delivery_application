@@ -1,26 +1,28 @@
 import  { useState, useRef } from 'react';
 
 const DraggableComponent = ({ children }) => {
-  const ref = useRef();
   const [dragging, setDragging] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const {innerWidth,innerHeight} = window
-  const height = ref.current.getBoundingClientRect().height
+  const ref = useRef();
+
 
   const handleMouseDown = (e) => {
     const { clientX, clientY } = e;
     const { offsetLeft, offsetTop } = ref.current;
-
-    if(offsetTop > innerHeight - height - 5){
-        offsetTop = innerHeight - height
-       }
 
     setOffset({ x: clientX - offsetLeft, y: clientY - offsetTop });
     setDragging(true);
   };
 
   const handleMouseMove = (e) => {
+    let {offsetLeft,offsetTop} = ref.current
+    const height = ref.current.getBoundingClientRect().height
+    const {innerWidth,innerHeight} = window
+ 
+   if(offsetTop > innerHeight - height - 5){
+       setDragging(false)
+   }
 
     if (dragging) {
       const { clientX, clientY } = e;

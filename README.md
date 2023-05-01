@@ -1,11 +1,10 @@
-# OBS: Este projeto ainda está em desenvolvimento, mas como ele ja está em um estágio interessante acabei logo
-# destacando pra evolução dele poder ser acompanhada.
-
+<h2>OBS: Este projeto ainda está em desenvolvimento, mas como ele ja está em um estágio interessante acabei logo
+ destacando pra evolução dele poder ser acompanhada.</h2>
 <h4>
    Para executar este projeto, primeiro é preciso rodar o comando "npm run server" para habilitar o servidor json
  que armazena as informações principais. Em seguida abra outro terminal e execute o comando "npm start" em
- uma porta diferente da 3000 (pois é nesta que o json server roda).
-   A ideia é fazer com que o usuário se sinta em um restaurante online, após seus pedidos serem definidos
+ uma porta diferente da 3000 (pois é nesta que o json server roda).<br/>
+   A ideia é fazer com que o usuário se sinta em um restaurante online. Após seus pedidos serem definidos
    e ele executar o pedido é encaminhado para o whatsapp do estabelecimento com tudo ja preenchido e definido.
 </h4>
 

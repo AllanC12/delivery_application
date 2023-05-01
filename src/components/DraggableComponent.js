@@ -15,21 +15,34 @@ const DraggableComponent = ({ children }) => {
     setDragging(true);
   };
 
+
   const handleMouseMove = (e) => {
     let {offsetLeft,offsetTop} = ref.current
-    const height = ref.current.getBoundingClientRect().height
-    const width = ref.current.getBoundingClientRect().width
+    const heightModal = ref.current.getBoundingClientRect().height
+    const widthModal = ref.current.getBoundingClientRect().width
     const {innerWidth,innerHeight} = window
+    const heightMax = innerHeight - heightModal - 25
+    const widthMax = innerWidth - widthModal - 25
+     
+  if(offsetTop > innerHeight - heightModal - 5){
+      setDragging(false)
+      ref.current.style.setProperty("top",heightMax + 'px')
+      return
+    }else if(offsetTop < 0){
+      setDragging(false)
+      ref.current.style.setProperty("top", 15 + 'px')
+      return
+    }else if(offsetLeft > innerWidth - widthModal - 5){
+      setDragging(false)
+      ref.current.style.setProperty("left",widthMax + 'px')
+      return
+    }else if(offsetLeft < 0){
+      setDragging(false)
+      ref.current.style.setProperty("left", 15 + 'px')
+      return
+    }
 
-    console.log(innerWidth)
-    console.log(offsetLeft)
  
-   if(offsetTop > innerHeight - height - 10){
-       setDragging(false)
-   }
-   if(offsetLeft < 0 || offsetLeft === innerWidth - width){
-    setDragging(false)
-   }
     if (dragging) {
       const { clientX, clientY } = e;
       setPosition({ x: clientX - offset.x, y: clientY - offset.y });
@@ -38,6 +51,7 @@ const DraggableComponent = ({ children }) => {
 
   const handleMouseUp = () => {
     setDragging(false);
+    return
   };
 
   return (

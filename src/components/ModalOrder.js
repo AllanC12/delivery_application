@@ -48,8 +48,10 @@ const ModalOrder = ({ orders, setOrders }) => {
     const ordersInString = orders.map((order) => order.name).join(", ");
     setMessageOrder(`Olá gostaria de fazer os seguintes pedidos:
     ${ordersInString}.`)
+    console.log(ordersInString)
 
   };
+
  
   return (
     <DraggableComponent>

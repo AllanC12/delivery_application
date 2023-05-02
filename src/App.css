@@ -126,10 +126,10 @@ img{
 
 h2.legend_banner{
   position: absolute;
-  left: 15vw;
-  top: 40vh;
+  left: 10vw;
+  top: 15vh;
   font-size: 4em;
-  color: #000;
+  color: #fff;
 }
 
 

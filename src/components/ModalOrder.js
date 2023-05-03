@@ -12,6 +12,8 @@ const ModalOrder = ({ orders, setOrders }) => {
   const [valueTotalOrder, setValueTotalOrder] = useState("");
   const [messageOrder, setMessageOrder] = useState("");
   const adressWhatapp = `https://wa.me/+5537988551832?text=${messageOrder}`;
+  const ocurrencesOrder = {};
+
 
   const sumOrder = () => {
     let valueOrder = orders.map((order) => parseFloat(order.price));
@@ -44,13 +46,52 @@ const ModalOrder = ({ orders, setOrders }) => {
     orders.length = 0;
   };
 
-  const sendOrder = () => {
-    const ordersInString = orders.map((order) => order.name).join(", ");
-    setMessageOrder(`Olá gostaria de fazer os seguintes pedidos:
-    ${ordersInString}.`)
+  const mapingOrders = () =>{
+    orders.map((order) => {
+      if (ocurrencesOrder[order.name]) {
+        ocurrencesOrder[order.name]++;
+      } else {
+        ocurrencesOrder[order.name] = 1;
+      }
+    });
+  }
+
+  const buildMessageOrder = () => {
+    const quantityOrder = Object.values(ocurrencesOrder);
+    const nameOrder = Object.keys(ocurrencesOrder);
+
+    const arrayBuildOrders = quantityOrder.reduce((acc, value, index) => {
+      acc.push(value, nameOrder[index]);
+      return acc;
+    }, []);
+
+    const arrayOrders = arrayBuildOrders.reduce((accumulator, current, index) => {
+        if (index % 2 === 0) {
+          accumulator.push(current);
+        } else {
+          accumulator.push(accumulator.pop() + " " + current);
+        }
+        return accumulator;
+      },[]);
+
+      const messageOrders = arrayOrders.join(", ")
+
+      setMessageOrder(`Olá, gostaria de fazer os seguintes pedidos: ${messageOrders}. 
+       Confirme para mim o valor do pedido em R$${valueTotalOrder}.
+      `)
+  }
+
+  const sendOrder = (e) => {
+    if(orders.length === 0){
+      e.preventDefault()
+      return
+    }
+
+    mapingOrders()
+    buildMessageOrder()
 
   };
- 
+
   return (
     <DraggableComponent>
       <div className={styles.order_details}>
@@ -73,12 +114,13 @@ const ModalOrder = ({ orders, setOrders }) => {
           <h2>
             Valor total: <span>R${valueTotalOrder}</span>
           </h2>
-          <button onClick={sendOrder} className={styles.btn_order}>
-            <a target="_blank" href={adressWhatapp}>
+            <a onClick={(e)=>sendOrder(e)} 
+             className={styles.btn_order} 
+             target="_blank" href={adressWhatapp}
+             >
               Fazer pedido
             </a>
-          </button>
-        </form>
+         </form>
       </div>
     </DraggableComponent>
   );

@@ -11,8 +11,9 @@ const ModalOrder = ({ orders, setOrders }) => {
   const modalRef = useRef();
   const [valueTotalOrder, setValueTotalOrder] = useState("");
   const [messageOrder, setMessageOrder] = useState("");
-  const adressWhatapp = `https://wa.me/+5537988383824?text=${messageOrder}`;
-  const btnSendOrder = useRef()
+  const adressWhatapp = `https://wa.me/+5537988551832?text=${messageOrder}`;
+  const ocurrencesOrder = {};
+
 
   const sumOrder = () => {
     let valueOrder = orders.map((order) => parseFloat(order.price));
@@ -45,9 +46,7 @@ const ModalOrder = ({ orders, setOrders }) => {
     orders.length = 0;
   };
 
-  const sendOrder = () => {
-    const ocurrencesOrder = {};
-
+  const mapingOrders = () =>{
     orders.map((order) => {
       if (ocurrencesOrder[order.name]) {
         ocurrencesOrder[order.name]++;
@@ -55,9 +54,9 @@ const ModalOrder = ({ orders, setOrders }) => {
         ocurrencesOrder[order.name] = 1;
       }
     });
+  }
 
-    
-
+  const buildMessageOrder = () => {
     const quantityOrder = Object.values(ocurrencesOrder);
     const nameOrder = Object.keys(ocurrencesOrder);
 
@@ -80,6 +79,17 @@ const ModalOrder = ({ orders, setOrders }) => {
       setMessageOrder(`Olá, gostaria de fazer os seguintes pedidos: ${messageOrders}. 
        Confirme para mim o valor do pedido em R$${valueTotalOrder}.
       `)
+  }
+
+  const sendOrder = (e) => {
+    if(orders.length === 0){
+      e.preventDefault()
+      return
+    }
+
+    mapingOrders()
+    buildMessageOrder()
+
   };
 
   return (
@@ -104,7 +114,10 @@ const ModalOrder = ({ orders, setOrders }) => {
           <h2>
             Valor total: <span>R${valueTotalOrder}</span>
           </h2>
-             <a ref={btnSendOrder} onClick={sendOrder} className={styles.btn_order} target="_blank" href={adressWhatapp}>
+            <a onClick={(e)=>sendOrder(e)} 
+             className={styles.btn_order} 
+             target="_blank" href={adressWhatapp}
+             >
               Fazer pedido
             </a>
          </form>

@@ -45,14 +45,38 @@ const ModalOrder = ({ orders, setOrders }) => {
   };
 
   const sendOrder = () => {
-    const ordersInString = orders.map((order) => order.name).join(", ");
-    setMessageOrder(`Olá gostaria de fazer os seguintes pedidos:
-    ${ordersInString}.`)
-    console.log(ordersInString)
+    const ocurrencesOrder = {};
 
+    orders.map((order) => {
+      if (ocurrencesOrder[order.name]) {
+        ocurrencesOrder[order.name]++;
+      } else {
+        ocurrencesOrder[order.name] = 1;
+      }
+    });
+
+    const quantityOrder = Object.values(ocurrencesOrder);
+    const nameOrder = Object.keys(ocurrencesOrder);
+
+    const arrayBuildOrders = quantityOrder.reduce((acc, value, index) => {
+      acc.push(value, nameOrder[index]);
+      return acc;
+    }, []);
+
+    const arrayOrders = arrayBuildOrders.reduce(
+      (accumulator, current, index) => {
+        if (index % 2 !== 0) {
+          accumulator.push(accumulator.pop() + " " + current);
+        } else {
+          accumulator.push(current);
+        }
+        return accumulator;
+      },[]);
+
+      const stringOrders = arrayOrders.join(", ")
+      console.log(stringOrders)
   };
 
- 
   return (
     <DraggableComponent>
       <div className={styles.order_details}>

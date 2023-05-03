@@ -11,7 +11,8 @@ const ModalOrder = ({ orders, setOrders }) => {
   const modalRef = useRef();
   const [valueTotalOrder, setValueTotalOrder] = useState("");
   const [messageOrder, setMessageOrder] = useState("");
-  const adressWhatapp = `https://wa.me/+5537988551832?text=${messageOrder}`;
+  const adressWhatapp = `https://wa.me/+5537988383824?text=${messageOrder}`;
+  const btnSendOrder = useRef()
 
   const sumOrder = () => {
     let valueOrder = orders.map((order) => parseFloat(order.price));
@@ -55,6 +56,8 @@ const ModalOrder = ({ orders, setOrders }) => {
       }
     });
 
+    
+
     const quantityOrder = Object.values(ocurrencesOrder);
     const nameOrder = Object.keys(ocurrencesOrder);
 
@@ -63,18 +66,20 @@ const ModalOrder = ({ orders, setOrders }) => {
       return acc;
     }, []);
 
-    const arrayOrders = arrayBuildOrders.reduce(
-      (accumulator, current, index) => {
-        if (index % 2 !== 0) {
-          accumulator.push(accumulator.pop() + " " + current);
-        } else {
+    const arrayOrders = arrayBuildOrders.reduce((accumulator, current, index) => {
+        if (index % 2 === 0) {
           accumulator.push(current);
+        } else {
+          accumulator.push(accumulator.pop() + " " + current);
         }
         return accumulator;
       },[]);
 
-      const stringOrders = arrayOrders.join(", ")
-      console.log(stringOrders)
+      const messageOrders = arrayOrders.join(", ")
+
+      setMessageOrder(`Olá, gostaria de fazer os seguintes pedidos: ${messageOrders}. 
+       Confirme para mim o valor do pedido em R$${valueTotalOrder}.
+      `)
   };
 
   return (
@@ -99,12 +104,10 @@ const ModalOrder = ({ orders, setOrders }) => {
           <h2>
             Valor total: <span>R${valueTotalOrder}</span>
           </h2>
-          <button onClick={sendOrder} className={styles.btn_order}>
-            <a target="_blank" href={adressWhatapp}>
+             <a ref={btnSendOrder} onClick={sendOrder} className={styles.btn_order} target="_blank" href={adressWhatapp}>
               Fazer pedido
             </a>
-          </button>
-        </form>
+         </form>
       </div>
     </DraggableComponent>
   );

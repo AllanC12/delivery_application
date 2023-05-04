@@ -9,6 +9,52 @@ main{
     .banner_about{
         width: 100%;
         height: 100%;
-       }
+    }
+
+    .box_about{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include display-flex;
+        justify-content: space-around;
+
+        .box_single{
+            margin: 10px;
+            width: 33%;
+            max-width: 400px;
+            background-color: rgba(0,0,0,0.6);
+            padding: 20px 10px;
+            height: 86vh; 
+            color: white;
+            border-radius: 10px;
+
+            h2{
+                text-align: center;
+            }
+
+            p{
+                margin: 10px;
+            }
+            
+            ul{
+                list-style-type: none;
+                
+                li{
+                    margin:10px
+                }
+            }
+
+            .testimonials img{
+                width: 40px;
+                height: 40px;
+                
+                .box_testimonials{
+                    height: 200px;
+                }
+            }
+
+        }
+     }
      
 }

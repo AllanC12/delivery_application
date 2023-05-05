@@ -4,8 +4,13 @@ import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
 
 const About = () => {
-  const adressBanner =
-    "https://vinicolaaraucaria.com.br/wp-content/uploads/2020/06/interna_restaurante-1-1400x700.jpg";
+  const adressBanner = "https://vinicolaaraucaria.com.br/wp-content/uploads/2020/06/interna_restaurante-1-1400x700.jpg";
+
+  const adressProfilePhoto = ["https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png",
+"https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/08/site-vacinacao-26-anos.png",
+"https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/08/ed5d55c8-3966-4114-8ce4-9b9d0d25effd.png"
+  ]
+
   return (
     <div>
       <Navbar />
@@ -70,7 +75,7 @@ const About = () => {
 
             <div className={styles.box_testimonials}>
               <div className={styles.header_testimonial}>
-                <img src="" className={styles.profile_testimonial} />
+                <img src={adressProfilePhoto[0]} className={styles.profile_testimonial} />
                 <h4>Ana Paula</h4>
               </div>
               <p>
@@ -82,7 +87,7 @@ const About = () => {
 
             <div className={styles.box_testimonials}>
               <div className={styles.header_testimonial}>
-                <img src="" className={styles.profile_testimonial} />
+                <img src={adressProfilePhoto[1]} className={styles.profile_testimonial} />
                 <h4>João Carlos</h4>
               </div>
               <p>
@@ -94,7 +99,7 @@ const About = () => {
 
             <div className={styles.box_testimonials}>
               <div className={styles.header_testimonial}>
-                <img src="" className={styles.profile_testimonial} />
+                <img src={adressProfilePhoto[2]} className={styles.profile_testimonial} />
                 <h4>Fernanda Oliveira</h4>
               </div>
               <p>
@@ -104,7 +109,7 @@ const About = () => {
                 experimentamos!"
               </p>
             </div>
-            
+
           </div>
         </div>
       </main>

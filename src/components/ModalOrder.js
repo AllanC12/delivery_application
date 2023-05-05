@@ -14,7 +14,6 @@ const ModalOrder = ({ orders, setOrders }) => {
   const adressWhatapp = `https://wa.me/+5537988551832?text=${messageOrder}`;
   const ocurrencesOrder = {};
 
-
   const sumOrder = () => {
     let valueOrder = orders.map((order) => parseFloat(order.price));
 
@@ -65,13 +64,13 @@ const ModalOrder = ({ orders, setOrders }) => {
       return acc;
     }, []);
 
-    const arrayOrders = arrayBuildOrders.reduce((accumulator, current, index) => {
+    const arrayOrders = arrayBuildOrders.reduce((acc, current, index) => {
         if (index % 2 === 0) {
-          accumulator.push(current);
+          acc.push(current);
         } else {
-          accumulator.push(accumulator.pop() + " " + current);
+          acc.push(acc.pop() + " " + current);
         }
-        return accumulator;
+        return acc;
       },[]);
 
       const messageOrders = arrayOrders.join(", ")

@@ -17,7 +17,8 @@ import next_page from "../images/arrows/next-page.png";
 
 const Menu = () => {
   //Endereço do banner do componente menu
-  const adressBanner = "https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg";
+  const adressBanner =
+    "https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg";
 
   //Referencias para todas as páginas do cardápio
   const pageOne = useRef();
@@ -43,9 +44,9 @@ const Menu = () => {
   const { data: drinks_alcool } = useFetch(urlsForMenu[4]);
 
   //State que aramazena os pedidos feitos pelo cliente
-  const [orders,setOrders] = useState([])
-    
- //Funções que realizam a animação e sincronização das páginas do cardápio
+  const [orders, setOrders] = useState([]);
+
+  //Funções que realizam a animação e sincronização das páginas do cardápio
   const verifyPageTwo = (pageTwo, pageFour, pageOne, pageThree) => {
     if (
       getComputedStyle(pageTwo).transform !== "none" &&
@@ -108,15 +109,20 @@ const Menu = () => {
     );
     showPageFive(pageThree.current, pageFour.current, pageFive.current);
   };
+
   return (
     <div className={styles.menu_element}>
       <Navbar />
       <div className={styles.banner_menu}>
         <img src={adressBanner} />
         <ModalOrder setOrders={setOrders} orders={orders} />
+
         <div className={styles.menu}>
+          
           <img alt="beforePage" onClick={beforePage} src={before_page} />
+
           <div className={styles.cover_menu}>
+
             <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
               <h2>Pratos típicos</h2>
               {dishes &&
@@ -129,6 +135,7 @@ const Menu = () => {
                   />
                 ))}
             </div>
+
             <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
               <h2>Bebidas sem álcool</h2>
               {drinks &&
@@ -141,6 +148,7 @@ const Menu = () => {
                   />
                 ))}
             </div>
+
             <div
               ref={pageThree}
               className={`${styles.page_three} ${styles.page}`}
@@ -156,6 +164,7 @@ const Menu = () => {
                   />
                 ))}
             </div>
+
             <div
               ref={pageFour}
               className={`${styles.page_four} ${styles.page}`}
@@ -171,6 +180,7 @@ const Menu = () => {
                   />
                 ))}{" "}
             </div>
+
             <div
               ref={pageFive}
               className={`${styles.page_five} ${styles.page}`}

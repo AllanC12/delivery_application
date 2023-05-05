@@ -45,12 +45,22 @@ main{
                 }
             }
 
-            .testimonials img{
-                width: 40px;
-                height: 40px;
-                
-                .box_testimonials{
-                    height: 200px;
+            .box_testimonials{
+                 background-color: green;
+                 @include flex(space-between);
+                 
+                    p{
+                        font-size: .9em;
+                    }
+
+                .box_img_testimonial{
+                    width: 40px;
+                    height: 40px;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
 

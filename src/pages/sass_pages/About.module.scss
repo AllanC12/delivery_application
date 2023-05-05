@@ -23,9 +23,9 @@ main{
             margin: 10px;
             width: 33%;
             max-width: 400px;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0,0,0,0.8);
             padding: 20px 10px;
-            height: 86vh; 
+            height: 75vh; 
             color: white;
             border-radius: 10px;
 
@@ -45,12 +45,27 @@ main{
                 }
             }
 
-            .testimonials img{
-                width: 40px;
-                height: 40px;
-                
-                .box_testimonials{
-                    height: 200px;
+            .box_testimonials{
+                  margin-bottom: 10px;
+                  background-color: #ccc;
+                  padding: 5px 1%;
+                  color: #000;
+                  border-radius: 10px;
+                  
+                    p{
+                        font-size: .9em;
+                    }
+
+                .header_testimonial{
+                    width: 100%;
+                    @include flex(flex-start);
+                    padding: 5px;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        margin: 0 10px;
+                        border-radius: 50%;
+                    }
                 }
             }
 

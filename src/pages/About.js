@@ -67,12 +67,12 @@ const About = () => {
           </div>
 
           <div className={`${styles.testimonials} ${styles.box_single}`}>
-            
+
             <div className={styles.box_testimonials}>
-              <div className={styles.box_img_testimonial}>
+              <div className={styles.header_testimonial}>
                 <img src="" className={styles.profile_testimonial} />
+                <h4>Ana Paula</h4>
               </div>
-              <h4>Ana Paula</h4>
               <p>
                 "Amei o restaurante Sabores do Brasil! Os pratos são muito bem
                 preparados e deliciosos. Sempre que posso, venho saborear a
@@ -81,10 +81,10 @@ const About = () => {
             </div>
 
             <div className={styles.box_testimonials}>
-              <div className={styles.box_img_testimonial}>
+              <div className={styles.header_testimonial}>
                 <img src="" className={styles.profile_testimonial} />
+                <h4>João Carlos</h4>
               </div>
-              <h4>João Carlos</h4>
               <p>
                 "O Sabores do Brasil é o meu restaurante favorito! A comida é
                 incrível e o atendimento é excelente. O escondidinho de carne
@@ -93,10 +93,10 @@ const About = () => {
             </div>
 
             <div className={styles.box_testimonials}>
-              <div className={styles.box_img_testimonial}>
+              <div className={styles.header_testimonial}>
                 <img src="" className={styles.profile_testimonial} />
+                <h4>Fernanda Oliveira</h4>
               </div>
-              <h4>Fernanda Oliveira</h4>
               <p>
                 "Eu e minha família adoramos o Sabores do Brasil. Os pratos são
                 muito bem servidos e a decoração do ambiente é super
@@ -104,30 +104,7 @@ const About = () => {
                 experimentamos!"
               </p>
             </div>
-
-            <div className={styles.box_testimonials}>
-              <div className={styles.box_img_testimonial}>
-                <img src="" className={styles.profile_testimonial} />
-              </div>
-              <h4>Pedro Henrique</h4>
-              <p>
-                "Sem dúvida, o Sabores do Brasil é o melhor restaurante da
-                cidade! Os pratos são deliciosos e muito bem apresentados. O
-                bolo de rolo é um dos meus favoritos!"
-              </p>
-            </div>
-
-            <div className={styles.box_testimonials}>
-              <div className={styles.box_img_testimonial}>
-                <img src="" className={styles.profile_testimonial} />
-              </div>
-              <h4>Juliana Almeida</h4>
-              <p>
-                "O Sabores do Brasil é simplesmente fantástico! Os pratos são
-                muito saborosos e a variedade é enorme. Eu recomendo muito a
-                moqueca capixaba e o sorvete de cupuaçu!"
-              </p>
-            </div>
+            
           </div>
         </div>
       </main>

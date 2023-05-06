@@ -1,45 +1,6 @@
 {
   "clients": [
-    {
-      "id": 1,
-      "name": "Allan",
-      "password": "allan007"
-    },
-    {
-      "name": "jose14",
-      "password": "jose1212",
-      "id": 2
-    },
-    {
-      "name": "marcia",
-      "password": "marcia1212",
-      "id": 13
-    },
-    {
-      "name": "ana",
-      "password": "ana1212",
-      "id": 14
-    },
-    {
-      "name": "jorge",
-      "password": "jorge1212",
-      "id": 15
-    },
-    {
-      "name": "jimmy",
-      "password": "jimmy1212",
-      "id": 16
-    },
-    {
-      "name": "john",
-      "password": "john1212",
-      "id": 17
-    },
-    {
-      "name": "josemar",
-      "password": "josemar1212",
-      "id": 18
-    }
+    
   ],
   "desserts": [
     {

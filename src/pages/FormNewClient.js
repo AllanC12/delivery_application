@@ -11,6 +11,7 @@ const FormNewClient = () => {
   const urlAddClient = `http://localhost:3000/clients`
   const {registerClient} = useFetch(urlAddClient)
  
+  const [emailAddUser,setEmailAddUser] = useState('')
   const [nameAddUser,setNameAddUser] = useState('')
   const [passwordAddUser,setPasswordAddUser] = useState('')
   const [confirmPasswordAddUser,setConfirmPasswordAddUser] = useState('')
@@ -39,7 +40,9 @@ const FormNewClient = () => {
      }
    
      const clientData = {
+       id: Math.random(),
        name:nameAddUser,
+       email:emailAddUser,
        password:passwordAddUser
      }
 
@@ -61,6 +64,14 @@ const FormNewClient = () => {
         <form onSubmit={handleSubmit}>
            <h2>Pra abusar de nossas delícias é preciso se cadastrar</h2>
            <img src={chef} alt="Chefe" />
+
+           <label>
+               <input type="email" 
+               placeholder="Seu melhor E-mail"
+               onChange={(e)=> setEmailAddUser(e.target.value)}
+               value={emailAddUser}
+               />
+           </label>
 
            <label>
                <input type="text" 

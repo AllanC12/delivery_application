@@ -9,10 +9,11 @@ import FormClient from "./pages/FormClient";
 import FormNewClient from "./pages/FormNewClient";
 import Menu from "./pages/Menu";
 import About from "./pages/About"
+import DataClient from "./pages/DataClient";
 
 function App() {
 
-  const [confirmUser, setConfirmUser] = useState({status: false})
+  const [confirmUser, setConfirmUser] = useState({status: true})
   sessionStorage.setItem("confirmedUser", confirmUser.status)
   const confirmedUser = JSON.parse(sessionStorage.getItem("confirmedUser"))
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/inicio" element={confirmedUser ? <Home /> : <Navigate to="/"/>} />
           <Route path="/cardapio" element={confirmedUser ? <Menu /> : <Navigate to="/"/>} />
           <Route path="/sobre" element={confirmedUser ? <About/> : <Navigate to="/"/>} />
+          <Route path="/meus_dados" element={confirmedUser ? <DataClient/> : <Navigate to="/"/>} />
         </Routes>
       </BrowserRouter>
     </div>

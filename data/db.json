@@ -1,6 +1,11 @@
 {
   "clients": [
-    
+    {
+      "id": 0.24408799130393932,
+      "name": "Allan",
+      "email": "allancandido40@gmail.com",
+      "password": "allan007"
+    }
   ],
   "desserts": [
     {

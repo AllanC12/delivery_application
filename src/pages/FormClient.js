@@ -67,7 +67,7 @@ const FormClient = ({ setConfirmUser }) => {
     if (userName.length > 0) {
       if (userPassword.length > 0) {
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
-        setConfirmUser(true);
+        setConfirmUser({status:true,name:nameClient});
         setTimeout(() => {
           Navigate("/inicio");
         }, 500);

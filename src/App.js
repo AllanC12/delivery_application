@@ -12,10 +12,10 @@ import About from "./pages/About"
 
 function App() {
 
-  const [confirmUser, setConfirmUser] = useState(false)
-  sessionStorage.setItem("confirmedUser", confirmUser)
-  const confirmedUser = sessionStorage.getItem("confirmedUser")
-  
+  const [confirmUser, setConfirmUser] = useState({status: false})
+  sessionStorage.setItem("confirmedUser", confirmUser.status)
+  const confirmedUser = JSON.parse(sessionStorage.getItem("confirmedUser"))
+
   return (
     <div className="App">
       <BrowserRouter>

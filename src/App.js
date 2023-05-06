@@ -12,7 +12,7 @@ import About from "./pages/About"
 
 function App() {
 
-  const [confirmUser, setConfirmUser] = useState({status: true})
+  const [confirmUser, setConfirmUser] = useState({status: false})
   sessionStorage.setItem("confirmedUser", confirmUser.status)
   const confirmedUser = JSON.parse(sessionStorage.getItem("confirmedUser"))
 

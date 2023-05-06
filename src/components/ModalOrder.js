@@ -93,32 +93,29 @@ const ModalOrder = ({ orders, setOrders }) => {
 
   return (
     <DraggableComponent>
+
       <div className={styles.order_details}>
         <form ref={modalRef} className={styles.form_order}>
-          <h2>Comanda</h2>
-          <FaWindowClose className={styles.close_modal} onClick={closeModal} />
-          <div className={styles.box_order}>
-            {orders &&
-              orders.map((order) => (
-                <div className={styles.order} key={order.id}>
-                  <p>{order.name}</p>
-                  <p>R${order.price}</p>
-                  <MdRemoveCircle
-                    onClick={() => removeOrder(order.id)}
-                    className={styles.remove_order}
-                  />
-                </div>
-              ))}
-          </div>
-          <h2>
-            Valor total: <span>R${valueTotalOrder}</span>
-          </h2>
-            <a onClick={(e)=>sendOrder(e)} 
-             className={styles.btn_order} 
-             target="_blank" href={adressWhatapp}
-             >
-              Fazer pedido
-            </a>
+            <h2>Comanda</h2>
+
+            <FaWindowClose className={styles.close_modal} onClick={closeModal} />
+
+            <div className={styles.box_order}>
+              {orders && orders.map((order) => (
+                  <div className={styles.order} key={order.id}>
+                    <p>{order.name}</p>
+                    <p>R${order.price}</p>
+                    <MdRemoveCircle onClick={() => removeOrder(order.id)} className={styles.remove_order}/>
+                  </div>
+               ))}
+            </div>
+
+            <h2>
+              Valor total: <span>R${valueTotalOrder}</span>
+            </h2>
+              <a onClick={(e)=>sendOrder(e)} className={styles.btn_order} target="_blank" href={adressWhatapp}>
+                Fazer pedido
+              </a>
          </form>
       </div>
     </DraggableComponent>

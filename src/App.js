@@ -17,12 +17,9 @@ import DataClient from "./pages/DataClient";
 
 function App() {
     const [confirmUser, setConfirmUser] = useState({})
-    const nameUser = confirmUser.length > 0 ? confirmUser[0].name : ''
-    sessionStorage.setItem("user",nameUser)
-    const confirmedUser = sessionStorage.getItem("user") !==  '' ?  true : false
-    console.log(confirmedUser)
-  
-  return (
+    const confirmedUser = confirmUser.statusLogin
+
+    return (
     <div className="App">
       <ContextUserDataProvider value={{confirmUser}}>
         <BrowserRouter>

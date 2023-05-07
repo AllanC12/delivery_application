@@ -13,9 +13,8 @@ import DataClient from "./pages/DataClient";
 
 function App() {
 
-  const [confirmUser, setConfirmUser] = useState({status: true})
-  sessionStorage.setItem("confirmedUser", confirmUser.status)
-  const confirmedUser = JSON.parse(sessionStorage.getItem("confirmedUser"))
+   const [confirmUser, setConfirmUser] = useState({})
+   const confirmedUser = confirmUser.name
 
   return (
     <div className="App">

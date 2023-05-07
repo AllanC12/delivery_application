@@ -7,7 +7,7 @@ import styles from './sass_pages/DataClient.module.scss'
 
 const DataClient = () => {
 
-  const adressBanner = "https://s2.glbimg.com/TYVOVw7XXf6DwUashZWbGR3eZoY=/512x320/smart/e.glbimg.com/og/ed/f/original/2021/09/02/predio-tombado-de-1940-em-sao-paulo-recebe-novo-restaurante-italiano_5.jpg"
+  const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
 
   return (
     <>

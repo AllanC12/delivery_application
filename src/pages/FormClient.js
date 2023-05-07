@@ -29,6 +29,7 @@ const FormClient = ({ setConfirmUser }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
+  let userValidate;
   let userNameValidate;
   let userPasswordValidate;
 
@@ -55,6 +56,10 @@ const FormClient = ({ setConfirmUser }) => {
 
   const verifyDataClient = (clients) => {
     if (clients) {
+      userValidate = clients.filter(client => client.name === nameClient &&
+            client.password === password
+        )
+
       userNameValidate = clients.filter((client) => client.name === nameClient);
 
       userPasswordValidate = clients.filter(
@@ -66,11 +71,13 @@ const FormClient = ({ setConfirmUser }) => {
   const validateDataClient = (userName, userPassword) => {
     if (userName.length > 0) {
       if (userPassword.length > 0) {
+
         setSuccessMessage(`Seja bem vindo ${nameClient}`);
-        setConfirmUser({status:true,name:nameClient});
+        setConfirmUser(userValidate);
         setTimeout(() => {
           Navigate("/inicio");
         }, 500);
+
       } else {
         setErrorMessage(`Senha incorreta`);
         return;

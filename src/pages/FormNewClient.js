@@ -13,6 +13,7 @@ const FormNewClient = () => {
  
   const [emailAddUser,setEmailAddUser] = useState('')
   const [nameAddUser,setNameAddUser] = useState('')
+  const [urlPhotoUser,setUrlPhotoUser] = useState('')
   const [passwordAddUser,setPasswordAddUser] = useState('')
   const [confirmPasswordAddUser,setConfirmPasswordAddUser] = useState('')
   const [errorMessage,setErrorMessage] = useState(null)
@@ -42,6 +43,7 @@ const FormNewClient = () => {
      const clientData = {
        id: Math.random(),
        name:nameAddUser,
+       urlImage: urlPhotoUser,
        email:emailAddUser,
        password:passwordAddUser
      }
@@ -78,6 +80,14 @@ const FormNewClient = () => {
                placeholder="Crie um belo usuário..."
                onChange={(e)=> setNameAddUser(e.target.value)}
                value={nameAddUser}
+               />
+           </label>
+
+           <label>
+               <input type="text" 
+               placeholder="A URL de uma bela foto"
+               onChange={(e)=> setUrlPhotoUser(e.target.value)}
+               value={urlPhotoUser}
                />
            </label>
 

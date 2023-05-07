@@ -17,7 +17,9 @@ import DataClient from "./pages/DataClient";
 
 function App() {
     const [confirmUser, setConfirmUser] = useState({})
-    const confirmedUser = confirmUser.length > 0 ? confirmUser[0].name : false
+    const nameUser = confirmUser.length > 0 ? confirmUser[0].name : false
+    sessionStorage.setItem("user",nameUser)
+    const confirmedUser = sessionStorage.getItem("user") ===  'false' ?  false : true
   
   return (
     <div className="App">

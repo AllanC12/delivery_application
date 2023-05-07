@@ -10,9 +10,7 @@ const DataClient = () => {
 
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser[0]
-
-  console.log(userData)
-
+ 
   const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
 
   return (
@@ -20,9 +18,12 @@ const DataClient = () => {
         <Navbar/>
             <div className={styles.data_client}>
                 <img src={adressBanner} alt="banner"/>
-                <div className={styles.box_data_client}>
-                 
-                 </div>
+                 <div className={styles.box_data_client}>
+                    <div className={styles.header_client}>
+                       <img className={styles.profile_photo} src={userData.urlImage} alt="Foto do perfil"/>
+                    </div>
+
+                  </div>
             </div>
         <Footer/>
     </>

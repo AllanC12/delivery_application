@@ -36,8 +36,7 @@ const Navbar = () => {
 
           <nav onMouseLeave={()=>handleMenuClient("0")} ref={menuClientRef} className={styles.menu_data_client}>
             <ul>
-               <li><NavLink to="/meu_perfil">Meu perfil</NavLink></li>
-               <li><NavLink to="meus_dados">Meus dados</NavLink></li>
+               <li><NavLink to="/meus_dados">Meus dados</NavLink></li>
                <li><NavLink to="/">Sair</NavLink></li>
             </ul>
           </nav>

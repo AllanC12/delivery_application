@@ -41,6 +41,14 @@ const Home = () => {
           <img src="https://blog.ginbrasil.com.br/wp-content/uploads/2020/08/Gin-Brasil-11-Entenda-a-fun%C3%A7%C3%A3o-do-gelo-no-seu-drink-e-por-que-ele-%C3%A9-importante.jpg" />
         </div>
       </div>
+
+      <div className={styles.promotions}>
+         <div className={styles.header_promotions}>
+            <div className="line"></div>
+            <h2>Nossas promoções</h2>
+            <div className="line"></div>
+         </div>
+      </div>
       <Footer />
     </div>
   );

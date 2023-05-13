@@ -16,7 +16,7 @@ import About from "./pages/About"
 import DataClient from "./pages/DataClient";
 
 function App() {
-    const [confirmUser, setConfirmUser] = useState({statusLogin:true})
+    const [confirmUser, setConfirmUser] = useState({})
     const confirmedUser = confirmUser.statusLogin
 
     return (

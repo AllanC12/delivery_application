@@ -10,6 +10,7 @@ const DataClient = () => {
 
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
+  console.log(userData)
  
   const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
 
@@ -22,7 +23,12 @@ const DataClient = () => {
                     <div className="header_client">
                        <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
                     </div>
-
+                    <div className="inform_login">
+                       <h4>Nome de usuário: <span>{userData.name}</span></h4>
+                       <h4>Email: <span>{userData.email}</span></h4>
+                       <h4>Senha: <span>{userData.password}</span></h4>
+                       <h4>ID de usuário: <span>{userData.id}</span></h4>
+                    </div>
                   </div>
             </div>
         <Footer/>

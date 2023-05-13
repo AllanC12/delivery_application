@@ -1,5 +1,5 @@
 //styles
-import styles from "./sass_pages/Menu.module.scss";
+import "./sass_pages/Menu.scss";
 
 //Hooks
 import { useRef, useState } from "react";
@@ -111,19 +111,19 @@ const Menu = () => {
   };
 
   return (
-    <div className={styles.menu_element}>
+    <div className="menu_element">
       <Navbar />
-      <div className={styles.banner_menu}>
+      <div className="banner_menu">
         <img src={adressBanner} />
         <ModalOrder setOrders={setOrders} orders={orders} />
 
-        <div className={styles.menu}>
+        <div className="menu">
           
           <img alt="beforePage" onClick={beforePage} src={before_page} />
 
-          <div className={styles.cover_menu}>
+          <div className="cover_menu">
 
-            <div ref={pageOne} className={`${styles.page_one} ${styles.page}`}>
+            <div ref={pageOne} className="page_one page">
               <h2>Pratos típicos</h2>
               {dishes &&
                 dishes.map((dishe, index) => (
@@ -136,7 +136,7 @@ const Menu = () => {
                 ))}
             </div>
 
-            <div ref={pageTwo} className={`${styles.page_two} ${styles.page}`}>
+            <div ref={pageTwo} className="page_two page">
               <h2>Bebidas sem álcool</h2>
               {drinks &&
                 drinks.map((drink, index) => (
@@ -151,7 +151,7 @@ const Menu = () => {
 
             <div
               ref={pageThree}
-              className={`${styles.page_three} ${styles.page}`}
+              className="page_three page"
             >
               <h2>Pizzas</h2>
               {pizzas &&
@@ -167,7 +167,7 @@ const Menu = () => {
 
             <div
               ref={pageFour}
-              className={`${styles.page_four} ${styles.page}`}
+              className="page_four page"
             >
               <h2>Sobremesas</h2>
               {desserts &&
@@ -183,7 +183,7 @@ const Menu = () => {
 
             <div
               ref={pageFive}
-              className={`${styles.page_five} ${styles.page}`}
+              className="page_five page"
             >
               <h2>Bebidas alcoólicas</h2>
               {drinks_alcool &&

@@ -1,3 +1,5 @@
+import "./sass_components/Banner.scss";
+
 import { useEffect, useRef } from "react";
 
 const BannerHome = () => {

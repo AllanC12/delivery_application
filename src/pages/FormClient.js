@@ -1,4 +1,4 @@
-import styles from "./sass_pages/FormClient.module.scss";
+import "./sass_pages/FormClient.scss";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -99,10 +99,10 @@ const FormClient = ({ setConfirmUser }) => {
   };
 
   return (
-    <div className={styles.banner_form_login}>
-      <form onSubmit={handleLogin} className={styles.form_login}>
+    <div className="banner_form_login">
+      <form onSubmit={handleLogin} className="form_login">
         <h2>A fome bateu? Entre aqui e sirva-se</h2>
-        <div ref={divImgsFormAnimation} className={styles.form_animation}>
+        <div ref={divImgsFormAnimation} className="form_animation">
           <img src={beer} alt="beer" />
           <img src={cheeseBurguer} alt="cheeseBurguer" />
           <img src={cokeCup} alt="cokeCup" />

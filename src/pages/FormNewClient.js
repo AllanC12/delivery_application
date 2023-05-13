@@ -1,4 +1,4 @@
-import styles from "./sass_pages/FormClient.module.scss"
+import "./sass_pages/FormClient.scss"
 
 import chef from "../images/img_animations/chef.png"
 import hungry from "../images/img_animations/hungry.png"
@@ -62,7 +62,7 @@ const FormNewClient = () => {
   }
 
   return (
-    <div className={styles.banner_form_add}>
+    <div className="banner_form_add">
         <form onSubmit={handleSubmit}>
            <h2>Pra abusar de nossas delícias é preciso se cadastrar</h2>
            <img src={chef} alt="Chefe" />

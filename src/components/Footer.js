@@ -1,8 +1,8 @@
-import styles from './sass_components/Navbar.module.scss'
+import'./sass_components/Navbar.scss'
 
 const Footer = () => {
   return (
-   <footer className={styles.footer}>
+   <footer className="footer">
        <p>Todos os direitos reservados | © Copyright</p>
    </footer>
   )

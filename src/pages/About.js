@@ -1,4 +1,4 @@
-import styles from "./sass_pages/About.module.scss";
+import "./sass_pages/About.scss";
 
 import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
@@ -15,9 +15,10 @@ const About = () => {
     <div>
       <Navbar />
       <main>
-        <img className={styles.banner_about} src={adressBanner} />
-        <div className={styles.box_about}>
-          <div className={`${styles.about} ${styles.box_single}`}>
+        <img className="banner_about" src={adressBanner} />
+        <div className="box_about">
+
+          <div className="about box_single">
             <h2>Um pouco sobre nós</h2>
             <p>
               Há alguns anos, uma cozinheira apaixonada pela culinária
@@ -40,7 +41,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className={`${styles.cuisine} ${styles.box_single}`}>
+          <div className="cuisine box_single">
             <h2>Nossa inspirações</h2>
             <ul>
               <li>
@@ -71,11 +72,11 @@ const About = () => {
             </ul>
           </div>
 
-          <div className={`${styles.testimonials} ${styles.box_single}`}>
+          <div className="testimonials box_single">
 
-            <div className={styles.box_testimonials}>
-              <div className={styles.header_testimonial}>
-                <img src={adressProfilePhoto[0]} className={styles.profile_testimonial} />
+            <div className="box_testimonials">
+              <div className="header_testimonial">
+                <img src={adressProfilePhoto[0]} className="profile_testimonial" />
                 <h4>Ana Paula</h4>
               </div>
               <p>
@@ -85,9 +86,9 @@ const About = () => {
               </p>
             </div>
 
-            <div className={styles.box_testimonials}>
-              <div className={styles.header_testimonial}>
-                <img src={adressProfilePhoto[1]} className={styles.profile_testimonial} />
+            <div className="box_testimonials">
+              <div className="header_testimonial">
+                <img src={adressProfilePhoto[1]} className="profile_testimonial" />
                 <h4>João Carlos</h4>
               </div>
               <p>
@@ -97,9 +98,9 @@ const About = () => {
               </p>
             </div>
 
-            <div className={styles.box_testimonials}>
-              <div className={styles.header_testimonial}>
-                <img src={adressProfilePhoto[2]} className={styles.profile_testimonial} />
+            <div className="box_testimonials">
+              <div className="header_testimonial" > 
+                <img src={adressProfilePhoto[2]} className="profile_testimonial" />
                 <h4>Fernanda Oliveira</h4>
               </div>
               <p>

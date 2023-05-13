@@ -1,4 +1,4 @@
-import styles from './sass_components/Navbar.module.scss'
+import './sass_components/Navbar.scss'
 
 import { NavLink } from 'react-router-dom'
 
@@ -16,11 +16,11 @@ const Navbar = () => {
   }
   
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logo}>
+    <nav className="navbar">
+      <div className="logo">
          <img src={logo} alt="logo" />
        </div>
-      <div className={styles.menu_desktop}>
+      <div className="menu_desktop">
          <ul>
            <li><NavLink to="/inicio">Início</NavLink></li>
            <li><NavLink to="/cardapio">Cardápio</NavLink></li>
@@ -29,12 +29,12 @@ const Navbar = () => {
          </ul>
       </div>
 
-        <div className={styles.about_client}>
-          <div  onMouseEnter={()=>handleMenuClient("1")} className={styles.profile_client}>
+        <div className="about_client">
+          <div  onMouseEnter={()=>handleMenuClient("1")} className="profile_client">
               <FaUser/>
           </div>
 
-          <nav onMouseLeave={()=>handleMenuClient("0")} ref={menuClientRef} className={styles.menu_data_client}>
+          <nav onMouseLeave={()=>handleMenuClient("0")} ref={menuClientRef} className="menu_data_client">
             <ul>
                <li><NavLink to="/meus_dados">Meus dados</NavLink></li>
                <li><NavLink to="/">Sair</NavLink></li>

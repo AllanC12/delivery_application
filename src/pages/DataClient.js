@@ -4,7 +4,7 @@ import { ContextUserData } from '../context/ContextUser'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-import styles from './sass_pages/DataClient.module.scss'
+import './sass_pages/DataClient.scss'
 
 const DataClient = () => {
 
@@ -16,11 +16,11 @@ const DataClient = () => {
   return (
     <>
         <Navbar/>
-            <div className={styles.data_client}>
+            <div className="data_client">
                 <img src={adressBanner} alt="banner"/>
-                 <div className={styles.box_data_client}>
-                    <div className={styles.header_client}>
-                       <img className={styles.profile_photo} src={userData.urlImage} alt="Foto do perfil"/>
+                 <div className="box_data_client">
+                    <div className="header_client">
+                       <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
                     </div>
 
                   </div>

@@ -1,12 +1,12 @@
-import styles from './sass_components/Promotions.module.scss'
+import styles from './sass_components/Promotions.scss'
 
 const Promotions = () => {
   return (
-    <div className={styles.promotions}>
-        <div className={styles.header_promotions}>
-            <div className={styles.line}></div>
+    <div className="promotions">
+        <div className="header_promotions">
+            <div className="line"></div>
             <h2>Nossas promoções</h2>
-            <div className={styles.line}></div>
+            <div className="line"></div>
         </div>
    </div>
   )

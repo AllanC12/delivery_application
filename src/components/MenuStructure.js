@@ -1,4 +1,4 @@
-import styles from "./sass_components/MenuStructure.module.scss";
+import "./sass_components/MenuStructure.scss";
 
 const MenuStructure = ({ titleFood, priceFood, setOrders }) => {
   //Função que monta os pedidos do cliente
@@ -22,7 +22,7 @@ const MenuStructure = ({ titleFood, priceFood, setOrders }) => {
            if(!e.target.children[0] || !e.target.children[1]) return  
            addOrders(e);
          }}
-        className={styles.boxFood}
+        className="boxFood"
       >
         <h4>{titleFood}</h4>
         <h4>

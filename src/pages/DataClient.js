@@ -26,21 +26,7 @@ const DataClient = () => {
   const [errorMessage,setErrorMessage] = useState("")
   const [successMessage,setSuccessMessage] = useState("")
 
-
-  const getNewData = (e) => {
-    if(e.target.name === "newUrl"){
-      setNewUrl(e.target.value)
-    }else if(e.target.name === "newName"){
-      setNewName(e.target.value)
-    }else if(e.target.name === "newEmail"){
-      setNewEmail(e.target.value)
-    }else if(e.target.name === "newPassword"){
-      setNewPassword(e.target.value)
-    }else{
-      return
-    }
-  }
- 
+  
  
 
   const postNewData = async () =>{

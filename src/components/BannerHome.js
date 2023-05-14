@@ -27,7 +27,7 @@ const BannerHome = () => {
       </div>
       <div className="banner_wraper ">
         <h2 className="legend_banner">...Sobremesas impactantes...</h2>
-        <img src="https://www.sabornamesa.com.br/media/k2/items/cache/7d2898c3630feea92ec1553d16389ff6_XL.jpg" />
+        <img src="https://www.assai.com.br/sites/default/files/styles/blog_destaque/public/blog/receita-para-a-sobremesa-do-ano-novo_1.jpg?itok=oVo6gPkU" />
       </div>
       <div className="banner_wraper ">
         <h2 className="legend_banner">Drinks de tirar o fôlego...</h2>

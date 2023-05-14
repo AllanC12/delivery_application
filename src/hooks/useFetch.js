@@ -6,8 +6,9 @@ export const useFetch = (url) => {
     const [callFetch,setCallFetch] = useState(null)
     const [config,setConfig] = useState(null)
     const [loading,setLoading] = useState(false)
+    const [idClient,setIdClient] = useState(null)
 
-    const registerClient = useCallback((data,method)=>{
+    const handleDataClient = useCallback((data,method)=>{
         if(method === "POST"){
             setConfig({
                 "method":"POST",
@@ -18,6 +19,17 @@ export const useFetch = (url) => {
             })
 
             setMethod("POST")
+
+       }else if(method === "DELETE"){
+        setConfig({
+            "method":"DELETE",
+            "headers":{
+                "content-type":"application/json"
+            }
+        })
+
+        setMethod("DELETE")
+        setIdClient(data)
        }
     })
 
@@ -41,20 +53,36 @@ export const useFetch = (url) => {
     },[url,callFetch])
 
     useEffect(()=>{
-       if(method === "POST"){
-         const createUser = async () => {
+      const fetchOptions = [url,config]
+
+      const handleUser = async () => {
+        let response;
+
+        if(method === "POST"){
+
             setLoading(true);
-                const fetchOptions = [url,config]
                 const respInsert = await fetch(...fetchOptions)
-                const responseInsert = await respInsert.json()
-                setCallFetch(responseInsert)
+                response = await respInsert.json()
+                setCallFetch(response)
             setLoading(false)
-         }
-         createUser()
-       }
+
+         }else if(method === "DELETE"){
+
+            setLoading(true);
+                const urlDeleteClient = `${url}/${idClient}`
+                const respDelClient = await fetch(urlDeleteClient,config)
+                response = await respDelClient.json()
+                setCallFetch(response)
+            setLoading(false)
+
+        }
+
+     }
+
+        handleUser()
     },[url,method])
     
 
-    return {data,registerClient,loading}
+    return {data,handleDataClient,loading}
 }
 

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom"
  
 const FormNewClient = () => {
   const urlAddClient = `http://localhost:3000/clients`
-  const {registerClient} = useFetch(urlAddClient)
+  const {handleDataClient} = useFetch(urlAddClient)
  
   const [emailAddUser,setEmailAddUser] = useState('')
   const [nameAddUser,setNameAddUser] = useState('')
@@ -26,7 +26,7 @@ const FormNewClient = () => {
      if(nameAddUser){
         if(passwordAddUser){
            if(passwordAddUser === confirmPasswordAddUser){
-              setSuccessMessage(`Cliente cadastrado!!! Hora de comer.`)
+              setSuccessMessage(`Cliente cadastrado. Hora de comer!`)
            }else{
             setErrorMessage(`As senhas precisam ser iguais`)
             return
@@ -49,7 +49,7 @@ const FormNewClient = () => {
      }
 
       
-       registerClient(clientData,"POST")
+     handleDataClient(clientData,"POST")
    
      
      setNameAddUser('')

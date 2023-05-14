@@ -7,7 +7,14 @@ import { FaUser } from "react-icons/fa";
 
 import { useRef } from 'react'
 
+import { ContextUserData } from '../context/ContextUser';
+import { useContext } from 'react';
+
 const Navbar = () => {
+
+  const userDataContext = useContext(ContextUserData)
+  const imageUserProfile = userDataContext.value.confirmUser.userValidate[0].urlImage
+
   const menuClientRef = useRef()
 
   const handleMenuClient = (visibility) => {
@@ -24,14 +31,14 @@ const Navbar = () => {
          <ul>
            <li><NavLink to="/inicio">Início</NavLink></li>
            <li><NavLink to="/cardapio">Cardápio</NavLink></li>
-           <li><NavLink to="/sobre">Sobre</NavLink></li>
+           <li><NavLink to="/sobre">Nossa história</NavLink></li>
            <li><NavLink to="/contatos">Contatos</NavLink></li>
          </ul>
       </div>
 
         <div className="about_client">
           <div  onMouseEnter={()=>handleMenuClient("1")} className="profile_client">
-              <FaUser/>
+            {imageUserProfile !== '' ? <img src={imageUserProfile}/> : <FaUser/>}    
           </div>
 
           <nav onMouseLeave={()=>handleMenuClient("0")} ref={menuClientRef} className="menu_data_client">

@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext,useState } from 'react'
 import { ContextUserData } from '../context/ContextUser'
 
 import Navbar from '../components/Navbar'
@@ -10,9 +10,51 @@ const DataClient = () => {
 
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
-  console.log(userData)
  
   const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
+
+  const [newName,setNewName] = useState("")
+  const [newEmail,setNewEmail] = useState("")
+  const [newPassword,setNewPassword] = useState("")
+  const [errorMessage,setErrorMessage] = useState("")
+  const [successMessage,setSuccessMessage] = useState("")
+
+  const getNewData = (e) => {
+    if(e.target.name === "newName"){
+      setNewName(e.target.value)
+    }else if(e.target.name === "newEmail"){
+      setNewEmail(e.target.value)
+    }else if(e.target.name === "newPassword"){
+      setNewPassword(e.target.value)
+    }else{
+      return
+    }
+  }
+
+  console.log(newName)
+
+  const updateDataEdit = () => {
+    
+  }
+ 
+  const validateDataEdit = () => {
+    if(newName === userData.name || newPassword === userData.password || newEmail === userData.email){
+      setErrorMessage("Sem alterações nos dados")
+      return
+    }else{
+      updateDataEdit()
+    }
+  }
+
+
+const handleEditData = (e) => {
+  e.preventDefault()
+  validateDataEdit()
+
+  setNewName('')
+  setNewEmail('')
+  setNewPassword('')
+}
 
   return (
     <>
@@ -20,26 +62,30 @@ const DataClient = () => {
             <div className="data_client">
                 <img src={adressBanner} alt="banner"/>
  -
-                      <form className="form_alter_data">
+                      <form onSubmit={handleEditData} >
                           <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
 
                         <h4>ID de usuário: <span>{userData.id}</span></h4>
                           <label>
                             <h4>Nome de usuário: <span>{userData.name}</span></h4>
-                            <input type="text"  placeholder="Novo nome..." />
+                            <input type="text"  onChange={getNewData}  value={newName} name="newName" placeholder="Novo nome..." />
                           </label>
 
                           <label>
                             <h4>Email: <span>{userData.email}</span></h4>
-                            <input type="email"  placeholder="Novo email..." />
+                            <input type="email"  onChange={getNewData} value={newEmail} name="newEmail" placeholder="Novo email..." />
                           </label>
                           
                           <label>
                             <h4>Senha: <span>{userData.password}</span></h4>
-                            <input type="text"  placeholder="Nova senha..." />
+                            <input type="text"  onChange={getNewData} value={newPassword} name="newPassword" placeholder="Nova senha..." />
                           </label>
 
                           <input type="submit" value="Alterar dados" className="btn" />
+
+                          {errorMessage && <p className="message-error">{errorMessage}</p>}
+
+                          {successMessage && <p className="message-success">{successMessage}</p>}
                         </form>
 
              </div>

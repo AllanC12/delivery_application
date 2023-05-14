@@ -7,7 +7,7 @@ export const useFetch = (url) => {
     const [config,setConfig] = useState(null)
     const [loading,setLoading] = useState(false)
 
-    const registerClient = useCallback((data,method)=>{
+    const handleDataClient = useCallback((data,method)=>{
         if(method === "POST"){
             setConfig({
                 "method":"POST",
@@ -55,6 +55,6 @@ export const useFetch = (url) => {
     },[url,method])
     
 
-    return {data,registerClient,loading}
+    return {data,handleDataClient,loading}
 }
 

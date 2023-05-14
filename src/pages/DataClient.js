@@ -26,12 +26,26 @@ const DataClient = () => {
   const [errorMessage,setErrorMessage] = useState("")
   const [successMessage,setSuccessMessage] = useState("")
 
-  
+
+  const getNewData = (e) => {
+    if(e.target.name === "newUrl"){
+      setNewUrl(e.target.value)
+    }else if(e.target.name === "newName"){
+      setNewName(e.target.value)
+    }else if(e.target.name === "newEmail"){
+      setNewEmail(e.target.value)
+    }else if(e.target.name === "newPassword"){
+      setNewPassword(e.target.value)
+    }else{
+      return
+    }
+  }
+ 
  
 
   const postNewData = async () =>{
 
-    
+
     const updatedDataClient = {
       id: Math.random(),
       urlImage:newUrl || userData.urlImage,
@@ -44,7 +58,6 @@ const DataClient = () => {
     
   }
   
-  
   const updateDataEdit = async () =>{
     await handleDataClient(userData.id,"DELETE")
     await postNewData()
@@ -54,26 +67,25 @@ const DataClient = () => {
       },1000)
   }
   
-  
   const handleEditData =  (e) => {
-  e.preventDefault()
+    e.preventDefault()
 
-  if(newName === userData.name && 
-    newPassword === userData.password && 
-    newEmail === userData.email){
-    setErrorMessage("Sem alterações nos dados")
-    return
-  }
+    if(newName === userData.name && 
+      newPassword === userData.password && 
+      newEmail === userData.email){
+      setErrorMessage("Sem alterações nos dados")
+      return
+    }
 
-  if(newName === "" &&  newPassword === "" && newEmail === "") return
-  
-  updateDataEdit()
-  
-  
-  setNewName('')
-  setNewEmail('')
-  setNewPassword('')
-}
+    if(newName === "" &&  newPassword === "" && newEmail === "") return
+    
+    updateDataEdit()
+    
+    
+    setNewName('')
+    setNewEmail('')
+    setNewPassword('')
+ }
 
    return (
     <>

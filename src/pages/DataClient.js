@@ -26,7 +26,6 @@ const DataClient = () => {
   const [errorMessage,setErrorMessage] = useState("")
   const [successMessage,setSuccessMessage] = useState("")
 
-
   const getNewData = (e) => {
     if(e.target.name === "newUrl"){
       setNewUrl(e.target.value)
@@ -41,10 +40,7 @@ const DataClient = () => {
     }
   }
  
- 
-
   const postNewData = async () =>{
-
 
     const updatedDataClient = {
       id: Math.random(),

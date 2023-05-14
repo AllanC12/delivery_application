@@ -1,5 +1,6 @@
 import { useContext,useState } from 'react'
 import { ContextUserData } from '../context/ContextUser'
+import { useNavigate } from 'react-router-dom'
 
 import {useFetch} from "../hooks/useFetch"
 
@@ -9,13 +10,16 @@ import Footer from '../components/Footer'
 import './sass_pages/DataClient.scss'
 
 const DataClient = () => {
+  const navigate = useNavigate()
+
   const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
 
   const urlClient = `http://localhost:3000/clients`
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
-  const {handleDataClient} = useFetch(urlClient)
+  const {handleDataClient,loading} = useFetch(urlClient)
 
+  const [newUrl,setNewUrl] = useState("")
   const [newName,setNewName] = useState("")
   const [newEmail,setNewEmail] = useState("")
   const [newPassword,setNewPassword] = useState("")
@@ -23,7 +27,9 @@ const DataClient = () => {
   const [successMessage,setSuccessMessage] = useState("")
 
   const getNewData = (e) => {
-    if(e.target.name === "newName"){
+    if(e.target.name === "newUrl"){
+      setNewUrl(e.target.value)
+    }else if(e.target.name === "newName"){
       setNewName(e.target.value)
     }else if(e.target.name === "newEmail"){
       setNewEmail(e.target.value)
@@ -35,8 +41,6 @@ const DataClient = () => {
   }
  
 
-
-  
   const validateDataEdit = () => {
     if(newName === userData.name && newPassword === userData.password && newEmail === userData.email){
       setErrorMessage("Sem alterações nos dados")
@@ -46,9 +50,25 @@ const DataClient = () => {
     }
   }
 
-  const updateDataEdit =(id) =>{
-    handleDataClient(id,"DELETE")
+  const postNewData = async () =>{
+    const updatedDataClient = {
+      id: Math.random(),
+      urlImage:newUrl,
+      name:newName,
+      email: newEmail,
+      password: newPassword
+    }
+    handleDataClient(updatedDataClient,"POST")
+  }
 
+  const updateDataEdit = async () =>{
+      await handleDataClient(userData.id,"DELETE")
+      await postNewData()
+
+    setTimeout(()=>{
+      navigate("/")
+    },1000)
+    alert("Refaça o login com os novos dados")
   }
   
 
@@ -56,7 +76,7 @@ const handleEditData = (e) => {
   e.preventDefault()
   
   validateDataEdit()
-  updateDataEdit(userData.id)
+  updateDataEdit()
   
 
   setNewName('')
@@ -74,6 +94,11 @@ const handleEditData = (e) => {
                           <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
 
                         <h4>ID de usuário: <span>{userData.id}</span></h4>
+                          <label>
+                            <h4>URL de perfil</h4>
+                            <input type="text"  onChange={getNewData}  value={newUrl} name="newUrl" placeholder="URL de perfil..." />
+                          </label>
+
                           <label>
                             <h4>Nome de usuário: <span>{userData.name}</span></h4>
                             <input type="text"  onChange={getNewData}  value={newName} name="newName" placeholder="Novo nome..." />
@@ -94,6 +119,8 @@ const handleEditData = (e) => {
                           {errorMessage && <p className="message-error">{errorMessage}</p>}
 
                           {successMessage && <p className="message-success">{successMessage}</p>}
+
+                          {loading && <p>Carregando...</p>}
                         </form>
 
              </div>

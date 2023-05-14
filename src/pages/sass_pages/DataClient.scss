@@ -1,7 +1,7 @@
 @import "../../sass_mixins/mixin.scss";
 
 .data_client{
-   width: 100vw;
+   width: 100%;
    height: 80vh;
    @include flex(center);
    position: relative;
@@ -35,6 +35,14 @@
                 object-fit: cover;
                 position: inherit;
              }
+        }
+
+        .inform_login{
+            padding: 20px 4%;
+
+            h4{
+                margin-bottom: 3vh;
+            }
         }
    }
 

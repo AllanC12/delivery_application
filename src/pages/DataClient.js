@@ -1,17 +1,20 @@
 import { useContext,useState } from 'react'
 import { ContextUserData } from '../context/ContextUser'
 
+import {useFetch} from "../hooks/useFetch"
+
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 import './sass_pages/DataClient.scss'
 
 const DataClient = () => {
+  const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
 
+  const urlClient = `http://localhost:3000/clients`
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
- 
-  const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
+  const {handleDataClient} = useFetch(urlClient)
 
   const [newName,setNewName] = useState("")
   const [newEmail,setNewEmail] = useState("")
@@ -30,15 +33,12 @@ const DataClient = () => {
       return
     }
   }
-
-  console.log(newName)
-
-  const updateDataEdit = () => {
-    
-  }
  
+
+
+  
   const validateDataEdit = () => {
-    if(newName === userData.name || newPassword === userData.password || newEmail === userData.email){
+    if(newName === userData.name && newPassword === userData.password && newEmail === userData.email){
       setErrorMessage("Sem alterações nos dados")
       return
     }else{
@@ -46,10 +46,18 @@ const DataClient = () => {
     }
   }
 
+  const updateDataEdit =(id) =>{
+    handleDataClient(id,"DELETE")
+
+  }
+  
 
 const handleEditData = (e) => {
   e.preventDefault()
+  
   validateDataEdit()
+  updateDataEdit(userData.id)
+  
 
   setNewName('')
   setNewEmail('')

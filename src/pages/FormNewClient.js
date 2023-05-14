@@ -26,7 +26,7 @@ const FormNewClient = () => {
      if(nameAddUser){
         if(passwordAddUser){
            if(passwordAddUser === confirmPasswordAddUser){
-              setSuccessMessage(`Cliente cadastrado!!! Hora de comer.`)
+              setSuccessMessage(`Cliente cadastrado. Hora de comer!`)
            }else{
             setErrorMessage(`As senhas precisam ser iguais`)
             return
@@ -49,7 +49,7 @@ const FormNewClient = () => {
      }
 
       
-       handleDataClient(clientData,"POST")
+     handleDataClient(clientData,"POST")
    
      
      setNameAddUser('')

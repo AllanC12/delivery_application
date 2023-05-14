@@ -1,13 +1,5 @@
 {
-  "clients": [
-    {
-      "id": 0.2037603723016661,
-      "name": "Allan",
-      "urlImage": "https://media.licdn.com/dms/image/D4D35AQFUUSSa8rQnoA/profile-framedphoto-shrink_200_200/0/1681777989391?e=1684627200&v=beta&t=WylKGyf-uJpxCX7S_NIJfdZYRKQv2AjpNQyJEejNX0Y",
-      "email": "allancandido89@gmail.com",
-      "password": "allan1212"
-    }
-  ],
+  "clients": [],
   "desserts": [
     {
       "id": 1,

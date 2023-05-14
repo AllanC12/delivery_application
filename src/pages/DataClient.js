@@ -19,18 +19,30 @@ const DataClient = () => {
         <Navbar/>
             <div className="data_client">
                 <img src={adressBanner} alt="banner"/>
-                 <div className="box_data_client">
-                    <div className="header_client">
-                       <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
-                    </div>
-                    <div className="inform_login">
-                       <h4>Nome de usuário: <span>{userData.name}</span></h4>
-                       <h4>Email: <span>{userData.email}</span></h4>
-                       <h4>Senha: <span>{userData.password}</span></h4>
-                       <h4>ID de usuário: <span>{userData.id}</span></h4>
-                    </div>
-                  </div>
-            </div>
+ -
+                      <form className="form_alter_data">
+                          <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
+
+                        <h4>ID de usuário: <span>{userData.id}</span></h4>
+                          <label>
+                            <h4>Nome de usuário: <span>{userData.name}</span></h4>
+                            <input type="text"  placeholder="Novo nome..." />
+                          </label>
+
+                          <label>
+                            <h4>Email: <span>{userData.email}</span></h4>
+                            <input type="email"  placeholder="Novo email..." />
+                          </label>
+                          
+                          <label>
+                            <h4>Senha: <span>{userData.password}</span></h4>
+                            <input type="text"  placeholder="Nova senha..." />
+                          </label>
+
+                          <input type="submit" value="Alterar dados" className="btn" />
+                        </form>
+
+             </div>
         <Footer/>
     </>
   )

@@ -26,6 +26,7 @@ const DataClient = () => {
   const [errorMessage,setErrorMessage] = useState("")
   const [successMessage,setSuccessMessage] = useState("")
 
+
   const getNewData = (e) => {
     if(e.target.name === "newUrl"){
       setNewUrl(e.target.value)
@@ -40,51 +41,55 @@ const DataClient = () => {
     }
   }
  
-
-  const validateDataEdit = () => {
-    if(newName === userData.name && newPassword === userData.password && newEmail === userData.email){
-      setErrorMessage("Sem alterações nos dados")
-      return
-    }else{
-      updateDataEdit()
-    }
-  }
+ 
 
   const postNewData = async () =>{
+
+    
     const updatedDataClient = {
       id: Math.random(),
-      urlImage:newUrl,
-      name:newName,
-      email: newEmail,
-      password: newPassword
+      urlImage:newUrl || userData.urlImage,
+      name:newName || userData.name,
+      email: newEmail || userData.email,
+      password: newPassword || userData.password
     }
+    
     handleDataClient(updatedDataClient,"POST")
+    
   }
-
+  
+  
   const updateDataEdit = async () =>{
-      await handleDataClient(userData.id,"DELETE")
-      await postNewData()
-
-    setTimeout(()=>{
-      navigate("/")
-    },1000)
-    alert("Refaça o login com os novos dados")
+    await handleDataClient(userData.id,"DELETE")
+    await postNewData()
+      
+      setTimeout(()=>{
+        navigate("/")
+      },1000)
   }
   
-
-const handleEditData = (e) => {
-  e.preventDefault()
   
-  validateDataEdit()
+  const handleEditData =  (e) => {
+  e.preventDefault()
+
+  if(newName === userData.name && 
+    newPassword === userData.password && 
+    newEmail === userData.email){
+    setErrorMessage("Sem alterações nos dados")
+    return
+  }
+
+  if(newName === "" &&  newPassword === "" && newEmail === "") return
+  
   updateDataEdit()
   
-
+  
   setNewName('')
   setNewEmail('')
   setNewPassword('')
 }
 
-  return (
+   return (
     <>
         <Navbar/>
             <div className="data_client">

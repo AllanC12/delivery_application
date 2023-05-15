@@ -7,3 +7,10 @@
     justify-content: $spacing;
     align-items: center;
 }
+
+@mixin position_absolute($value_left, $value_top, $value_right: none){
+    position: absolute;
+    left: $value_left;
+    top:$value_top;
+    right: $value_right;
+}

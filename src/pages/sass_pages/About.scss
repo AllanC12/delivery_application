@@ -13,9 +13,7 @@ main{
 
     .box_about{
         width: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
+        @include position_absolute(0,0,auto);
         @include display-flex;
         justify-content: space-around;
 

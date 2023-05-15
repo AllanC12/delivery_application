@@ -81,9 +81,7 @@
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
           border-right: 5px solid #ccc;
-          position: absolute;
-          right: 2%;
-          top: 5%;
+          @include position_absolute(auto,5%,2%);
         }
 
         .page_six {

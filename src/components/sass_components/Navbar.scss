@@ -42,10 +42,8 @@
     .about_client{
         width: 100%;
         max-width: 120px;
-        position: absolute;
-        right: 1%;
-        top: 3vh;
-
+        @include position_absolute(auto,3vh,1%);
+        
         .profile_client{
             width: 30px;
             height: 30px;

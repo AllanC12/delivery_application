@@ -6,6 +6,13 @@
       "name": "Allan",
       "email": "allancandido48@gmail.com",
       "password": "allan1234"
+    },
+    {
+      "id": 0.5888546629673406,
+      "name": "alfredo",
+      "urlImage": "",
+      "email": "alfredo12@gmail.com",
+      "password": "alfredo1212"
     }
   ],
   "desserts": [

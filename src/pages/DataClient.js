@@ -1,13 +1,14 @@
 import { useContext,useState } from 'react'
 import { ContextUserData } from '../context/ContextUser'
 import { useNavigate } from 'react-router-dom'
-
 import {useFetch} from "../hooks/useFetch"
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 import './sass_pages/DataClient.scss'
+
+import { FaUser } from "react-icons/fa";
 
 const DataClient = () => {
   const navigate = useNavigate()
@@ -90,7 +91,14 @@ const DataClient = () => {
                 <img src={adressBanner} alt="banner"/>
  -
                       <form onSubmit={handleEditData} >
-                          <img className="profile_photo" src={userData.urlImage} alt="Foto do perfil"/>
+                        
+                         {userData.urlImage ?
+                          <img className="profile_photo" 
+                          src={userData.urlImage} 
+                          alt="Foto do perfil"/> :
+                          <FaUser/>
+                          }
+                          
 
                         <h4>ID de usuário: <span>{userData.id}</span></h4>
                           <label>

@@ -14,3 +14,8 @@
     top:$value_top;
     right: $value_right;
 }
+
+@mixin max_dimensions{
+    width: 100%;
+    height: 100%;
+}

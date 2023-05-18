@@ -14,6 +14,10 @@ import dinner from "../images/img_animations/dinner.png";
 import potatoChips from "../images/img_animations/potato_chips.png";
 import sprite from "../images/img_animations/sprite.png";
 
+//icons
+import {FaEye} from "react-icons/fa"
+import {FaEyeSlash} from "react-icons/fa"
+
 const FormClient = ({ setConfirmUser }) => {
   const Navigate = useNavigate();
 
@@ -28,10 +32,23 @@ const FormClient = ({ setConfirmUser }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
   let userValidate;
   let userNameValidate;
   let userPasswordValidate;
+ 
+  const inputPassword = useRef()
+  const [visibilityPassword,setVisibilityPassword] = useState(false)
+
+  const showOrHidePassword = () => {
+    if(!visibilityPassword){
+      inputPassword.current.setAttribute("type","text")
+      setVisibilityPassword(true)
+    }else{
+      inputPassword.current.setAttribute("type","password")
+      setVisibilityPassword(false)
+
+    }
+  }
 
   const animationForm = () => {
     const imgsAnimation = divImgsFormAnimation.current.children;
@@ -102,6 +119,7 @@ const FormClient = ({ setConfirmUser }) => {
     <div className="banner_form_login">
       <form onSubmit={handleLogin} className="form_login">
         <h2>A fome bateu? Entre aqui e sirva-se</h2>
+
         <div ref={divImgsFormAnimation} className="form_animation">
           <img src={beer} alt="beer" />
           <img src={cheeseBurguer} alt="cheeseBurguer" />
@@ -110,6 +128,7 @@ const FormClient = ({ setConfirmUser }) => {
           <img src={potatoChips} alt="potatoChips" />
           <img src={sprite} alt="sprite" />
         </div>
+
         <label>
           <input
             onFocus={() => setErrorMessage("")}
@@ -127,7 +146,12 @@ const FormClient = ({ setConfirmUser }) => {
             placeholder="Insira sua senha..."
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            ref={inputPassword}
           />
+
+          <div onClick={showOrHidePassword} className="visibility-password">
+            {visibilityPassword ?  <FaEyeSlash/> : <FaEye/>}
+          </div>
         </label>
 
         {!loading && (

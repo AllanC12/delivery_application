@@ -14,6 +14,7 @@ import FormNewClient from "./pages/FormNewClient";
 import Menu from "./pages/Menu";
 import About from "./pages/About"
 import DataClient from "./pages/DataClient";
+import Contacts from "./pages/Contacts";
 
 function App() {
     const [confirmUser, setConfirmUser] = useState({})
@@ -31,6 +32,7 @@ function App() {
             <Route path="/cardapio" element={confirmedUser ? <Menu /> : <Navigate to="/"/>} />
             <Route path="/sobre" element={confirmedUser ? <About/> : <Navigate to="/"/>} />
             <Route path="/meus_dados" element={confirmedUser ? <DataClient/> : <Navigate to="/"/>} />
+            <Route path="/contatos" element={confirmedUser ? <Contacts/> : <Navigate to="/"/>} />
           </Routes>
         </BrowserRouter>
       </ContextUserDataProvider>

@@ -41,7 +41,7 @@ const FormNewClient = () => {
      }
    
      const clientData = {
-       id: Math.random(),
+       id: Math.floor(Math.random() * 10000),
        name:nameAddUser,
        urlImage: urlPhotoUser,
        email:emailAddUser,

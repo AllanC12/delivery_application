@@ -22,13 +22,14 @@
    label{
 
       .visibility-password{
+       width: 18px;
+       height: 18px;
         position: relative;
         top: -4vh;
-        left: 7vw;
+        left: 16vw;
 
           svg{
-            width: 18px;
-            height: 18px;
+            @include max_dimensions;
             cursor: pointer;
             color: #3c3e42;
           }

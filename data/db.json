@@ -1,18 +1,11 @@
 {
   "clients": [
     {
-      "id": 0.5685609256080726,
-      "urlImage": "https://media.licdn.com/dms/image/D4D35AQFUUSSa8rQnoA/profile-framedphoto-shrink_200_200/0/1681777989391?e=1684684800&v=beta&t=KDXRT6b_Cr12pwC7f-AFHlM-eMr8foW342wOPrIFjDw",
+      "id": 4371,
       "name": "Allan",
-      "email": "allancandido48@gmail.com",
-      "password": "allan1234"
-    },
-    {
-      "id": 0.5888546629673406,
-      "name": "alfredo",
       "urlImage": "",
-      "email": "alfredo12@gmail.com",
-      "password": "alfredo1212"
+      "email": "allan12@gmail.com",
+      "password": "allan1212"
     }
   ],
   "desserts": [

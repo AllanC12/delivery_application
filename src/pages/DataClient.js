@@ -99,8 +99,6 @@ const DataClient = () => {
                           <FaUser/>
                           }
                           
-
-                        <h4>ID de usuário: <span>{userData.id}</span></h4>
                           <label>
                             <h4>URL de perfil</h4>
                             <input type="text"  onChange={getNewData}  value={newUrl} name="newUrl" placeholder="URL de perfil..." />

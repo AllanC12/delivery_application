@@ -1,0 +1,12 @@
+@import "../../sass_mixins/mixin.scss";
+
+.contacts{
+    @include max_dimensions;
+  
+    .contacts_banner{
+        min-height: 80vh;
+        background-image: url("https://www.carpemundi.com.br/wp-content/uploads/2020/08/restaurantes-melhores-vistas-sao-paulo.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+     }
+}

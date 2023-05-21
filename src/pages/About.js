@@ -4,19 +4,17 @@ import Navbar from "../components/Navbar.js";
 import Footer from "../components/Footer.js";
 
 const About = () => {
-  const adressBanner = "https://vinicolaaraucaria.com.br/wp-content/uploads/2020/06/interna_restaurante-1-1400x700.jpg";
-
+ 
   const adressProfilePhoto = ["https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png",
-"https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/08/site-vacinacao-26-anos.png",
-"https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/08/ed5d55c8-3966-4114-8ce4-9b9d0d25effd.png"
-  ]
+  "https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/08/site-vacinacao-26-anos.png",
+  "https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/08/ed5d55c8-3966-4114-8ce4-9b9d0d25effd.png"
+    ]
 
   return (
     <div>
       <Navbar />
       <main>
-        <img className="banner_about" src={adressBanner} />
-        <div className="box_about">
+         <div className="box_about">
 
           <div className="about box_single">
             <h2>Um pouco sobre nós</h2>

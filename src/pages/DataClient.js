@@ -13,8 +13,6 @@ import { FaUser } from "react-icons/fa";
 const DataClient = () => {
   const navigate = useNavigate()
 
-  const adressBanner = "https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif"
-
   const urlClient = `http://localhost:3000/clients`
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
@@ -88,9 +86,8 @@ const DataClient = () => {
     <>
         <Navbar/>
             <div className="data_client">
-                <img src={adressBanner} alt="banner"/>
  -
-                      <form onSubmit={handleEditData} >
+                       <form onSubmit={handleEditData} >
                         
                          {userData.urlImage ?
                           <img className="profile_photo" 

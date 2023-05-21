@@ -2,15 +2,11 @@
 
 .data_client{
    width: 100%;
-   height: 80vh;
+   height: 79vh;
    @include flex(center);
-   position: relative;
-
-    img{
-        @include max_dimensions;
-        @include position_absolute(0,0,auto);
-        object-fit: cover;
-    }
+   background-image: url("https://beminparis.com/wp-content/uploads/2018/02/Georges_2%E2%94%AC%C2%AEGroupBeaumarly.gif");
+   background-size: cover;
+   background-position: center;
 
             img.profile_photo{
                 margin: 5px auto;

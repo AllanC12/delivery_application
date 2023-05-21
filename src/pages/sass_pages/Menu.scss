@@ -1,11 +1,14 @@
 @import "../../sass_mixins/mixin.scss";
 
 .menu_element {
-  width: 100%;
-  min-height: 85vh;
+    height: 79vh;
 
   .banner_menu {
     @include max_dimensions;
+
+    background-image: url("https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg");
+    background-size: cover;
+    background-position: center;
 
     img {
       @include max_dimensions;

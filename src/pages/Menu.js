@@ -16,9 +16,6 @@ import before_page from "../images/arrows/before-page.png";
 import next_page from "../images/arrows/next-page.png";
 
 const Menu = () => {
-  //Endereço do banner do componente menu
-  const adressBanner =
-    "https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg";
 
   //Referencias para todas as páginas do cardápio
   const pageOne = useRef();
@@ -114,8 +111,7 @@ const Menu = () => {
     <div className="menu_element">
       <Navbar />
       <div className="banner_menu">
-        <img src={adressBanner} />
-        <ModalOrder setOrders={setOrders} orders={orders} />
+         <ModalOrder setOrders={setOrders} orders={orders} />
 
         <div className="menu">
           

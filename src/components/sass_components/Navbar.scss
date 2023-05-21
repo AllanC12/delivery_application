@@ -19,7 +19,6 @@
      }
 
      .menu{
-        text-align: center;
         padding: 10px 0;
         position: absolute;
         background-color: #000;
@@ -28,6 +27,15 @@
 
         ul{
             li{
+                @include flex(center);
+
+                svg{
+                    width: 1em;
+                    height: 1em;
+                    color: white;
+                    margin-right: 8px;
+                }
+                
                 transition: .5s;
                 padding: 5px 0;
             }
@@ -93,9 +101,7 @@
             margin-top: 10px;
             z-index: 2;
 
-            li{
-                margin-bottom: 5px;
-            }
+
             
         }
 

@@ -1,12 +1,25 @@
-<h2>OBS: Este projeto ainda está em desenvolvimento, mas como ele ja está em um estágio interessante acabei logo
- destacando pra evolução dele poder ser acompanhada.</h2>
 <h4>
    Para executar este projeto, primeiro é preciso rodar o comando "npm run server" para habilitar o servidor json
- que armazena as informações principais. Em seguida abra outro terminal e execute o comando "npm start" em
- uma porta diferente da 3000 (pois é nesta que o json server roda).<br/>
-   A ideia é fazer com que o usuário se sinta em um restaurante online. Após seus pedidos serem definidos
-   e ele executar o pedido é encaminhado para o whatsapp do estabelecimento com tudo ja preenchido e definido.
+ que armazena as informações principais e serve como backend. Em seguida abra outro terminal e execute o comando "npm start" confirme a porta diferente da 3000 (pois é nesta que o json server roda).<br/>
+   A ideia do projeto é fazer com que o usuário se sinta em um restaurante online. Após seus pedidos serem definidos
+   e o usuário executar o pedido , ele é encaminhado para o whatsapp do estabelecimento com a mensagem de pedido ja montada no campo de mensagem confirmando tambem o valor total do pedido. Basta apenas que ele aperte enviar.
 </h4>
+
+## Tecnologias
+
+_ ReactJS </br>
+_ CSS </br>
+_ SASS </br>
+
+## O que coloquei em prática ? </br>
+
+Ao executar este projeto apliquei várias técnicas e conceitos do ReactJS como: </br>
+_React Hooks </br>
+_React Router </br>
+_Context API</br>
+_Manipulação de estado do usuário</br>
+_Reaproveitamento de componentes</br>
+_State lift. </br>
 
 <div allign="center">
    <img src="https://user-images.githubusercontent.com/112294367/235500164-9b347327-28ad-4402-bfbe-40376f6db256.png" />

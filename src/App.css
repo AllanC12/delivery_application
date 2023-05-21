@@ -15,10 +15,17 @@ form {
   z-index: 1;
 }
 
-form a {
+ul{
+  list-style-type: none;
+}
+
+a{
   text-decoration: none;
   color: #999491;
   font-size: 1em;
+}
+
+form a {
   display: block;
   margin-top: 20px;
 }

@@ -30,6 +30,15 @@ export const useFetch = (url) => {
 
         setMethod("DELETE")
         setIdClient(data)
+       }else if(method === "PUT"){
+        setConfig({
+            "method": "PUT",
+            "headers": {
+                "content-type":"application/json"
+            },
+            "body": JSON.stringify(data)
+        })
+        setMethod("PUT")
        }
     })
 
@@ -75,6 +84,11 @@ export const useFetch = (url) => {
                 setCallFetch(response)
             setLoading(false)
 
+        }else if(method === "PUT"){
+            const urlUpdateClient = `${url}/${idClient}`
+            const respUpClient = await fetch(urlUpdateClient,config)
+            response = await respUpClient.json()
+            setCallFetch(response)
         }
 
      }

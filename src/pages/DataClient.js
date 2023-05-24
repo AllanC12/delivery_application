@@ -54,7 +54,7 @@ const DataClient = () => {
   }
   
   const updateDataEdit = async () =>{
-    await handleDataClient(userData.id,"DELETE")
+    // await handleDataClient(userData.id,"DELETE")
     await postNewData()
       
       setTimeout(()=>{

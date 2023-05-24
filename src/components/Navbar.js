@@ -65,12 +65,12 @@ const Navbar = () => {
 
       <div className="about_client">
         <div
-          ref={profilePhotoRef}
           onMouseEnter={(e) => handleMenuClient(e.target)}
           className="profile_client"
         >
           {imageUserProfile !== "" ? (
-            <img src={imageUserProfile} />
+            <img  ref={profilePhotoRef}
+            src={imageUserProfile} />
           ) : (
             <FaUser />
           )}

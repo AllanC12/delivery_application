@@ -13,9 +13,11 @@ import { FaUser } from "react-icons/fa";
 const DataClient = () => {
   const navigate = useNavigate()
 
-  const urlClient = `http://localhost:3000/clients`
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
+  console.log(userData)
+  const userId = userData.id
+  const urlClient = `http://localhost:3000/clients/${userId}`
   const {handleDataClient,loading} = useFetch(urlClient)
 
   const [newUrl,setNewUrl] = useState("")
@@ -43,23 +45,22 @@ const DataClient = () => {
 
     const updatedDataClient = {
       id: Math.random(),
-      urlImage:newUrl || userData.urlImage,
-      name:newName || userData.name,
-      email: newEmail || userData.email,
-      password: newPassword || userData.password
+      urlImage:newUrl === "" ? userData.urlImage : newUrl,
+      name:newName === "" ?  userData.name : newName,
+      email: newEmail === "" ? userData.email : newEmail,
+      password: newPassword === "" ? userData.password : newPassword
     }
     
-    handleDataClient(updatedDataClient,"POST")
+    handleDataClient(updatedDataClient,"PUT")
     
   }
   
   const updateDataEdit = async () =>{
-    await handleDataClient(userData.id,"DELETE")
-    await postNewData()
+    await postNewData() 
       
-      setTimeout(()=>{
-        navigate("/")
-      },1000)
+      // setTimeout(()=>{
+      //   navigate("/")
+      // },1000)
   }
   
   const handleEditData =  (e) => {
@@ -89,7 +90,7 @@ const DataClient = () => {
  -
                        <form onSubmit={handleEditData} >
                         
-                         {userData.urlImage ?
+                         {userData.urlImage !== "" ?
                           <img className="profile_photo" 
                           src={userData.urlImage} 
                           alt="Foto do perfil"/> :

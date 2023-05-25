@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 
 export const useFetch = (url) => {
+  
   const [data, setData] = useState(null);
   const [method, setMethod] = useState(null);
   const [callFetch, setCallFetch] = useState(null);
@@ -12,7 +13,6 @@ export const useFetch = (url) => {
     const getDataClient = async () => {
       try {
         setLoading(true);
-            console.log('aqui')
             const res = await fetch(url);
             const response = await res.json();
             setData(response);
@@ -46,6 +46,7 @@ export const useFetch = (url) => {
 
       setMethod("DELETE");
       setIdClient(data);
+
     } else if (method === "PUT") {
       setConfig({
         method: "PUT",
@@ -80,11 +81,9 @@ export const useFetch = (url) => {
             setCallFetch(response);
         setLoading(false);
       } else if (method === "PUT") {
-        setLoading(true);
             const respUpClient = await fetch(url, config);
             response = await respUpClient.json();
             setCallFetch(response);
-        setLoading(false);
       }
     };
 

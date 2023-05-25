@@ -15,9 +15,12 @@ const DataClient = () => {
 
   const userDataContext = useContext(ContextUserData)
   const userData = userDataContext.value.confirmUser.userValidate[0]
-  console.log(userData)
   const userId = userData.id
   const urlClient = `http://localhost:3000/clients/${userId}`
+
+  const {data: client} = useFetch(urlClient)
+  console.log(client)
+
   const {handleDataClient,loading} = useFetch(urlClient)
 
   const [newUrl,setNewUrl] = useState("")
@@ -87,44 +90,44 @@ const DataClient = () => {
     <>
         <Navbar/>
             <div className="data_client">
- -
-                       <form onSubmit={handleEditData} >
-                        
-                         {userData.urlImage !== "" ?
-                          <img className="profile_photo" 
-                          src={userData.urlImage} 
-                          alt="Foto do perfil"/> :
-                          <FaUser/>
-                          }
-                          
-                          <label>
-                            <h4>URL de perfil</h4>
-                            <input type="text"  onChange={getNewData}  value={newUrl} name="newUrl" placeholder="URL de perfil..." />
-                          </label>
 
-                          <label>
-                            <h4>Nome de usuário: <span>{userData.name}</span></h4>
-                            <input type="text"  onChange={getNewData}  value={newName} name="newName" placeholder="Novo nome..." />
-                          </label>
+              <form onSubmit={handleEditData} >
+              
+                {userData.urlImage !== "" ?
+                  <img className="profile_photo" 
+                  src={userData.urlImage} 
+                  alt="Foto do perfil"/> :
+                  <FaUser/>
+                }
+                
+                <label>
+                  <h4>URL de perfil</h4>
+                  <input type="text"  onChange={getNewData}  value={newUrl} name="newUrl" placeholder="URL de perfil..." />
+                </label>
 
-                          <label>
-                            <h4>Email: <span>{userData.email}</span></h4>
-                            <input type="email"  onChange={getNewData} value={newEmail} name="newEmail" placeholder="Novo email..." />
-                          </label>
-                          
-                          <label>
-                            <h4>Senha: <span>{userData.password}</span></h4>
-                            <input type="text"  onChange={getNewData} value={newPassword} name="newPassword" placeholder="Nova senha..." />
-                          </label>
+                <label>
+                  <h4>Nome de usuário: <span>{userData.name}</span></h4>
+                  <input type="text"  onChange={getNewData}  value={newName} name="newName" placeholder="Novo nome..." />
+                </label>
 
-                          <input type="submit" value="Alterar dados" className="btn" />
+                <label>
+                  <h4>Email: <span>{userData.email}</span></h4>
+                  <input type="email"  onChange={getNewData} value={newEmail} name="newEmail" placeholder="Novo email..." />
+                </label>
+                
+                <label>
+                  <h4>Senha: <span>{userData.password}</span></h4>
+                  <input type="text"  onChange={getNewData} value={newPassword} name="newPassword" placeholder="Nova senha..." />
+                </label>
 
-                          {errorMessage && <p className="message-error">{errorMessage}</p>}
+                <input type="submit" value="Alterar dados" className="btn" />
 
-                          {successMessage && <p className="message-success">{successMessage}</p>}
+                {errorMessage && <p className="message-error">{errorMessage}</p>}
 
-                          {loading && <p>Carregando...</p>}
-                        </form>
+                {successMessage && <p className="message-success">{successMessage}</p>}
+
+                {loading && <p>Carregando...</p>}
+              </form>
 
              </div>
         <Footer/>

@@ -4,7 +4,8 @@ import { NavLink } from "react-router-dom";
 
 import logo from "../images/img_animations/logo.png";
 
-import { FaUser, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { FaUser, FaWhatsapp, FaEnvelope, FaHamburger } from "react-icons/fa";
+import {FiMenu} from "react-icons/fi"
 
 import { ContextUserData } from "../context/ContextUser";
 import { useContext, useRef } from "react";
@@ -37,9 +38,11 @@ const Navbar = () => {
 
   return (
     <nav className="navbar" onMouseLeave={(e) => handleMenuClient(e.target)}>
+
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
+
       <div className="menu_desktop">
         <ul>
           <li>
@@ -61,6 +64,33 @@ const Navbar = () => {
             </span>
           </li>
         </ul>
+      </div>
+
+
+      <div className="menu_mobile">
+        <FiMenu/>
+         
+        <ul>
+          <li>
+            <NavLink to="/inicio">Início</NavLink>
+          </li>
+          <li>
+            <NavLink to="/cardapio">Cardápio</NavLink>
+          </li>
+          <li>
+            <NavLink to="/sobre">Nossa história</NavLink>
+          </li>
+
+          <li>
+            <span
+              onMouseEnter={(e) => handleMenuClient(e.target)}
+              ref={linkContactRef}
+            >
+              Fale com a gente
+            </span>
+          </li>
+        </ul>
+
       </div>
 
       <div className="about_client">

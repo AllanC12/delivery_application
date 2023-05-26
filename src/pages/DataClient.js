@@ -1,7 +1,7 @@
 import { useContext,useState } from 'react'
 import { ContextUserData } from '../context/ContextUser'
 import { useNavigate } from 'react-router-dom'
-import {useFetch} from "../hooks/useFetch"
+import { useFetch } from "../hooks/useFetch"
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -18,8 +18,6 @@ const DataClient = () => {
   const userId = userData.id
   const urlClient = `http://localhost:3000/clients/${userId}`
 
-  const {data: client} = useFetch(urlClient)
-  console.log(client)
 
   const {handleDataClient,loading} = useFetch(urlClient)
 
@@ -57,13 +55,18 @@ const DataClient = () => {
     handleDataClient(updatedDataClient,"PUT")
     
   }
+
+  const redirectUser = () => {
+    setSuccessMessage("Refaça o login com os novos dados...")
+       setTimeout(()=>{
+        navigate("/")
+        window.location.reload()
+      },1000)
+  }
   
   const updateDataEdit = async () =>{
     await postNewData() 
-      
-      // setTimeout(()=>{
-      //   navigate("/")
-      // },1000)
+    redirectUser()
   }
   
   const handleEditData =  (e) => {

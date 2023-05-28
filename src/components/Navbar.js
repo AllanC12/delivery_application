@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import logo from "../images/img_animations/logo.png";
 
-import { FaUser, FaWhatsapp, FaEnvelope, FaHamburger } from "react-icons/fa";
+import { FaUser, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import {FiMenu} from "react-icons/fi"
 
 import { ContextUserData } from "../context/ContextUser";
@@ -19,6 +19,8 @@ const Navbar = () => {
   const menuContactRef = useRef();
   const menuClientRef = useRef();
   const linkContactRef = useRef();
+  const iconMenuMobileRef = useRef()
+  const menuMobileRef = useRef()
 
   const handleMenuClient = (target) => {
     const profilePhoto = profilePhotoRef.current;
@@ -27,14 +29,28 @@ const Navbar = () => {
     const linkContact = linkContactRef.current;
 
     if (target === profilePhoto) {
-      menuClient.style.setProperty("opacity", "1");
+      menuClient.style.setProperty("display", "block");
+      console.log("perfil")
+
     } else if (target === linkContact) {
-      menuContact.style.setProperty("opacity", "1");
-    } else {
-      menuContact.style.setProperty("opacity", "0");
-      menuClient.style.setProperty("opacity", "0");
+      menuContact.style.setProperty("display", "block");
+      console.log("contato")
+     } else {
+      menuContact.style.setProperty("display", "none");
+      menuClient.style.setProperty("display", "none");
     }
   };
+
+  const handleMenuMobile = (target) =>{
+    let statusVisiblity = false
+    const iconMenu = iconMenuMobileRef.current
+    const menuMobile = menuMobileRef.current
+
+    // if(target === iconMenu){
+      menuMobile.style.setProperty("right","0")
+       statusVisiblity = true
+    // }
+  }
 
   return (
     <nav className="navbar" onMouseLeave={(e) => handleMenuClient(e.target)}>
@@ -68,28 +84,32 @@ const Navbar = () => {
 
 
       <div className="menu_mobile">
-        <FiMenu/>
+        <div  ref={iconMenuMobileRef} onClick={(e) => handleMenuMobile(e.target)} className="icon_menu">
+          <FiMenu /> 
+        </div>
          
+      <nav ref={menuMobileRef}>
         <ul>
-          <li>
-            <NavLink to="/inicio">Início</NavLink>
-          </li>
-          <li>
-            <NavLink to="/cardapio">Cardápio</NavLink>
-          </li>
-          <li>
-            <NavLink to="/sobre">Nossa história</NavLink>
-          </li>
+            <li>
+              <NavLink to="/inicio">Início</NavLink>
+            </li>
+            <li>
+              <NavLink to="/cardapio">Cardápio</NavLink>
+            </li>
+            <li>
+              <NavLink to="/sobre">Nossa história</NavLink>
+            </li>
 
-          <li>
-            <span
-              onMouseEnter={(e) => handleMenuClient(e.target)}
-              ref={linkContactRef}
-            >
-              Fale com a gente
-            </span>
-          </li>
-        </ul>
+            <li>
+              <span
+
+              >
+                Fale com a gente
+              </span>
+            </li>
+          </ul>
+      </nav>
+
 
       </div>
 

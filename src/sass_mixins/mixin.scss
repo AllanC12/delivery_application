@@ -19,3 +19,8 @@
     width: 100%;
     height: 100%;
 }
+
+@mixin hover_effect{
+    background-color: #302c2c;
+    transition: .5s;
+}

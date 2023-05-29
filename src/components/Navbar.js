@@ -22,16 +22,21 @@ const Navbar = () => {
   const linkContactRef = useRef();
   const iconMenuMobileRef = useRef();
   const menuMobileRef = useRef();
-  let visibilityMenu = false;
+  let visibilityMenu = true;
 
-  const handleMenuClient = (target) => {
+  const handleMenuClient = (target,visibilityMenu) => {
     const profilePhoto = profilePhotoRef.current;
     const menuContact = menuContactRef.current;
     const menuClient = menuClientRef.current;
     const linkContact = linkContactRef.current;
 
-    if (target === profilePhoto) menuClient.style.setProperty("display", "block");
-    if (target === linkContact) menuContact.style.setProperty("display", "block");
+    if (target === linkContact) menuContact.style.setProperty("display", "block");       
+     if (target.parentNode === profilePhoto) menuClient.style.setProperty("display", "block"); 
+
+    if(!visibilityMenu){
+      menuContact.style.setProperty("display", "none")
+      menuClient.style.setProperty("display", "none")
+    }
 
 
    };
@@ -66,10 +71,10 @@ const Navbar = () => {
               <NavLink to="/sobre">Nossa história</NavLink>
             </li>
 
-            <li ref={linkContactRef} onMouseEnter={(e) => handleMenuClient(e.target)}>
+            <li ref={linkContactRef} onMouseEnter={(e) => handleMenuClient(e.target,true)}>
               Fale com a gente
 
-              <div ref={menuContactRef}  onMouseLeave={(e) => handleMenuClient(e.target)} className="menu_contact menu">
+              <div ref={menuContactRef}  onMouseLeave={(e) => handleMenuClient(e.target,false)} className="menu_contact menu">
 
                 <div className="container_contact">
                   <FaWhatsapp />
@@ -95,15 +100,15 @@ const Navbar = () => {
 
       <div className="about_client">
         
-        <div ref={profilePhotoRef} className="photo_client">
+        <div ref={profilePhotoRef} onMouseEnter={(e) => handleMenuClient(e.target,true)} className="photo_client">
           {imageUserProfile !== "" ? (
-            <img ref={profilePhotoRef} src={imageUserProfile} />
+            <img src={imageUserProfile} />
           ) : (
             <FaUser />
           )}
         </div>
 
-        <div ref={menuClientRef} className="menu_data_client menu">
+        <div ref={menuClientRef} onMouseLeave={(e)=> handleMenuClient(e.target,false)} className="menu_data_client menu">
            <ul>
               <li>
                 <NavLink to="/meus_dados">Meus dados</NavLink>
@@ -116,36 +121,6 @@ const Navbar = () => {
 
       </div>
 
-      {/* <div className="menu_mobile">
-        <div  ref={iconMenuMobileRef} onClick={(e) => handleMenuMobile(e.target)} className="icon_menu">
-          {!visibilityMenu ? <FiMenu /> : <GrClose/>}           
-        </div>
-         
-        <nav ref={menuMobileRef}>
-          <ul>
-              <li>
-                <NavLink to="/inicio">Início</NavLink>
-              </li>
-              <li>
-                <NavLink to="/cardapio">Cardápio</NavLink>
-              </li>
-              <li>
-                <NavLink to="/sobre">Nossa história</NavLink>
-              </li>
-
-              <li>
-                   Fale com a gente 
-               </li>
-            </ul>
-      </nav>
-
-
-      </div> */}
-
-      {/* <nav ref={menuClientRef} className="menu_data_client menu">
-
-        </nav>
-      </div> */}
     </nav>
   );
 };

@@ -4,18 +4,21 @@ import { NavLink } from "react-router-dom";
 
 import logo from "../images/img_animations/logo.png";
 
-import { FaUser, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import { FiMenu } from "react-icons/fi";
-import { GrClose } from "react-icons/gr";
+import {
+  FaWhatsapp,
+  FaEnvelope,
+  FaHome,
+  FaBookOpen,
+  FaBuilding,
+} from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
 
-import { ContextUserData } from "../context/ContextUser";
 import { useContext, useRef } from "react";
 
-const Navbar = () => {
-  const userDataContext = useContext(ContextUserData);
-  const imageUserProfile = userDataContext.value.confirmUser.userValidate[0].urlImage;
+import ProfileClient from "./ProfileClient";
 
-  const navbarRef = useRef()
+const Navbar = () => {
+  const navbarRef = useRef();
   const profilePhotoRef = useRef();
   const menuContactRef = useRef();
   const menuClientRef = useRef();
@@ -24,22 +27,19 @@ const Navbar = () => {
   const menuMobileRef = useRef();
   let visibilityMenu = true;
 
-  const handleMenuClient = (target,visibilityMenu) => {
+  const handleMenuClient = (target, visibilityMenu) => {
     const profilePhoto = profilePhotoRef.current;
     const menuContact = menuContactRef.current;
     const menuClient = menuClientRef.current;
     const linkContact = linkContactRef.current;
 
-    if (target === linkContact) menuContact.style.setProperty("display", "block");       
-     if (target.parentNode === profilePhoto) menuClient.style.setProperty("display", "block"); 
+    if (target === linkContact)
+      menuContact.style.setProperty("display", "block");
 
-    if(!visibilityMenu){
-      menuContact.style.setProperty("display", "none")
-      menuClient.style.setProperty("display", "none")
+    if (!visibilityMenu) {
+      menuContact.style.setProperty("display", "none");
     }
-
-
-   };
+  };
 
   const handleMenuMobile = (target) => {
     const iconMenu = iconMenuMobileRef.current;
@@ -53,7 +53,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav ref={navbarRef} className="navbar" >
+    <nav ref={navbarRef} className="navbar">
       <div className="logo">
         <img src={logo} alt="logo" />
       </div>
@@ -71,11 +71,16 @@ const Navbar = () => {
               <NavLink to="/sobre">Nossa história</NavLink>
             </li>
 
-            <li ref={linkContactRef} onMouseEnter={(e) => handleMenuClient(e.target,true)}>
+            <li
+              ref={linkContactRef}
+              onMouseEnter={(e) => handleMenuClient(e.target, true)}
+            >
               Fale com a gente
-
-              <div ref={menuContactRef}  onMouseLeave={(e) => handleMenuClient(e.target,false)} className="menu_contact menu">
-
+              <div
+                ref={menuContactRef}
+                onMouseLeave={(e) => handleMenuClient(e.target, false)}
+                className="menu_contact menu"
+              >
                 <div className="container_contact">
                   <FaWhatsapp />
                   <a target="_blank" href="http://wa.me/37988551832">
@@ -89,38 +94,36 @@ const Navbar = () => {
                     Email
                   </a>
                 </div>
-
               </div>
             </li>
-
           </ul>
         </div>
 
+        <ProfileClient />
       </div>
 
-      <div className="about_client">
-        
-        <div ref={profilePhotoRef} onMouseEnter={(e) => handleMenuClient(e.target,true)} className="photo_client">
-          {imageUserProfile !== "" ? (
-            <img src={imageUserProfile} />
-          ) : (
-            <FaUser />
-          )}
-        </div>
-
-        <div ref={menuClientRef} onMouseLeave={(e)=> handleMenuClient(e.target,false)} className="menu_data_client menu">
-           <ul>
-              <li>
-                <NavLink to="/meus_dados">Meus dados</NavLink>
-              </li>
-              <li>
-                <NavLink to="/">Sair</NavLink>
-              </li>
-            </ul>
-        </div>
-
+      <div className="menu_mobile">
+        <ul>
+          <li>
+            <ProfileClient />
+          </li>
+          <li>
+            <NavLink to="/inicio">
+              <FaHome />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/cardapio">
+              <FaBookOpen />
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/sobre">
+              <FaBuilding />
+            </NavLink>
+          </li>
+        </ul>
       </div>
-
     </nav>
   );
 };

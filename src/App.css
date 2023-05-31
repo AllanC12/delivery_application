@@ -57,11 +57,8 @@ input::placeholder {
 }
 
 .active {
-  padding: 5px 10px;
-  background-color: #e65f1c;
-  color: #000;
-  border-radius: 5px;
-}
+    border-bottom: 2px solid #c75218;;
+ }
 
 .btn , .btn_order{
   border-radius: 5px;

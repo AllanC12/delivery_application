@@ -1,0 +1,28 @@
+@import "../../sass_mixins/mixin.scss";
+
+.about_client{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+
+    .photo_client{
+        @include max_dimensions;
+        @include flex(center);
+         background-color: #ccc;
+         border-radius: 50%;
+         cursor: pointer;
+
+         a{
+            @include max_dimensions;
+
+             img{
+                border-radius: 50%;
+                @include max_dimensions;
+               }
+         }
+
+
+    }
+    
+}

@@ -1,144 +1,147 @@
 @import "../../sass_mixins/mixin.scss";
 
-.navbar{
-    
+.navbar {
+  @include flex(space-between);
+  width: 100%;
+  background-color: #000;
+  padding: 10px 2%;
+  cursor: pointer;
+
+  .container_menu {
     width: 100%;
+    @include flex(flex-end);
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+
+    img {
+      @include max_dimensions;
+    }
+  }
+
+  .menu {
+    position: absolute;
     background-color: #000;
-    position: relative;
-    padding: 10px 2%;
-    @include flex(space-between);
-    cursor: pointer;
+    display: none;
 
-    .container_menu{
-        width: 100%;
-         @include flex(flex-end);
+    ul {
+      li {
+        @include flex(center);
+
+        svg {
+          width: 1em;
+          height: 1em;
+          color: white;
+          margin-right: 8px;
+        }
+
+        transition: 0.5s;
+        padding: 5px 0;
+      }
     }
 
+    li:hover {
+      @include hover_effect;
+    }
+  }
 
-    .logo{
-        width: 40px;
-        height: 40px;
-         
-        img{
-         @include max_dimensions;
-        }
-     }
+  a,
+  li {
+    color: white;
+    font-size: 1em;
+  }
 
-     .menu{
-        position: absolute;
-        background-color: #000;
-        display: none;
+  .menu_desktop {
+    width: 100%;
+    max-width: 450px;
+    margin-right: 8%;
 
-        ul{
-            li{
-                @include flex(center);  
-                
-                svg{
-                    width: 1em;
-                    height: 1em;
-                    color: white;
-                    margin-right: 8px;
-                }
-                
-                transition: .5s;
-                padding: 5px 0;
-            }
-        }
-        
-        li:hover{
-            @include hover_effect;
-        }
-     }
+    ul {
+      @include flex(flex-end);
+      gap: 10px;
 
-     a,li{
-        color: white;
-        font-size: 1em;
-        
-     }
+      li {
+        margin-right: 15px;
+      }
+    }
+  }
 
-    .menu_desktop{
-        width: 100%;
-        max-width: 450px;
-        margin-right: 8%;
- 
-        ul{
-            @include flex(flex-end);
-            gap: 10px;
+  .menu_contact {
+    z-index: 5;
+    top: 50px;
 
-            li{
-              margin-right: 15px;
-
-            }
-
-        }
+    .container_contact {
+      @include flex(center);
+      margin-bottom: 5px;
+      padding: 5px;
+      gap: 5px;
     }
 
-    .menu_contact{
-        z-index: 5;
-        top: 50px;
-        
-        .container_contact{
-            @include flex(center);
-            margin-bottom: 5px;
-            padding: 5px;
-            gap: 5px;
-        }
-        
-        .container_contact:hover{
-            @include hover_effect;
-        }
-
+    .container_contact:hover {
+      @include hover_effect;
     }
+  }
 
+  .icon_menu_mobile{
+    opacity: 0;
+    width: 2.3em;
+    height: 2.3em;
+    color: #fff;
+    z-index: 2;
+  }
 
+  .menu_mobile {
+    @include max_dimensions;
+    visibility: hidden;
+    background-color: #000;
+    padding: 20px 5px;
+    max-width: 60px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 3;
 
-    .menu_mobile{
-       @include max_dimensions;
-       background-color: #000;
-       padding: 20px 5px;
-       max-width: 60px;
-       position: fixed;
-       right: 0;
-       top: 0;
-       z-index: 3;
-       
-       ul{
-        @include max_dimensions;
-           @include flex(flex-start);
-           gap: 40px;
-           flex-direction: column;
+    ul {
+      @include max_dimensions;
+      @include flex(flex-start);
+      gap: 40px;
+      flex-direction: column;
 
-           li{
-            margin-top: 40px;
-            svg{
-                width: 1.5em;
-                height: 1.5em;
-            }
-           }
+      li {
+        margin-top: 40px;
+        svg {
+          width: 1.5em;
+          height: 1.5em;
         }
-       
-   }
-
-    .footer{
-        text-align: center;
-        width: 100%;
-        padding: 20px;
-        color: #ccc;
-        background-color: #000;
-
-
-        p{
-            font-size: 13px;
-        }
+      }
     }
+  }
 
 }
 
 
-//responsive
-@media screen and (max-width: 650px){
-    .menu_desktop{
-        display: none;
+.footer {
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    color: #ccc;
+    background-color: #000;
+
+    p {
+      font-size: 13px;
     }
+  }
+
+//responsive
+@media screen and (max-width: 650px) {
+  .menu_desktop {
+    display: none;
+  }
+
+  .icon_menu_mobile{
+    opacity: 1;
+  }
 
 }

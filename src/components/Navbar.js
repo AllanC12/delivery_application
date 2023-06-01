@@ -11,9 +11,12 @@ import {
   FaBookOpen,
   FaBuilding,
 } from "react-icons/fa";
+
+import { BiMenu } from "react-icons/bi";
+
 import { GrContact } from "react-icons/gr";
 
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 
 import ProfileClient from "./ProfileClient";
 
@@ -99,8 +102,12 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <ProfileClient />
+
       </div>
+
+      <ProfileClient />
+
+      <BiMenu className="icon_menu_mobile" />
 
       <div className="menu_mobile">
         <ul>

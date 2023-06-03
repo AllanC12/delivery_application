@@ -5,22 +5,18 @@
 
   .banner_menu {
     @include max_dimensions;
-
     background-image: url("https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg");
     background-size: cover;
     background-position: center;
 
-    img {
-      @include max_dimensions;
-      object-fit: cover;
-    }
 
-    .menu {
+    .menuCard {
       @include flex(space-evenly);
       width: 100%;
       height: 65vh;
       position: absolute;
       top: 20%;
+      // background-color: transparent;
 
       img {
         width: 100%;

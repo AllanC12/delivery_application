@@ -13,14 +13,18 @@ import {
 } from "react-icons/fa";
 
 import { BiMenu } from "react-icons/bi";
-
 import { IoClose } from "react-icons/io5";
+import { GiExitDoor } from "react-icons/gi" 
 
 import { useRef, useState } from "react";
+
+import { useNavigate } from "react-router-dom";
 
 import ProfileClient from "./ProfileClient";
 
 const Navbar = () => {
+  const navigate = useNavigate()
+
   const navbarRef = useRef();
   const menuContactRef = useRef();
   const linkContactRef = useRef();
@@ -53,6 +57,11 @@ const Navbar = () => {
     }
 
   };
+
+  const finishSession = () => {
+    navigate("/")
+    window.location.reload()
+  }
 
   return (
     <nav ref={navbarRef} className="navbar">
@@ -131,6 +140,10 @@ const Navbar = () => {
             <NavLink to="/sobre">
               <FaBuilding />
             </NavLink>
+          </li>
+
+          <li>
+              <GiExitDoor onClick={finishSession}/>
           </li>
         </ul>
       </div>

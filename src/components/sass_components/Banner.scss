@@ -31,3 +31,9 @@
   .selected {
     opacity: 1;
   }
+
+  @media screen and (max-width: 650px){
+    h2.legend_banner{
+      font-size: 3em;
+    }
+  }

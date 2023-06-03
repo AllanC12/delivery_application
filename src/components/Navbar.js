@@ -14,27 +14,24 @@ import {
 
 import { BiMenu } from "react-icons/bi";
 
-import { GrContact } from "react-icons/gr";
+import { IoClose } from "react-icons/io5";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import ProfileClient from "./ProfileClient";
 
 const Navbar = () => {
   const navbarRef = useRef();
-  const profilePhotoRef = useRef();
   const menuContactRef = useRef();
-  const menuClientRef = useRef();
   const linkContactRef = useRef();
   const iconMenuMobileRef = useRef();
   const menuMobileRef = useRef();
-  let visibilityMenu = true;
 
+  const [openMenuMobile,setOpenMenuMobile] = useState(false)
+ 
   const handleMenuClient = (target, visibilityMenu) => {
-    const profilePhoto = profilePhotoRef.current;
-    const menuContact = menuContactRef.current;
-    const menuClient = menuClientRef.current;
-    const linkContact = linkContactRef.current;
+     const menuContact = menuContactRef.current;
+     const linkContact = linkContactRef.current;
 
     if (target === linkContact)
       menuContact.style.setProperty("display", "block");
@@ -45,14 +42,16 @@ const Navbar = () => {
   };
 
   const handleMenuMobile = (target) => {
-    const iconMenu = iconMenuMobileRef.current;
     const menuMobile = menuMobileRef.current;
-
-    if (target === iconMenu) {
+    
+    if(openMenuMobile){
+      menuMobile.style.setProperty("right", "-60px") 
+      setOpenMenuMobile(false)
+    }else{
       menuMobile.style.setProperty("right", "0");
-      console.log("aqui");
-      //  visibilityMenu = true
+      setOpenMenuMobile(true)
     }
+
   };
 
   return (
@@ -103,13 +102,17 @@ const Navbar = () => {
         </div>
 
 
+        <div className="profile_desktop">
+          <ProfileClient />
+        </div>
+
+        <div onClick={(e)=>handleMenuMobile(e.target)} ref={iconMenuMobileRef} className="icon_menu_mobile">
+          {!openMenuMobile ? <BiMenu/> : <IoClose/>}
+        </div>
+
       </div>
 
-      <ProfileClient />
-
-      <BiMenu className="icon_menu_mobile" />
-
-      <div className="menu_mobile">
+      <div ref={menuMobileRef} className="menu_mobile">
         <ul>
           <li>
             <ProfileClient />

@@ -3,9 +3,7 @@
 .about_client{
     width: 40px;
     height: 40px;
-    position: absolute;
-    right: 10px;
-
+   
     .photo_client{
         @include max_dimensions;
         @include flex(center);

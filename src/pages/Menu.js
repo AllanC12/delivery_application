@@ -113,7 +113,7 @@ const Menu = () => {
       <div className="banner_menu">
          <ModalOrder setOrders={setOrders} orders={orders} />
 
-        <div className="menu">
+        <div className="menuCard">
           
           <img alt="beforePage" onClick={beforePage} src={before_page} />
 

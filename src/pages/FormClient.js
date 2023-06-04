@@ -184,7 +184,7 @@ const FormClient = ({ setConfirmUser }) => {
 
         {successMessage && <p className="message-success">{successMessage}</p>}
 
-        <Link to="/cadastro">Se é novato então clica aqui!</Link>
+        <Link className="linkNewClient" to="/cadastro">Se é novato então clica aqui!</Link>
       </form>
     </div>
   );

@@ -1,9 +1,9 @@
 @import "../../sass_mixins/mixin.scss";
 
 .promotions{
-    margin: 15vh;
+    margin: 10vh;
     
-
+}
     .header_promotions{
         width: 100%;
         @include flex(center);
@@ -23,11 +23,7 @@
 
     .img_promotions{
         @include flex(space-between);
-        margin-top: 5vh;
-        width: 100%;
-        max-width: 1200px;
-        max-height: 60vh;
-        background-color: #ccc;
+        margin: 10px auto;
         padding: 15px;
         border-radius: 10px;
 
@@ -35,6 +31,27 @@
            height: 90%;
            width: 30%;
            object-fit: contain;
+        }
+    }
+
+
+@media screen and (max-width: 650px){
+    .header_promotions {
+        h2{
+            font-size: 2em;
+        }
+    }
+
+    .img_promotions{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .header_promotions {
+        h2{
+            font-size: 1.5em;
         }
     }
 }

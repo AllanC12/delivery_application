@@ -4,14 +4,13 @@
     width: 100%;
     position: relative;
     height: 79vh;
-    
   }
-    .banner_wraper{
-      @include max_dimensions;
-      @include position_absolute(0,0,auto);
-      transition: 1s;
-      opacity: 0;
-    }
+  .banner_wraper{
+    @include max_dimensions;
+    @include position_absolute(0,0,auto);
+    transition: 1s;
+    opacity: 0;
+  }
   
   
   img{

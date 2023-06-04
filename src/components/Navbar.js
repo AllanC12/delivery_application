@@ -11,10 +11,9 @@ import {
   FaBookOpen,
   FaBuilding,
 } from "react-icons/fa";
-
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
-import { GiExitDoor } from "react-icons/gi" 
+import { GiExitDoor } from "react-icons/gi";
 
 import { useRef, useState } from "react";
 
@@ -23,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 import ProfileClient from "./ProfileClient";
 
 const Navbar = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const navbarRef = useRef();
   const menuContactRef = useRef();
@@ -31,11 +30,12 @@ const Navbar = () => {
   const iconMenuMobileRef = useRef();
   const menuMobileRef = useRef();
 
-  const [openMenuMobile,setOpenMenuMobile] = useState(false)
- 
+  const [openMenuMobile, setOpenMenuMobile] = useState(false);
+
+  //função que manipula o menu de contatos
   const handleMenuClient = (target, visibilityMenu) => {
-     const menuContact = menuContactRef.current;
-     const linkContact = linkContactRef.current;
+    const menuContact = menuContactRef.current;
+    const linkContact = linkContactRef.current;
 
     if (target === linkContact)
       menuContact.style.setProperty("display", "block");
@@ -45,23 +45,24 @@ const Navbar = () => {
     }
   };
 
-  const handleMenuMobile = (target) => {
+  //função que manipula o menuMobile
+  const handleMenuMobile = () => {
     const menuMobile = menuMobileRef.current;
-    
-    if(openMenuMobile){
-      menuMobile.style.setProperty("right", "-60px") 
-      setOpenMenuMobile(false)
-    }else{
-      menuMobile.style.setProperty("right", "0");
-      setOpenMenuMobile(true)
-    }
 
+    if (openMenuMobile) {
+      menuMobile.style.setProperty("right", "-60px");
+      setOpenMenuMobile(false);
+    } else {
+      menuMobile.style.setProperty("right", "0");
+      setOpenMenuMobile(true);
+    }
   };
 
+  //função de logout
   const finishSession = () => {
-    navigate("/")
-    window.location.reload()
-  }
+    navigate("/login");
+    window.location.reload();
+  };
 
   return (
     <nav ref={navbarRef} className="navbar">
@@ -73,7 +74,7 @@ const Navbar = () => {
         <div className="menu_desktop">
           <ul>
             <li>
-              <NavLink to="/inicio">Início</NavLink>
+              <NavLink to="/">Início</NavLink>
             </li>
             <li>
               <NavLink to="/cardapio">Cardápio</NavLink>
@@ -110,15 +111,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-
         <div className="profile_desktop">
           <ProfileClient />
         </div>
 
-        <div onClick={(e)=>handleMenuMobile(e.target)} ref={iconMenuMobileRef} className="icon_menu_mobile">
-          {!openMenuMobile ? <BiMenu/> : <IoClose/>}
+        <div
+          onClick={(e) => handleMenuMobile(e.target)}
+          ref={iconMenuMobileRef}
+          className="icon_menu_mobile"
+        >
+          {!openMenuMobile ? <BiMenu /> : <IoClose />}
         </div>
-
       </div>
 
       <div ref={menuMobileRef} className="menu_mobile">
@@ -127,7 +130,7 @@ const Navbar = () => {
             <ProfileClient />
           </li>
           <li>
-            <NavLink to="/inicio">
+            <NavLink to="/">
               <FaHome />
             </NavLink>
           </li>
@@ -143,7 +146,7 @@ const Navbar = () => {
           </li>
 
           <li>
-              <GiExitDoor onClick={finishSession}/>
+            <GiExitDoor onClick={finishSession} />
           </li>
         </ul>
       </div>

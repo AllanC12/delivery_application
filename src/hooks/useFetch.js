@@ -36,6 +36,7 @@ export const useFetch = (url) => {
       });
 
       setMethod("POST");
+
     } else if (method === "DELETE") {
       setConfig({
         method: "DELETE",
@@ -62,14 +63,13 @@ export const useFetch = (url) => {
 
 
   useEffect(() => {
-    const fetchOptions = [config];
 
     const handleUser = async () => {
       let response;
 
       if (method === "POST") {
         setLoading(true);
-            const respInsert = await fetch(...fetchOptions);
+            const respInsert = await fetch(url,config);
             response = await respInsert.json();
             setCallFetch(response);
         setLoading(false);

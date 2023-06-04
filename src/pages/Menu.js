@@ -6,8 +6,6 @@ import { useRef, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
 //components
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import MenuStructure from "../components/MenuStructure";
 import ModalOrder from "../components/ModalOrder";
 
@@ -109,8 +107,8 @@ const Menu = () => {
 
   return (
     <div className="menu_element">
-      <Navbar />
-      <div className="banner_menu">
+
+       <div className="banner_menu">
          <ModalOrder setOrders={setOrders} orders={orders} />
 
         <div className="menuCard">
@@ -197,8 +195,7 @@ const Menu = () => {
         </div>
       </div>
 
-      <Footer />
-    </div>
+     </div>
   );
 };
 

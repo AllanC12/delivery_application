@@ -6,6 +6,7 @@ import hungry from "../images/img_animations/hungry.png"
 import { useState } from "react"
 import { useFetch } from "../hooks/useFetch"
 import { useNavigate } from "react-router-dom"
+import { resetFields } from "../hooks/useResetFields"
  
 const FormNewClient = () => {
   const urlAddClient = `http://localhost:3000/clients`
@@ -21,7 +22,8 @@ const FormNewClient = () => {
 
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  //função que faz a validação dos dados inseridos no cadastro
+  const handleSubmit = async (e) => {
      e.preventDefault()
      if(nameAddUser){
         if(passwordAddUser){
@@ -48,17 +50,13 @@ const FormNewClient = () => {
        password:passwordAddUser
      }
 
-      
-     handleDataClient(clientData,"POST")
-   
-     
-     setNameAddUser('')
-     setPasswordAddUser('')
-     setConfirmPasswordAddUser('')
+     await handleDataClient(clientData,"POST")
+     setTimeout(()=> {
+       navigate("/login")
+      },500)
+      resetFields(setEmailAddUser,setNameAddUser,setPasswordAddUser,setConfirmPasswordAddUser)
 
-    setTimeout(()=> {
-      navigate("/")
-    },500)
+
   }
 
   return (

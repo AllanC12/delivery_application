@@ -6,17 +6,21 @@
    
     .photo_client{
         @include max_dimensions;
-        @include flex(center);
-         background-color: #ccc;
-         border-radius: 50%;
-         cursor: pointer;
-
-         a{
+        background-color: #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        
+        a{
+            @include flex(center);
             @include max_dimensions;
-
+            
              img{
                 border-radius: 50%;
                 @include max_dimensions;
+               }
+
+               svg{
+                color: #000;
                }
          }
 

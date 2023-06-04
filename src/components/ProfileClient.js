@@ -7,8 +7,13 @@ import {FaUser} from "react-icons/fa"
 import { NavLink } from "react-router-dom";
 
 const ProfileClient = () => {
+
     const userDataContext = useContext(ContextUserData);
-    const imageUserProfile = userDataContext.value.confirmUser.userValidate[0].urlImage;
+    const statusUser = userDataContext.value.confirmUser.statusLogin;
+    //Definindo valor de imageUserProfile só após o conteúdo do context ser definidio
+    const imageUserProfile = statusUser
+      ? userDataContext.value.confirmUser.userValidate[0].urlImage
+      : null;
 
   return (
         <div className="about_client">

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 //hooks
 import { useRef, useEffect, useState } from "react";
 import { useFetch } from "../hooks/useFetch";
+import { resetFields } from "../hooks/useResetFields";
 
 //img_animation
 import beer from "../images/img_animations/beer.png";
@@ -15,8 +16,8 @@ import potatoChips from "../images/img_animations/potato_chips.png";
 import sprite from "../images/img_animations/sprite.png";
 
 //icons
-import {FaEye} from "react-icons/fa"
-import {FaEyeSlash} from "react-icons/fa"
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const FormClient = ({ setConfirmUser }) => {
   const Navigate = useNavigate();
@@ -27,35 +28,37 @@ const FormClient = ({ setConfirmUser }) => {
 
   const urlDataClient = `http://localhost:3000/clients`;
   const { data: clients, loading } = useFetch(urlDataClient);
-
-  const [nameClient, setNameClient] = useState("");
+  
+  const [nameClient,setNameClient] = useState("")
+  const [emailClient, setEmailClient] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  
+
   let userValidate;
-  let userNameValidate;
+  let userEmailValidate;
   let userPasswordValidate;
- 
-  const inputPassword = useRef()
-  const [visibilityPassword,setVisibilityPassword] = useState(false)
 
+  const inputPassword = useRef();
+  const [visibilityPassword, setVisibilityPassword] = useState(false);
+
+  //função que controla a visualização da senha
   const showOrHidePassword = () => {
-    if(!visibilityPassword){
-      inputPassword.current.setAttribute("type","text")
-      setVisibilityPassword(true)
-    }else{
-      inputPassword.current.setAttribute("type","password")
-      setVisibilityPassword(false)
-
+    if (!visibilityPassword) {
+      inputPassword.current.setAttribute("type", "text");
+      setVisibilityPassword(true);
+    } else {
+      inputPassword.current.setAttribute("type", "password");
+      setVisibilityPassword(false);
     }
-  }
+  };
 
+  //função que renderiza a animação em cima do formulário
   const animationForm = () => {
     const imgsAnimation = divImgsFormAnimation.current.children;
     const arrayImages = Array.from(imgsAnimation);
 
-      animationInterval = setInterval(() => {
+    animationInterval = setInterval(() => {
       if (indexImgAnimation === arrayImages.length) {
         indexImgAnimation = 0;
         for (let i = 0; i < arrayImages.length; i++) {
@@ -67,18 +70,22 @@ const FormClient = ({ setConfirmUser }) => {
     }, 1000);
   };
 
+  //resetando intervalos ao desmontar o componente
   useEffect(() => {
     animationForm();
-    return () => clearInterval(animationInterval)
+    return () => clearInterval(animationInterval);
   });
 
+  //função que verifica se há um cliente cadastrado com essete
   const verifyDataClient = (clients) => {
     if (clients) {
-      userValidate = clients.filter(client => client.name === nameClient &&
-            client.password === password
-        )
+      userValidate = clients.filter(
+        (client) => client.email === emailClient && client.password === password
+      );
 
-      userNameValidate = clients.filter((client) => client.name === nameClient);
+      userEmailValidate = clients.filter(
+        (client) => client.email === emailClient
+      );
 
       userPasswordValidate = clients.filter(
         (client) => client.password === password
@@ -86,34 +93,35 @@ const FormClient = ({ setConfirmUser }) => {
     }
   };
 
-  const validateDataClient = (userName, userPassword) => {
-    if (userName.length > 0) {
+  //iniciando sessão do usuário
+  const initSessionUser = () => {
+    setConfirmUser({ userValidate, statusLogin: true })
+    setTimeout(() => {
+      Navigate("/");
+    }, 500);
+  }
+
+  const validateDataClient = (userEmail, userPassword) => {
+    if (userEmail.length > 0) {
       if (userPassword.length > 0) {
-
-        setSuccessMessage(`Seja bem vindo ${nameClient}`);
-        setConfirmUser({userValidate,statusLogin:true});
-        setTimeout(() => {
-          Navigate("/inicio");
-        }, 500);
-
+        setSuccessMessage(`Seja bem vindo`);
+        initSessionUser()
       } else {
         setErrorMessage(`Senha incorreta`);
         return;
       }
     } else {
-      setErrorMessage(`Usuário não encontrado...`);
+      setErrorMessage(`E-mail não cadastrado...`);
       return;
     }
   };
-  
+
   const handleLogin = (e) => {
     e.preventDefault();
-    
-    verifyDataClient(clients);
-    validateDataClient(userNameValidate, userPasswordValidate);
 
-    setNameClient("");
-    setPassword("");
+    verifyDataClient(clients);
+    validateDataClient(userEmailValidate, userPasswordValidate);
+    resetFields(setEmailClient,setPassword)
   };
 
   return (
@@ -133,10 +141,10 @@ const FormClient = ({ setConfirmUser }) => {
         <label>
           <input
             onFocus={() => setErrorMessage("")}
-            type="text"
-            placeholder="Insira seu nome de usuário..."
-            value={nameClient}
-            onChange={(e) => setNameClient(e.target.value)}
+            type="email"
+            placeholder="Insira seu e-mail"
+            value={emailClient}
+            onChange={(e) => setEmailClient(e.target.value)}
           />
         </label>
 
@@ -151,7 +159,7 @@ const FormClient = ({ setConfirmUser }) => {
           />
 
           <div onClick={showOrHidePassword} className="visibility-password">
-            {visibilityPassword ?  <FaEyeSlash/> : <FaEye/>}
+            {visibilityPassword ? <FaEyeSlash /> : <FaEye />}
           </div>
         </label>
 

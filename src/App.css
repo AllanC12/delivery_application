@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.content{
+  padding-top: 60px;
+}
+
 form {
   border-radius: 10px;
   padding: 20px;

@@ -1,8 +1,5 @@
 import "./sass_pages/About.scss";
 
-import Navbar from "../components/Navbar.js";
-import Footer from "../components/Footer.js";
-
 const About = () => {
  
   const adressProfilePhoto = ["https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2021/07/site-vacinacao-33-anos.png",
@@ -12,8 +9,7 @@ const About = () => {
 
   return (
     <div>
-      <Navbar />
-      <main>
+       <main>
          <div className="box_about">
 
           <div className="about box_single">
@@ -112,8 +108,8 @@ const About = () => {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+      
+     </div>
   );
 };
 

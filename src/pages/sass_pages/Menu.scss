@@ -2,7 +2,7 @@
 
 .menu_element {
     height: 79vh;
-   
+} 
   .banner_menu {
     @include max_dimensions;
     padding-top: 50px ;
@@ -14,15 +14,15 @@
 
     .menuCard {
       @include flex(space-evenly);
+      gap: 15px;
       width: 100%;
       height: 65vh;
       position: absolute;
       top: 20%;
 
       img {
-        width: 100%;
-        max-width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         cursor: pointer;
       }
 
@@ -82,11 +82,29 @@
         }
 
         .page_six {
-           -webkit-box-shadow: 2px 0px 7px 0px rgba(0, 0, 0, 0.75);
+          -webkit-box-shadow: 2px 0px 7px 0px rgba(0, 0, 0, 0.75);
           -moz-box-shadow: 2px 0px 7px 0px rgba(0, 0, 0, 0.75);
-          box-shadow: 2px 0px 7px 0px rgba(0, 0, 0, 0.75);
+           box-shadow: 2px 0px 7px 0px rgba(0, 0, 0, 0.75);
         }
       }
     }
+  }
+
+@media screen and (max-width:768px){
+  .menuCard{
+    img{
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+
+@media screen and (max-width:600px){
+  .menuCard{
+    img{
+      width: 30px;
+      height: 30px;
+     }
   }
 }

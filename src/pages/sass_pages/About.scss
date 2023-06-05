@@ -3,68 +3,76 @@
 
 main{
     width: 100%;
-    height: 79vh;
+    min-height: 79vh;
     background-image: url("https://vinicolaaraucaria.com.br/wp-content/uploads/2020/06/interna_restaurante-1-1400x700.jpg");   
     background-size: cover;
     background-position: center;
     @include flex(center);
-
-    .box_about{
-        width: 100%;
-        @include display-flex;
-        justify-content: space-around;
-
-        .box_single{
-            margin: 10px;
-            width: 33%;
-            max-width: 400px;
-            background-color: rgba(0,0,0,0.8);
-            padding: 20px 10px;
-            height: 75vh; 
-            color: white;
-            border-radius: 10px;
-
-            h2{
-                text-align: center;
-            }
-
-            p{
-                margin: 10px;
-            }
-            
-            ul{
-                list-style-type: none;
-                
-                li{
-                    margin:10px
-                }
-            }
-
-            .box_testimonials{
-                  margin-bottom: 10px;
-                  background-color: #ccc;
-                  padding: 5px 1%;
-                  color: #000;
-                  border-radius: 10px;
-                  
-                    p{
-                        font-size: .9em;
-                    }
-
-                .header_testimonial{
-                    width: 100%;
-                    @include flex(flex-start);
-                    padding: 5px;
-                    img{
-                        width: 40px;
-                        height: 40px;
-                        margin: 0 10px;
-                        border-radius: 50%;
-                    }
-                }
-            }
-
-        }
-     }
-     
 }
+
+.box_about{
+    width: 100%;
+    @include flex(space-around);
+    flex-wrap: wrap;
+}
+
+.box_single{
+    margin: 10px;
+    width: 33%;
+    max-width: 400px;
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px 10px;
+    color: white;
+    border-radius: 10px;
+
+    h2{
+        text-align: center;
+    }
+
+    p{
+        margin: 10px;
+        }
+    
+    ul{
+        list-style-type: none;
+        
+        li{
+            margin:10px
+        }
+    }
+
+    .box_testimonials{
+            margin-bottom: 10px;
+            background-color: #ccc;
+            padding: 5px 1%;
+            color: #000;
+            border-radius: 10px;
+            
+            p{
+                font-size: .9em;
+            }
+
+        .header_testimonial{
+            width: 100%;
+            @include flex(flex-start);
+            padding: 5px;
+            img{
+                width: 40px;
+                height: 40px;
+                margin: 0 10px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+}
+     
+
+@media screen and (max-width: 1000px){
+    .box_single{
+        width: 80%;
+        max-width: 900px;
+    }
+}
+
+

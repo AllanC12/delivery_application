@@ -6,25 +6,25 @@
   .banner_menu {
     @include max_dimensions;
     padding-top: 50px ;
-
     background-image: url("https://www.emporiotambo.com.br/pub/media/resized/1300x800/ves/blog/xguia-de-mesa.jpg.pagespeed.ic.M976sIeg6W.jpg");
     background-size: cover;
     background-position: center;
+   }
 
 
-    .menuCard {
-      @include flex(space-evenly);
-      gap: 15px;
-      width: 100%;
-      height: 65vh;
-      position: absolute;
-      top: 20%;
+  .menuCard {
+    @include flex(space-evenly);
+    gap: 15px;
+    width: 100%;
+    height: 65vh;
+    position: absolute;
+    top: 20%;
 
-      img {
-        width: 60px;
-        height: 60px;
-        cursor: pointer;
-      }
+    img {
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+    }
 
       .cover_menu {
         @include max_dimensions;
@@ -88,13 +88,13 @@
         }
       }
     }
-  }
 
 @media screen and (max-width:768px){
   .menuCard{
+    height: 55vh;
     img{
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
     }
   }
 }
@@ -103,8 +103,8 @@
 @media screen and (max-width:600px){
   .menuCard{
     img{
-      width: 30px;
-      height: 30px;
+      width: 45px;
+      height: 45px;
      }
   }
 }

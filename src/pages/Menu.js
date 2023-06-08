@@ -191,7 +191,9 @@ const Menu = () => {
                 ))}
             </div>
           </div>
+
           <img alt="nextPage" onClick={nextPage} src={next_page} />
+          
         </div>
       </div>
 

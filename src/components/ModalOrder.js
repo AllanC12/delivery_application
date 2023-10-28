@@ -11,7 +11,7 @@ const ModalOrder = ({ orders, setOrders }) => {
   const modalRef = useRef();
   const [valueTotalOrder, setValueTotalOrder] = useState("");
   const [messageOrder, setMessageOrder] = useState("");
-  const adressWhatapp = `https://wa.me/+5537988551832?text=${messageOrder}`;
+  const adressWhatapp = `https://wa.me/+5537998287395?text=${messageOrder}`;
   const ocurrencesOrder = {};
 
   const sumOrder = () => {
